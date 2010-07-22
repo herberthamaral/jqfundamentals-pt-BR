@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter version="5.0" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <title>Events</title>
+
+  <section>
+    <title>Introdução</title>
+
+    <para>jQuery fornece métodos simples para anexar manipuladores de eventos (event handlers) para
+    seleções. Quando um evento ocorre, a função fornecida é executada.
+    Dentro da função, this refere-se ao elemento que foi clicado.</para>
+
+    <para>Para detalhes sobre eventos do jQuery, visite <link
+    xlink:href="http://api.jquery.com/category/events/">http://api.jquery.com/category/events/</link>.</para>
+
+    <para>A função manipuladora de evento pode receber um objeto de evento. Este objeto
+    pode ser usado para determinar a natureza do evento, e para impedir o
+    comportamento padrão do evento.</para>
+
+    <para>Para detalhes sobre o objeto de evento, visite <link
+    xlink:href="http://api.jquery.com/category/events/event-object/">http://api.jquery.com/category/events/event-object/</link>.</para>
+  </section>
+
+  <section>
+    <title>Conectando Eventos a Elementos</title>
+
+    <para>jQuery oferece métodos de conveniência para a maioria dos eventos comuns, e estes
+    são os métodos que você verá sendo usados com mais frequência. Estes métodos -- incluindo 
+    <code>$.fn.click</code>, <code>$.fn.focus</code>, <code>$.fn.blur</code>,
+    <code>$.fn.change</code>, etc. -- são atalhos para o método <code>$.fn.bind</code> 
+    do jQuery. O método bind é útil para ligar a mesma
+    função a múltiplos eventos, e é também usado quando você quer
+    fornecer dados para o event handler, ou quando você está trabalhando com
+    eventos personalizados.</para>
+
+    <example>
+      <title>Ligação de Eventos Usando um Método de Conveniência</title>
+
+      <programlisting>$('p').click(function() {
+    console.log('clique');
+});</programlisting>
+    </example>
+
+    <example>
+      <title>Ligação de evento usando o método <code>$.fn.bind</code></title>
+
+      <programlisting>$('p').bind('click', function() {
+    console.log('clique');
+});</programlisting>
+    </example>
+
+    <example>
+      <title>Ligação de evento usando o método <code>$.fn.bind</code> com
+      dados</title>
+
+      <para><programlisting>$('input').bind(
+    'click change',  // anexa múltiplos eventos
+    { foo : 'bar' }, // passa dados
+
+    function(eventObject) {
+        console.log(eventObject.type, eventObject.data);
+        // loga o tipo de evento, e então { foo : 'bar' }
+    }
+);</programlisting></para>
+    </example>
+
+    <section>
+      <title>Conectando Eventos para Executar Apenas uma vez</title>
+
+      <para>Algumas vezes você precisa que um handler específico execute apenas uma vez -- depois
+      disso, você pode querer que nenhum handler execute, ou pode querer que um handler
+      diferente execute. jQuery fornece o método <code>$.fn.one</code> para
+      este propósito.</para>
+
+      <example>
+        <title>Trocando manipuladores usando o método 
+        <code>$.fn.one</code></title>
+
+        <programlisting>$('p').one('click', function() {
+    $(this).click(function() { console.log('Você clicou nisto antes!'); });
+});</programlisting>
+      </example>
+
+      <para>O método <code>$.fn.one</code> é especialmente útil se você precisa
+      fazer alguma configuração complicada na primeira vez que um elemento é clicado, mas
+      não nas vezes subsequentes.</para>
+    </section>
+
+    <section>
+      <title>Desconectando Eventos</title>
+
+      <para>Para desconectar um manipulador de evento, você usa o método
+      <code>$.fn.unbind</code> e passa o tipo de evento para desatar. Se
+      você anexou uma função nomeada para o evento, então pode isolar a
+      desconexão para essa função nomeada passando-a como o segundo
+      argumento.</para>
+
+      <example>
+        <title>Desconectando todos os manipuladores de clique em uma seleção</title>
+
+        <para><programlisting>$('p').unbind('click');</programlisting></para>
+      </example>
+
+      <example>
+        <title>Desconectando um manipulador de clique específico</title>
+
+        <programlisting>var foo = function() { console.log('foo'); };
+var bar = function() { console.log('bar'); };
+
+$('p').bind('click', foo).bind('click', bar);
+$('p').unbind('click', bar); // foo ainda está ligado ao evento de clique</programlisting>
+      </example>
+    </section>
+
+    <section>
+      <title>Usando Namespaces com Eventos</title>
+
+      <para>Para aplicações complexas e para plugins que você compartilha com outros,
+      pode ser útil usar um namespace para seus eventos de forma que você não desconecte
+      sem querer eventos sobre os quais você não conhece ou não poderia conhecer.</para>
+
+      <example>
+        <title>Usando Namespaces com eventos</title>
+
+        <programlisting>$('p').bind('click.meuNamespace', function() { /* ... */ });
+$('p').unbind('click.meuNamespace');
+$('p').unbind('.meuNamespace'); // desconecta todos os eventos no namespace</programlisting>
+      </example>
+    </section>
+  </section>
+
+  <section>
+    <title>Por Dentro da Função Manipuladora de Evento</title>
+
+    <para>Como mencionado na introdução, a função manipuladora de evento recebe
+    um objeto de evento,  que contém muitas propriedades e métodos. O objeto
+    de evento é mais comumente usado para impedir a ação padrão do evento
+    através do método preventDefault. Contudo, o objeto de evento contém vários
+    outros métodos e propriedades úteis, incluindo:</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>pageX, pageY</term>
+
+        <listitem>
+          <para>A posição do mouse no momento em que o evento ocorreu, relativa ao
+          ao canto superior esquerdo da página.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>type</term>
+
+        <listitem>
+          <para>O tipo do evento (por ex. "click").</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>which</term>
+
+        <listitem>
+          <para>O botão ou tecla que foi pressionado(a).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>data</term>
+
+        <listitem>
+          <para>Quaisquer dados que foram passados quando o evento foi anexado.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>target</term>
+
+        <listitem>
+          <para>O elemento do DOM que iniciou o evento.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>preventDefault()</term>
+
+        <listitem>
+          <para>Impede a ação padrão do evento (por ex. seguir um
+          link).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>stopPropagation()</term>
+
+        <listitem>
+          <para>Impede o evento de se propagar (bubble up) para os outros elementos.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Além do objeto de evento, a função manipuladora de evento também
+    tem acesso ao elemento do DOM no qual o evento foi anexado através da
+    palavra-chave <code>this</code>. Para transformar um elemento do DOM em um objeto jQuery
+    no qual podemos usar métodos do jQuery, simplesmente fazemos <code>$(this)</code>,
+    frequentemente seguindo este idioma:</para>
+
+    <programlisting>var $this = $(this);</programlisting>
+
+    <example>
+      <title>Impedindo um link de ser seguindo</title>
+
+      <programlisting>$('a').click(function(e) {
+    var $this = $(this);
+    if ($this.attr('href').match('mau')) {
+        e.preventDefault();
+        $this.addClass('mau');
+    }
+});</programlisting>
+    </example>
+  </section>
+
+  <section>
+    <title>Disparando Eventos</title>
+
+    <para>jQuery fornece um jeito de disparar os eventos ligados a um
+    elemento sem qualquer interação do usuário através do método 
+    <code>$.fn.trigger</code>. Enquanto este método tem seus usos, ele não deve ser usado simplesmente
+    para chamar uma função que foi ligada como um tratador de clique. Ao invés disso, você deve
+    armazenar a função que você quer chamar em uma variável, e passar o nome da 
+    variável quando fizer sua ligação. Então você pode chamar a própria função
+    sempre que quiser, sem a necessidade do <code>$.fn.trigger</code>.</para>
+
+    <example>
+      <title>Disparando um evento do jeito certo</title>
+
+      <programlisting>var foo = function(e) { 
+    if (e) { 
+        console.log(e); 
+    } else {
+        console.log('isto não vem de um evento!');
+    }
+};
+
+
+$('p').click(foo); 
+
+foo(); // ao invés de $('p').trigger('click')</programlisting>
+    </example>
+  </section>
+
+  <section>
+    <title>Aumentando a Performance com Delegação de Evento</title>
+
+    <para>Você frequentemente usará o jQuery para adicionar novos elementos a página, e
+    quando o faz, pode precisar anexar eventos a esses novos elementos -- eventos que
+    você já anexou a elementos similares que estavam na página originalmente.
+    Ao invés de repetir a ligação de evento toda vez que adiciona elementoos à
+    página, você pode usar delegação de evento. Com delegação de evento você anexa seu
+    evento ao elemento conteiner, e então quando o evento ocorre, você verifica
+    em qual elemento contido ele ocorreu. Se isto soa complicado,
+    por sorte o jQuery facilita com seus métodos <code>$.fn.live</code> e
+    <code>$.fn.delegate</code>.</para>
+
+    <para>Enquanto a maioria das pessoas descobre a delegação de evento ao lidar com
+    elementos adicionados na página depois, isso tem alguns benefícios de performance mesmo se
+    você nunca adiciona mais elementos para a página. O tempo requerido para ligar eventos
+    a centenas de elementos individuais é não-trivial; se você tem um grande
+    conjunto de elementos, deve considerar a delegação de eventos relacionados a
+    um elemento conteiner.</para>
+
+    <note>
+      <para>O método <code>$.fn.live</code> foi introduzido no jQuery 1.3,
+      e na época apenas certos tipos de eventos eram suportados. Com o jQuery
+      1.4.2, o método <code>$.fn.delegate</code> está disponível, e é o 
+      método preferencial.</para>
+    </note>
+
+    <example>
+      <title>Delegação de Evento usando <code>$.fn.delegate</code></title>
+
+      <programlisting>$('#minhaListaNaoOrdenada').delegate('li', 'click', function(e) {
+    var $meuItemDeLista = $(this);
+    // ...
+});</programlisting>
+    </example>
+
+    <example>
+      <title>Delegação de Evento usando <code>$.fn.live</code></title>
+
+      <programlisting>$('#minhaListaNaoOrdenada li').live('click', function(e) {
+    var $meuItemDeLista = $(this);
+    // ...
+});</programlisting>
+    </example>
+
+    <section>
+      <title>Desatando Eventos Delegados</title>
+
+      <para>Se você precisa remover eventos delegados, não pode simplesmente usar
+      unbind neles. Ao invés disso, use <code>$.fn.undelegate</code> para eventos conectados
+      com <code>$.fn.delegate</code>, e <code>$.fn.die</code> para eventos
+      conectados com <code>$.fn.live</code>. Assim como com bind, você pode opcionalmente
+      passar o nome da função ligada ao evento.</para>
+
+      <example>
+        <title>Desatando eventos delegados</title>
+
+        <programlisting>$('#minhaListaNaoOrdenada').undelegate('li', 'click');
+$('#minhaListaNaoOrdenada li').die('click');</programlisting>
+      </example>
+    </section>
+  </section>
+
+  <section>
+    <title>Auxiliares de Eventos</title>
+
+    <para>jQuery oferece duas funções auxiliares relacionadas a eventos que te economizam
+    algumas teclas digitadas.</para>
+
+    <section>
+      <title><code>$.fn.hover</code></title>
+
+      <para>O método <code>$.fn.hover</code> deixa você passar uma ou duas
+      funções para serem executadas quando os eventos <code>mouseenter</code> e
+      <code>mouseleave</code> ocorrem em um elemento. Se você passar uma
+      função, ela será executada para ambos os eventos; se passar duas funções, a
+      primeira será executada para <code>mouseenter</code>, e a segunda será executada
+      para <code>mouseleave</code>.</para>
+
+      <note>
+        <para>Antes do jQuery 1.4, o método <code>$.fn.hover</code> exigia
+        duas funções.</para>
+      </note>
+
+      <example>
+        <title>A função auxiliar hover</title>
+
+        <programlisting>$('#menu li').hover(function() { 
+    $(this).toggleClass('hover'); 
+});</programlisting>
+      </example>
+    </section>
+
+    <section>
+      <title><code>$.fn.toggle</code></title>
+
+      <para>Assim como <code>$.fn.hover</code>, o método <code>$.fn.toggle</code>
+      recebe duas ou mais funções; cada vez que o evento ocorre, a
+      próxima função na lista é chamada. Geralmente, <code>$.fn.toggle</code>
+      é usado apenas com duas funções, mas tecnicamente você pode usar tantas
+      quantas desejar.</para>
+
+      <example>
+        <title>A função auxiliar toggle</title>
+
+        <programlisting>$('p.expander').toggle(
+    function() {
+        $(this).prev().addClass('open');
+    },
+    function() {
+        $(this).prev().removeClass('open');
+    }
+);</programlisting>
+      </example>
+    </section>
+  </section>
+
+  <section>
+    <title>Exercícios</title>
+
+    <xi:include href="exercises/input-hint.xml" xpointer="element(/1)" />
+
+    <xi:include href="exercises/tabbed-navigation.xml" xpointer="element(/1)" />
+  </section>
+</chapter>
