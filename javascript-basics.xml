@@ -318,7 +318,7 @@ var foo = bar ? 1 : 0;</programlisting>
         <programlisting>switch (foo) {
 
     case 'bar':
-        alert('the value was bar -- yay!');
+        alert('o valor é bar -- yay!');
     break;
 
     case 'baz':
@@ -326,19 +326,20 @@ var foo = bar ? 1 : 0;</programlisting>
     break;
 
     default:
-        alert('everything else is just ok');
+        alert('todo o resto está ok');
     break;
 
 }</programlisting>
       </example>
 
-      <para>Switch statements have somewhat fallen out of favor in JavaScript,
-      because often the same behavior can be accomplished by creating an obect
-      that has more potential for reuse, testing, etc. For example:</para>
+      <para>As declarações Switch de alguma forma favorecem o JavaScript,
+      pois frequentemente o mesmo comportamento pode ser obtido através da 
+      criação de um objeto que que tem um maior potencial para reuso, teste,
+      etc. Por exemplo:</para>
 
       <programlisting>var stuffToDo = {
     'bar' : function() { 
-        alert('the value was bar -- yay!');
+        alert('o valor é bar -- yay!');
     },
 
     'baz' : function() { 
@@ -346,7 +347,7 @@ var foo = bar ? 1 : 0;</programlisting>
     },
 
     'default' : function() { 
-        alert('everything else is just ok');
+        alert('todo o resto está ok');
     }
 };
 
@@ -356,108 +357,105 @@ if (stuffToDo[foo]) {
     stuffToDo['default']();
 }</programlisting>
 
-      <para>We'll look at objects in greater depth later in this
-      chapter.</para>
+      <para>Nós daremos uma olhada mais profunda em objetos mais
+      a frente neste capítulo.</para>
     </section>
   </section>
 
   <section>
-    <title>Loops</title>
+    <title>Laços</title>
 
-    <para>Loops let you run a block of code a certain number of times.</para>
+    <para>Laços permitem que você execute um bloco de código por um certo número de vezes.</para>
 
     <para><example id="javascript-basics.examples.loops">
-        <title>Loops</title>
+        <title>Laços</title>
 
-        <programlisting>// logs 'try 0', 'try 1', ..., 'try 4'
+        <programlisting>// loga 'tentativa 0', 'tentativa 1', ..., 'tentativa 4'
 for (var i=0; i&lt;5; i++) {
-    console.log('try ' + i);
+    console.log('tentativa ' + i);
 }</programlisting>
-      </example><remark>Note that in <xref
-    linkend="javascript-basics.examples.loops" /> even though we use the
-    keyword <token>var</token> before the variable name <varname>i</varname>,
-    this does not "scope" the variable <varname>i</varname> to the loop block.
-    We'll discuss scope in depth later in this chapter.</remark></para>
+      </example><remark>Note que em <xref
+    linkend="javascript-basics.examples.loops" /> mesmo que usemos a palavra
+    chave <token>var</token> antes do nome da variável  <varname>i</varname>,
+    o escopo da variável  <varname>i</varname> não é alterado para o bloco do laço.
+    Nós iremos discutir sobre escopo com mais profundidade mais a frente neste capítulo.</remark></para>
 
     <section>
-      <title>The for loop</title>
+      <title>O laço for</title>
 
-      <para>A <code>for</code> loop is made up of four statements and has the
-      following structure:</para>
+      <para>O laço <code>for</code> é consituído de quatro declarações e possui a 
+      seguinte estrutura:</para>
 
-      <programlisting>for ([initialisation]; [conditional]; [iteration])
- [loopBody]</programlisting>
+      <programlisting>for ([inicialização]; [condição]; [incremento])
+ [corpoDoLaço]</programlisting>
 
-      <para>The <emphasis>initialisation</emphasis> statement is executed only
-      once, before the loop starts. It gives you an oppurtunity to prepare or
-      declare any variables.</para>
+      <para>A declaração <emphasis>inicialização</emphasis> é executada somente
+      uma vez, antes do loop iniciar. Ela lhe dá uma oportunidade de preparar
+      ou declarar qualquer variável.</para>
 
-      <para>The <emphasis>conditional</emphasis> statement is executed before
-      each iteration, and its return value decides whether or not the loop is
-      to continue. If the conditional statement evaluates to a falsey value
-      then the loop stops.</para>
+      <para>A declaração <emphasis>condição</emphasis> é executada antes de 
+      cada iteração, e o seu valor de retorno decide se o loop continua ou
+      não. Se a declaração condicional for interpretada como um valor falso,
+      o laço para de ser executado.</para>
 
-      <para>The <emphasis>iteration</emphasis> statement is executed at the
-      end of each iteration and gives you an oppurtunity to change the state
-      of important variables. Typically, this will involve incrementing or
-      decrementing a counter and thus bringing the loop ever closer to its
-      end.</para>
+      <para>A declaração <emphasis>incremento</emphasis> é executada no fim
+      de cada iteração e lhe dá a oportunidade de mudar o estado de variáveis
+      importantes. Tipicamente, isso irá envolver o incremento ou decremento
+      de um contador e assim fazer com que o loop sempre chegue ao seu fim.</para>
 
-      <para>The <emphasis>loopBody</emphasis> statement is what runs on every
-      iteration. It can contain anything you want. You'll typically have
-      multiple statements that need to be executed and so will wrap them in a
-      block ( <code>{...}</code>).</para>
+      <para>A declaração <emphasis>corpoDoLaço</emphasis> é o que é executado
+      em cada iteração. Ele pode conter o que você quiser. Tipicamente, você 
+      terá múltiplas declarações que precisam ser executadas e portanto você
+      irá coloca-las dentro de um bloco de código ( <code>{...}</code>).</para>
 
-      <para>Here's a typical <code>for</code> loop:</para>
+      <para>Este é um uso típico para o laço <code>for</code>:</para>
 
       <example>
-        <title>A typical <code>for</code> loop</title>
+        <title>Um laço<code>for</code> típico</title>
 
         <programlisting>for (var i = 0, limit = 100; i &lt; limit; i++) {
-    // This block will be executed 100 times
-    console.log('Currently at ' + i);
-    // Note: the last log will be "Currently at 99"
+    // Este bloco será executado 100 vezes
+    console.log('Estou em ' + i);
+    // Nota: o último log será: "Estou em 99"
 }</programlisting>
       </example>
     </section>
 
     <section>
-      <title>The while loop</title>
+      <title>O laço while</title>
 
-      <para>A <code>while</code> loop is similar to an <code>if</code>
-      statement, axcept that its body will keep executing until the condition
-      evaluates to false.</para>
+      <para>O laço <code>while</code> é similar a uma declação <code>if</code>, 
+      exceto que seu corpo continuará executando até que a condição seja interpretada
+      como falso.</para>
 
-      <programlisting>while ([conditional]) [loopBody]</programlisting>
+      <programlisting>while ([condição]) [corpoDoLaço]</programlisting>
 
-      <para>Here's a typical <code>while</code> loop:</para>
+      <para>Este é um laço <code>while</code> típico:</para>
 
       <example>
-        <title>A typical <code>while</code> loop</title>
+        <title>Um laço <code>while</code> típico</title>
 
         <programlisting>var i = 0;
 while (i &lt; 100) {
 
-    // This block will be executed 100 times
-    console.log('Currently at ' + i);
+    // Este bloco será executado 100 vezes
+    console.log('Estou em ' + i);
     
-    i++; // increment i
+    i++; // incrementa i
     
 }</programlisting>
       </example>
 
-      <para>You'll notice that we're having to increment the counter within
-      the loop's body. It is possible to combine the conditional and
-      incrementer, like so:</para>
+      <para>Você irá perceber que nós temos que incrementar o contador dentro do
+      corpo do laço. É possível combinar o incremento e a condição, desse jeito:</para>
 
       <example>
-        <title>A <code>while</code> loop with a combined conditional and
-        incrementer</title>
+        <title>Um laço <code>while</code> com uma condição e incremento combinado</title>
 
         <programlisting>var i = -1;
 while (++i &lt; 100) {
-    // This block will be executed 100 times
-    console.log('Currently at ' + i);
+    // Este bloco será executado 100 vezes
+    console.log('Estou em ' + i);
 }</programlisting>
       </example>
 
