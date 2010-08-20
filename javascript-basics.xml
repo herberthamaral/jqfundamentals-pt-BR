@@ -840,20 +840,20 @@ var mySplit = myString.split('');  // [ 'h', 'e', 'l', 'l', 'o' ]</programlistin
 
       <programlisting>var myObject = {
     sayHello : function() {
-        console.log('hello');
+        console.log('olá');
     },
 
     myName : 'Rebecca'
 };
 
-myObject.sayHello();            // logs 'hello'
-console.log(myObject.myName);   // logs 'Rebecca'</programlisting>
+myObject.sayHello();            // loga 'olá'
+console.log(myObject.myName);   // loga 'Rebecca'</programlisting>
     </example>
 
     <note>
-      <para>When creating object literals, you should note that the key
-      portion of each key-value pair can be written as any valid JavaScript
-      identifier, a string (wrapped in quotes) or a number:</para>
+      <para>Ao criar literais objeto, você deve notar que a porção chave
+      de cada par chave-valor pode ser escrito como qualquer identificador
+      válido em JavaScript, uma string (entre aspas) ou um número:</para>
 
       <programlisting>var myObject = {
     validIdentifier: 123,
@@ -862,44 +862,44 @@ console.log(myObject.myName);   // logs 'Rebecca'</programlisting>
 };</programlisting>
     </note>
 
-    <para>Object literals can be extremely useful for code organization; for
-    more information, read <link
+    <para>Literais objeto podem ser extremamente úteis para organização
+    de código; para mais informações leia <link
     xlink:href="http://blog.rebeccamurphey.com/2009/10/15/using-objects-to-organize-your-code/">Using
-    Objects to Organize Your Code</link> by Rebecca Murphey.</para>
+    Objects to Organize Your Code</link> de Rebecca Murphey.</para>
   </section>
 
   <section>
-    <title>Functions</title>
+    <title>Funções</title>
 
-    <para>Functions contain blocks of code that need to be executed
-    repeatedly. Functions can take zero or more arguments, and can optionally
-    return a value.</para>
+    <para>Funções contém blocos de código que precisam ser executados repetidamente.
+    As funções podem ter zero ou mais argumentos, e pode opcionalmente retornar
+    um valor.</para>
 
-    <para>Functions can be created in a variety of ways:</para>
+    <para>Funções podem ser criadas em uma série de formas:</para>
 
     <example>
-      <title>Function Declaration</title>
+      <title>Declaração de Função</title>
 
-      <programlisting>function foo() { /* do something */ }</programlisting>
+      <programlisting>function foo() { /* faz alguma coisa */ }</programlisting>
     </example>
 
     <example>
-      <title>Named Function Expression</title>
+      <title>Expressão de Função Nomeada</title>
 
-      <programlisting>var foo = function() { /* do something */ }</programlisting>
+      <programlisting>var foo = function() { /* faz alguma coisa */ }</programlisting>
     </example>
 
-    <remark>I prefer the named function expression method of setting a
-    function's name, for some rather <link
-    xlink:href="http://yura.thinkweb2.com/named-function-expressions/">in-depth
-    and technical reasons</link>. You are likely to see both methods used in
-    others' JavaScript code.</remark>
+    <remark>Eu prefiro a expressão de função nomeada para definir o nome da função
+    por algumas <link
+    xlink:href="http://yura.thinkweb2.com/named-function-expressions/">questões
+    técnicas</link>. Você provavelmente verá ambos os métodos usados em código
+    JavaScript de outros.</remark>
 
     <section>
-      <title>Using Functions</title>
+      <title>Usando funções</title>
 
       <example>
-        <title>A simple function</title>
+        <title>Uma função simples</title>
 
         <programlisting>var greet = function(person, greeting) {
     var text = greeting + ', ' + person;
@@ -907,22 +907,22 @@ console.log(myObject.myName);   // logs 'Rebecca'</programlisting>
 };
 
 
-greet('Rebecca', 'Hello');</programlisting>
+greet('Rebecca', 'Olá');</programlisting>
       </example>
 
       <example>
-        <title>A function that returns a value</title>
+        <title>Uma função que retorna um valor</title>
 
         <programlisting>var greet = function(person, greeting) {
     var text = greeting + ', ' + person;
     return text;
 };
 
-console.log(greet('Rebecca','hello'));</programlisting>
+console.log(greet('Rebecca','Olá'));</programlisting>
       </example>
 
       <example>
-        <title>A function that returns another function</title>
+        <title>Uma função que retorna outra função</title>
 
         <programlisting>var greet = function(person, greeting) {
     var text = greeting + ', ' + person;
@@ -930,23 +930,22 @@ console.log(greet('Rebecca','hello'));</programlisting>
 };
 
 
-var greeting = greet('Rebecca', 'Hello');
+var greeting = greet('Rebecca', 'Olá');
 greeting();</programlisting>
       </example>
     </section>
 
     <section xml:id="javascript-basics.sections.self-executing-functions">
-      <title>Self-Executing Anonymous Functions</title>
+      <title>Funções anônimas autoexecutáveis</title>
 
-      <para>A common pattern in JavaScript is the self-executing anonymous
-      function. This pattern creates a function expression and then
-      immediately executes the function. This pattern is extremely useful for
-      cases where you want to avoid polluting the global namespace with your
-      code -- no variables declared inside of the function are visible outside
-      of it.</para>
+      <para>Um padrão comum em JavaScript é a função anônima autoexecutável.
+      Este padrão cria uma função e a executa imediatamente. Este padrão é
+      extremamente útil para casos onde você quer evitar poluir o namespace 
+      global com seu código -- nenhuma variável declarada dentro da função 
+      é visível fora dele.</para>
 
       <example xml:id="javascript-basics.examples.self-executing">
-        <title>A self-executing anonymous function</title>
+        <title>Uma função anônima auto-executável</title>
 
         <programlisting>(function(){
     var foo = 'Hello world';
@@ -958,7 +957,7 @@ console.log(foo);   // undefined!</programlisting>
     </section>
 
     <section>
-      <title>Functions as Arguments</title>
+      <title>Funções como argumento</title>
 
       <para>In JavaScript, functions are "first-class citizens" -- they can be
       assigned to variables or passed to other functions as arguments. Passing
