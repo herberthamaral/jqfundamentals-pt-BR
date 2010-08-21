@@ -959,23 +959,24 @@ console.log(foo);   // undefined!</programlisting>
     <section>
       <title>Funções como argumento</title>
 
-      <para>In JavaScript, functions are "first-class citizens" -- they can be
-      assigned to variables or passed to other functions as arguments. Passing
-      functions as arguments is an extremely common idiom in jQuery.</para>
+      <para>Em JavaScript, funções são "cidadções de primeira classe" -- eles
+      podem ser atribuídos a variáveis ou passados para outras funções como
+      argumentos. Passar funções como argumento é um idioma extremamente comum
+      em jQuery.</para>
 
       <example>
-        <title>Passing an anonymous function as an argument</title>
+        <title>Passando uma função anônima como argumento</title>
 
         <programlisting>var myFn = function(fn) {
     var result = fn();
     console.log(result);
 };
 
-myFn(function() { return 'hello world'; });   // logs 'hello world'</programlisting>
+myFn(function() { return 'olá mundo'; });   // loga 'olá mundo'</programlisting>
       </example>
 
       <example>
-        <title>Passing a named function as an argument</title>
+        <title>Passando uma função nomeada como argumento</title>
 
         <programlisting>var myFn = function(fn) {
     var result = fn();
@@ -983,29 +984,29 @@ myFn(function() { return 'hello world'; });   // logs 'hello world'</programlist
 };
 
 var myOtherFn = function() {
-    return 'hello world';
+    return 'olá mundo';
 };
 
-myFn(myOtherFn);   // logs 'hello world'</programlisting>
+myFn(myOtherFn);   // loga 'olá mundo'</programlisting>
       </example>
     </section>
   </section>
 
   <section>
-    <title>Testing Type</title>
+    <title>Testando Tipo</title>
 
-    <para>JavaScript offers a way to test the "type" of a variable. However,
-    the result can be confusing -- for example, the type of an Array is
-    "object".</para>
+    <para>JavaScript oferece um meio de testar o "tipo" de uma variável.
+    Entretanto, o resultado pode ser confuso -- por exemplo, o tipo de um
+    Array é "objeto".</para>
 
-    <para>It's common practice to use the <code>typeof</code> operator when
-    trying to determining the type of a specific value.</para>
+    <para>É uma prática comum usar o operador <code>typeof</code> ao
+    tentar determinar o tipo de um valor específico.</para>
 
     <example>
-      <title>Testing the type of various variables</title>
+      <title>Testando o tipo de várias variáveis</title>
 
       <programlisting>var myFunction = function() {
-    console.log('hello');
+    console.log('olá');
 };
 
 var myObject = {
@@ -1014,160 +1015,158 @@ var myObject = {
 
 var myArray = [ 'a', 'b', 'c' ];
 
-var myString = 'hello';
+var myString = 'olá';
 
 var myNumber = 3;
 
-typeof myFunction;   // returns 'function'
-typeof myObject;     // returns 'object'
-typeof myArray;      // <emphasis role="bold">returns 'object' -- careful!</emphasis>
-typeof myString;     // returns 'string';
-typeof myNumber;     // returns 'number'
+typeof myFunction;   // retorna 'function'
+typeof myObject;     // retorna 'object'
+typeof myArray;      // <emphasis role="bold">retorna 'object' -- cuidado!</emphasis>
+typeof myString;     // retorna 'string';
+typeof myNumber;     // retorna 'number'
 
-typeof null;         // <emphasis role="bold">returns 'object' -- careful!</emphasis>
+typeof null;         // <emphasis role="bold">retorna 'object' -- cuidado!</emphasis>
 
 
 if (myArray.push &amp;&amp; myArray.slice &amp;&amp; myArray.join) {
-    // probably an array
-    // (this is called "duck typing")
+    // provavelmente um array
+    // (isso é chamado de "duck typing")
 }
 
 if (Object.prototype.toString.call(myArray) === '[object Array]') {
-    // Definitely an array!
-    // This is widely considered as the most rebust way
-    // to determine if a specific value is an Array.
+    // Definitivamente um array!
+    // Isso é largamente considerado como a forma mais robusta para
+    // determinar se um valor específico é um Array.
 }</programlisting>
     </example>
 
-    <para>jQuery offers utility methods to help you determine the type of an
-    arbitrary value. These will be covered later.</para>
+    <para>O jQuery oferece métodos utilitários para ajudar você determinar 
+    o tipo de um valor arbitrário. Estes métodos serão mostrados depois.</para>
   </section>
 
   <section xml:id="javascript-basics.sections.scope">
-    <title>Scope</title>
+    <title>Escopo</title>
 
-    <para>"Scope" refers to the variables that are available to a piece of
-    code at a given time. A lack of understanding of scope can lead to
-    frustrating debugging experiences.</para>
+    <para>"Escopo" refere-se a variáveis que estão disponíveis em um pedaço
+    do código em um determinado tempo. A falta de entendimento de escopo pode
+    levar a experiências de debugging frustrantes.</para>
 
-    <para>When a variable is declared inside of a function using the
-    <code>var</code> keyword, it is only available to code inside of that
-    function -- code outside of that function cannot access the variable. On
-    the other hand, functions defined <emphasis>inside</emphasis> that
-    function <emphasis>will</emphasis> have access to to the declared
-    variable.</para>
+    <para>Quando uma variável é declarada dentro de uma função usando a palavra
+    chave <code>var</code>, ela é a única disponível para o código dentro daquela
+    função -- código fora desta função não podem acessar a variável. Por outro lado, 
+    funções definidas <emphasis>dentro</emphasis> daquela função <emphasis>terá acesso</emphasis> 
+    à variável declarada.</para>
 
-    <para>Furthermore, variables that are declared inside a function without
-    the <code>var</code> keyword are not local to the function -- JavaScript
-    will traverse the scope chain all the way up to the window scope to find
-    where the variable was previously defined. If the variable wasn't
-    previously defined, it will be defined in the global scope, which can have
-    extremely unexpected consequences;</para>
+    <para>Além disso, variáveis que são declaradas dentro de uma função sem
+    o código <code>var</code> não são locais para a função  -- JavaScript
+    irá atravessar a cadeia do escopo para indicar onde a variável foi definida
+    anteriormente. Se a variável não foi previamente definida, ela será definida
+    no escopo global, onde podem acontecer consequencias extremamente inesperadas;</para>
 
     <example>
-      <title>Functions have access to variables defined in the same
-      scope</title>
+      <title>Funções tem acesso a variáveis definidas num mesmo 
+      escopo</title>
 
-      <programlisting>var foo = 'hello';
+      <programlisting>var foo = 'olá';
 
 var sayHello = function() {
     console.log(foo);
 };
 
-sayHello();         // logs 'hello'
-console.log(foo);   // also logs 'hello'</programlisting>
+sayHello();         // loga 'olá'
+console.log(foo);   // também loga 'olá'</programlisting>
     </example>
 
     <example>
-      <title>Code outside the scope in which a variable was defined does not
-      have access to the variable</title>
+      <title>Código fora do escopo em que uma variável foi definida
+      não tem acesso à variável.</title>
 
       <programlisting>var sayHello = function() {
-    var foo = 'hello';
+    var foo = 'olá';
     console.log(foo);
 };
 
-sayHello();         // logs 'hello'
-console.log(foo);   // doesn't log anything</programlisting>
+sayHello();         // loga 'olá'
+console.log(foo);   // não loga nada</programlisting>
     </example>
 
     <example>
-      <title>Variables with the same name can exist in different scopes with
-      different values</title>
+      <title>Variáveis com o mesmo nome podem existir em escopos diferentes
+      com valores diferentes.</title>
 
-      <programlisting>var foo = 'world';
+      <programlisting>var foo = 'mundo';
 
 var sayHello = function() {
-    var foo = 'hello';
+    var foo = 'olá';
     console.log(foo);
 };
 
-sayHello();         // logs 'hello'
-console.log(foo);   // logs 'world'</programlisting>
+sayHello();         // loga 'olá'
+console.log(foo);   // loga 'mundo'</programlisting>
     </example>
 
     <example xml:id="javascript-basics.examples.scope-value-change">
-      <title>Functions can "see" changes in variable values after the function
-      is defined</title>
+      <title>Funções podem "ver" mudanças em valores de variáveis depois
+      que a função é definida</title>
 
       <programlisting>var myFunction = function() {
-    var foo = 'hello';
+    var foo = 'olá';
 
     var myFn = function() {
         console.log(foo);
     };
 
-    foo = 'world';
+    foo = 'mundo';
 
     return myFn;
 };
 
 var f = myFunction();
-f();  // logs 'world' -- uh oh</programlisting>
+f();  // loga 'mundo' -- uh oh</programlisting>
     </example>
 
     <example>
-      <title>Scope insanity</title>
+      <title>Insanidade do Escopo</title>
 
-      <programlisting>// a self-executing anonymous function
+      <programlisting>// uma função anônima auto-executável
 (function() {
     var baz = 1;
     var bim = function() { alert(baz); };
     bar = function() { alert(baz); };
 })();
 
-console.log(baz);  // baz is not defined outside of the function
+console.log(baz);  // baz não é definido fora da função
 
-bar();  // bar is defined outside of the anonymous function 
-        // because it wasn't declared with var; furthermore,
-        // because it was defined in the same scope as baz,
-        // it has access to baz even though other code
-        // outside of the function does not
+bar();  // bar é definida fora da função anônima
+        // porque ela não foi declarada com var; além disso,
+        // porque ela foi definida no mesmo escopo de baz,
+        // ela tem acesso a baz mesmo que outro código fora dela
+        // não tenha
 
-bim();  // bim is not defined outside of the anonymous function,
-        // so this will result in an error</programlisting>
+bim();  // bim não está definido fora da função anônima,
+        // então isto irá resultar em um erro</programlisting>
     </example>
   </section>
 
   <section>
     <title>Closures</title>
 
-    <para>Closures are an extension of the concept of scope — functions have
-    access to variables that were available in the scope where the function
-    was created. If that’s confusing, don’t worry: closures are generally best
-    understood by example.</para>
+    <para>Closures são uma extensão do conceito de escopo — funções tem acesso
+    a variáveis que estão disponíveis no escopo onde a função foi criada. Se isso
+    é confuso, não se preocupe: closures são geralmente entendidas melhor através
+    de um exemplo.</para>
 
-    <para>In <xref linkend="javascript-basics.examples.scope-value-change" />
-    we saw how functions have access to changing variable values. The same
-    sort of behavior exists with functions defined within loops -- the
-    function "sees" the change in the variable's value even after the function
-    is defined, resulting in all clicks alerting 4.</para>
+    <para>Em <xref linkend="javascript-basics.examples.scope-value-change" />
+    nós vimos como funções tem acesso para modificar valores de variáveis. O mesmo
+    tipo de comportamento existe com funções definidas dentro de laços -- a função
+    "vê" a mudança no valor da variável mesmo depois que a função é definida, resultando
+    em todos os cliques alertando 4.</para>
 
     <example>
-      <title>How to lock in the value of <code>i</code>?</title>
+      <title>Como travar no valor de <code>i</code>?</title>
 
-      <programlisting>/* this won't behave as we want it to; */
-/* every click will alert 5 */
+      <programlisting>/* isso não irá comportar como nós quisermos; */
+/* todo clique irá alertar 5 */
 for (var i=0; i&lt;5; i++) {
     $('&lt;p&gt;click me&lt;/p&gt;').appendTo('body').click(function() {
         alert(i);
@@ -1176,9 +1175,9 @@ for (var i=0; i&lt;5; i++) {
     </example>
 
     <example>
-      <title>Locking in the value of <code>i</code> with a closure</title>
+      <title>Travando no valor de <code>i</code> com uma closure</title>
 
-      <programlisting>/* fix: “close” the value of i inside createFunction, so it won't change */
+      <programlisting>/* conserto: “fecha” o valor de i dentro de createFuncion, então ela não irá mudar */
 var createFunction = function(i) {
     return function() { alert(i); };
 };
