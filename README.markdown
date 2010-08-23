@@ -1,5 +1,8 @@
 jQuery Fundamentals' pt-BR Translation
 =======================================
 
+This repository contains the pt-BR's source code for jQuery Fundamentals book, by Rebecca Murphey.
 
-Trying to organize the book translation by adding git submodules instead of putting the code in different folders/branches.
+More information is coming soon...
+
+Original repo: http://github.com/rmurphey/jqfundamentals
