@@ -619,55 +619,55 @@ webapp/scripts/jquery.beta.js</programlisting>
       <para>Para iniciar o buid, vá no diretório webapp/scripts, e execute o
       seguinte comando: </para>
 
-      <programlisting># non-windows systems
+      <programlisting># sistemas não-windows
 ../../requirejs/build/build.sh app.build.js
 
-# windows systems
+# sistemas windows
 ..\..\requirejs\build\build.bat app.build.js</programlisting>
 
-      <para>Now, in the webapp-build directory, <filename>app.js</filename>
-      will have the <filename>app.js</filename> contents,
-      <filename>jquery.alpha.js</filename> and
-      <filename>jquery.beta.js</filename> inlined. If you then load the
-      <filename>app.html</filename> file in the
-      <filename>webapp-build</filename> directory, you should not see any
-      network requests for <filename>jquery.alpha.js</filename> and
+      <para>Agora, no diretório webapp-build, <filename>app.js</filename>
+      terá o conteúdo de <filename>app.js</filename>,
+      <filename>jquery.alpha.js</filename> e
+      <filename>jquery.beta.js</filename> numa só linha. Então, se você carregar
+      o arquivo <filename>app.html</filename> no diretório
+      <filename>webapp-build</filename>, você não deverá ver nenhuma requisição 
+      de rede para <filename>jquery.alpha.js</filename> e
       <filename>jquery.beta.js</filename>. </para>
     </section>
   </section>
 
   <section>
-    <title>Exercises</title>
+    <title>Exercícios</title>
 
     <section>
-      <title>Create a Portlet Module</title>
+      <title>Crie um módulo Portlet</title>
 
-      <para>Open the file <filename>/exercises/portlets.html</filename> in
-      your browser. Use the file
-      <filename>/exercises/js/portlets.js</filename>. Your task is to create a
-      portlet creation function that uses the module pattern, such that the
-      following code will work:</para>
+      <para>Abra o arquivo <filename>/exercises/portlets.html</filename> em
+      seu navegador. Use o arquivo
+      <filename>/exercises/js/portlets.js</filename>. Sua tarefa é criar um
+      função criadora de portlet que utilize o module pattern, fazendo que o
+      seguinte código funcione:</para>
 
       <programlisting>var myPortlet = Portlet({
     title : 'Curry',
     source : 'data/html/curry.html',
-    initialState : 'open' // or 'closed'
+    initialState : 'aberto' // ou 'fechado'
 });
 
 myPortlet.$element.appendTo('body');</programlisting>
 
-      <para>Each portlet should be a div with a title, a content area, a
-      button to open/close the portlet, a button to remove the portlet, and a
-      button to refresh the portlet. The portlet returned by the Portlet
-      function should have the following public API:</para>
+      <para>Cada portlet deve ser uma div com um título, uma área de conteúdo,
+      um botão para abrir/fechar o portlet, um botão para remover o portlet,
+      e um botão para atualizar o portlet. O portlet retornado pela função Portlet
+      deve ter a seguinte API pública:</para>
 
-      <programlisting>myPortlet.open(); // force open state
-myPortlet.close(); // force close state
-myPortlet.toggle(); // toggle open/close state
-myPortlet.refresh(); // refresh the content
-myPortlet.destroy(); // remove the portlet from the page
+      <programlisting>myPortlet.open(); // força o estado aberto
+myPortlet.close(); // força o estado fechado
+myPortlet.toggle(); // inverte o estado open/close
+myPortlet.refresh(); // atualiza o conteúdo
+myPortlet.destroy(); // remove o portlet da página
 myPortlet.setSource('data/html/onions.html'); 
-// change the source</programlisting>
+// muda a fonte</programlisting>
     </section>
   </section>
 </chapter>
