@@ -7,7 +7,7 @@
       xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:db="http://docbook.org/ns/docbook">
   <info>
-    <title>jQuery Fundamentals</title>
+    <title>Fundamentos de jQuery (jQuery Fundamentals)</title>
 
     <author>
       <personname><link xlink:href="http://www.rebeccamurphey.com">Rebecca
@@ -56,9 +56,9 @@
     </othercredit>
 
     <othercredit>
-      <orgname>With contributions by James Padolsey, Paul Irish, and others.
-      See the GitHub repository for a complete history of
-      contributions.</orgname>
+      <orgname>Com contribuições de James Padolsey, Paul Irish e outros
+      Veja o repositório no Github para um histórico completo dos 
+      contribuidores.</orgname>
     </othercredit>
   </info>
 
@@ -87,14 +87,14 @@
   </part>
 
   <part>
-    <title>Advanced Topics</title>
+    <title>Tópicos Avançados</title>
 
     <article>
-      <title>This Section is a Work in Progress</title>
+      <title>Esta seção é um trabalho em andamento</title>
 
-      <para>Please visit <link
+      <para>Por favor, visite <link
       xlink:href="http://github.com/rmurphey/jqfundamentals">http://github.com/rmurphey/jqfundamentals</link>
-      to contribute!</para>
+      para contribuir!</para>
     </article>
     <xi:include href="performance.xml" />
   </part>
