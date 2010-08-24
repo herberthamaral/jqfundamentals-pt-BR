@@ -95,7 +95,9 @@
       <para>Por favor, visite <link
       xlink:href="http://github.com/rmurphey/jqfundamentals">http://github.com/rmurphey/jqfundamentals</link>
       para contribuir!</para>
-    </article>
+    </article> 
     <xi:include href="performance.xml" />
+    <xi:include href="code-organization.xml" />
+    <xi:include href="custom-events.xml" />
   </part>
 </book>
