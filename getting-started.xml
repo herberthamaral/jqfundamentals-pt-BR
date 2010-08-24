@@ -51,11 +51,6 @@
       <listitem>
         <para>Um editor de textos</para>
       </listitem>
-
-      <listitem>
-        <para>For the Ajax portions: A local server (such as MAMP or WAMP), or
-        an FTP or SSH client to access a remote server.</para>
-      </listitem>
 	  
 	  <listitem>
         <para>Para as partes com Ajax: um servidor local (como o MAMP ou WAMP),
