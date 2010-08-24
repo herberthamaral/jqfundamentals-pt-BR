@@ -6,39 +6,39 @@
          xmlns:m="http://www.w3.org/1998/Math/MathML"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns:db="http://docbook.org/ns/docbook">
-  <title>Performance Best Practices</title>
+  <title>Melhores práticas para performance</title>
 
-  <para>This chapter covers a number of jQuery and JavaScript best practices,
-  in no particular order. Many of the best practices in this chapter are based
-  on the <link xlink:href="http://paulirish.com/perf">jQuery Anti-Patterns for
-  Performance</link> presentation by Paul Irish.</para>
+  <para>Este capítulo cobre um número de melhores práticas de jQuery e JavaScript,
+  sem uma ordem particular. Muitas das melhores práticas neste capítulo são baseadas
+  na apresentação <link xlink:href="http://paulirish.com/perf">Anti-padrões do jQuery
+  para performance</link> por  Paul Irish.</para>
 
   <sect1>
-    <title>Cache length during loops</title>
+    <title>Armazene o length em loops</title>
 
-    <para>In a for loop, don't access the length property of an array every
-    time; cache it beforehand.</para>
+    <para>Em um loop, não acesse a propriedade length de um array todo tempo;
+    armazene-o em outra variável antes de manipula-lo..</para>
 
     <programlisting>var myLength = myArray.length;
 
 for (var i = 0; i &lt; myLength; i++) {
-    // do stuff
+    // faz alguma coisa
 }</programlisting>
   </sect1>
 
   <sect1>
-    <title>Append new content outside of a loop</title>
+    <title>Adicione novo conteúdo fora de um loop</title>
 
-    <para>Touching the DOM comes at a cost; if you're adding a lot of elements
-    to the DOM, do it all at once, not one at a time.</para>
+    <para>Tocar o DOM tem um custo; se você estiver adicionando muitos elementos
+    ao DOM, faça tudo de uma vez, não um de cada vez.</para>
 
-    <programlisting>// this is bad
+    <programlisting>// isto é ruim
 $.each(myArray, function(i, item) {
    var newListItem = '&lt;li&gt;' + item + '&lt;/li&gt;';
    $('#ballers').append(newListItem);
 });
 
-// better: do this
+// melhor: faça isso
 var frag = document.createDocumentFragment();
 
 $.each(myArray, function(i, item) {
@@ -47,7 +47,7 @@ $.each(myArray, function(i, item) {
 });
 $('#ballers')[0].appendChild(frag);
 
-// or do this
+// ou isso
 var myHtml = '';
 
 $.each(myArray, function(i, item) {
@@ -57,12 +57,12 @@ $('#ballers').html(myHtml);</programlisting>
   </sect1>
 
   <sect1>
-    <title>Keep things DRY</title>
+    <title>Mantenha as coisas DRY</title>
 
-    <para>Don't repeat yourself; if you're repeating yourself, you're doing it
-    wrong.</para>
+    <para>Don't repeat yourself; se você estiver se repetindo, você está
+    fazendo errado.</para>
 
-    <programlisting>// BAD
+    <programlisting>// RUIM
 if ($eventfade.data('currently') != 'showing') {
     $eventfade.stop();
 }
@@ -75,7 +75,7 @@ if ($spans.data('currently') != 'showing') {
     $spans.stop();
 }
 
-// GOOD!!
+// BOM!!
 var $elems = [$eventfade, $eventhover, $spans];
 $.each($elems, function(i,elem) {
     if (elem.data('currently') != 'showing') {
@@ -85,13 +85,13 @@ $.each($elems, function(i,elem) {
   </sect1>
 
   <sect1>
-    <title>Beware anonymous functions</title>
+    <title>Cuidado com funções anônimas</title>
 
-    <para>Anonymous functions bound everywhere are a pain. They're difficult
-    to debug, maintain, test, or reuse. Instead, use an object literal to
-    organize and name your handlers and callbacks.</para>
+    <para>Funções anônimas em todo lugar são dolorosas. Elas são difíceis
+    de debugar, manter, testar ou reusar. Ao invés disso, utilize um literal
+    objeto para organizar e nomear seus seus manipuladores e callbacks.</para>
 
-    <programlisting>// BAD
+    <programlisting>// RUIM
 $(document).ready(function() {
     $('#magic').click(function(e) {
         $('#yayeffects').slideUp(function() {
@@ -104,7 +104,7 @@ $(document).ready(function() {
     });
 });
 
-// BETTER
+// MELHOR
 var PI = {
     onReady : function() {
         $('#magic').click(PI.candyMtn);
@@ -124,215 +124,214 @@ $(document).ready(PI.onReady);            </programlisting>
   </sect1>
 
   <sect1>
-    <title>Optimize Selectors</title>
+    <title>Otimize seletores</title>
 
-    <para>Selector optimization is less important than it used to be, as more
-    browser implement <code>document.querySelectorAll()</code> and the burden
-    of selection shifts from jQuery to the browser. However, there are still
-    some tips to keep in midn.</para>
+    <para>Otimização de seletores é menos importante do que costumava ser,
+     pois mais navegadores implementam <code>document.querySelectorAll()</code>
+     e a carga de selecionamento muda do jQuery para o navegador. Entretanto,
+     ainda há algumas dicas para se manter em mente.</para>
 
     <sect2>
-      <title>ID-Based Selectors</title>
+      <title>Seletores baseados em ID</title>
 
-      <para>Beginning your selector with an ID is always best.</para>
+      <para>Começar seu seletor com um ID é sempre melhor.</para>
 
-      <programlisting>// fast
+      <programlisting>// rápido
 $('#container div.robotarm');
 
-// super-fast
+// super-rápido
 $('#container').find('div.robotarm');</programlisting>
 
-      <para>The <code>$.fn.find</code> approach is faster because the first
-      selection is handled without going through the Sizzle selector engine —
-      ID-only selections are handled using
-      <code>document.getElementById()</code>, which is extremely fast because
-      it is native to the browser.</para>
+      <para>A abordagem <code>$.fn.find</code> é mais rápida pois a primeira seleção
+      é manipulada sem passar pelo engine de seleção do Sizzle - seleções só com ID
+      são manipuladas usando <code>document.getElementById()</code>, que é 
+      extremamente rápido, pois é nativo para o navegador.</para>
     </sect2>
 
     <sect2>
-      <title>Specificity</title>
+      <title>Especificidade</title>
 
-      <para>Be specific on the right-hand side of your selector, and less
-      specific on the left.</para>
+      <para>Seja específico no lado direito do seu seletor, e menos específico
+      no esquerdo.</para> <!-- isso está certo? -->
 
-      <programlisting>// unoptimized
+      <programlisting>// não otimizado
 $('div.data .gonzalez');
 
-// optimized
+// otimizado
 $('.data td.gonzalez');</programlisting>
 
-      <para>Use <code>tag.class</code> if possible on your right-most
-      selector, and just <code>tag</code> or just <code>.class</code> on the
-      left.</para>
+      <para>Use <code>tag.classe</code> se possível no seu seletor mais a
+      direita, e somente <code>tag</code> ou <code>.class</code> na esquerda.
+      </para>
 
-      <para>Avoid excessive specificity.</para>
+      <para>Evite especificidade excessiva.</para>
 
       <programlisting>$('.data table.attendees td.gonzalez');
 
-// better: drop the middle if possible
+// melhor: remova o meio se possível
 $('.data td.gonzalez');</programlisting>
 
-      <para>A "flatter" DOM also helps improve selector performance, as the
-      selector engine has fewer layers to traverse when looking for an
-      element. </para>
+      <para>Um DOM "magro" também ajuda a melhorar a performance do seletor,
+      pois a engine de seleção possui poucas camadas para atravessar quando
+      estiver procurando por um elemento. </para>
     </sect2>
 
     <sect2>
-      <title>Avoid the Universal Selector</title>
+      <title>Evite o seletor universal</title>
 
-      <para>Selections that specify or imply that a match could be found
-      anywhere can be very slow.</para>
+      <para>Seleções que especificam ou deixam implícito que uma combinação
+      pode ser encontrada em qualquer lugar pode ser muito lenta.</para>
 
-      <programlisting>$('.buttons &gt; *');  // extremely expensive
-$('.buttons').children();  // much better
+      <programlisting>$('.buttons &gt; *');  // extremamente caro
+$('.buttons').children();  // muito melhor
 
-$('.gender :radio');  // implied universal selection
-$('.gender *:radio'); // same thing, explicit now
-$('.gender input:radio'); // much better</programlisting>
+$('.gender :radio');  // seleção universão implícita
+$('.gender *:radio'); // mesma coisa, explícito agora
+$('.gender input:radio'); // muito melhor</programlisting>
     </sect2>
   </sect1>
 
   <sect1>
-    <title>Use Event Delegation</title>
+    <title>Use Delegação de Evento</title>
 
-    <para>Event delegation allows you to bind an event handler to one
-    container element (for example, an unordered list) instead of multiple
-    contained elements (for example, list items). jQuery makes this easy with
-    $.fn.live and $.fn.delegate. Where possible, you should use
-    <code>$.fn.delegate</code> instead of <code>$.fn.live</code>, as it
-    eliminates the need for an unnecessary selection, and its explicit context
-    (vs. <code>$.fn.live</code>'s context of <code>document</code>) reduces
-    overhead by approximately 80%.</para>
+    <para>Delegação de evento permite que você delegue um manipulador de evento
+    a um elemento container (uma lista não-ordenada, por exemplo) ao invés
+    de múltiplos elementos contidos (uma lista de itens, por exemplo). O jQuery
+    torna isso fácil com $.fn.live e $.fn.delegate. Onde possível, você deve 
+    usar <code>$.fn.delegate</code> ao invés de <code>$.fn.live</code>, de forma
+    que isso elimina a necessidade de uma seleção desnecessária e seu contexto
+    explícito (vs. o contexto de  <code>$.fn.live</code> do <code>document</code>) 
+    reduz a sobrecarga por aproximadamente 80%.</para>
 
-    <para>In addition to performance benefits, event delegation also allows
-    you to add new contained elements to your page without having to re-bind
-    the event handlers for them as they're added.</para>
+    <para>Em adição aos benefícios de performance, delegação de eventos também
+    permite que você adicione novos elementos contidos a sua página sem ter que
+    re-delegar os manipuladores de eventos para eles quando são necessários.</para>
 
-    <programlisting>// bad (if there are lots of list items)
+    <programlisting>// ruim (se houver muitos itens de lista)
 $('li.trigger').click(handlerFn);
 
-// better: event delegation with $.fn.live
+// melhor: delegação de eventos com $.fn.live
 $('li.trigger').live('click', handlerFn);
 
-// best: event delegation with $.fn.delegate
-// allows you to specify a context easily
+// melhor ainda: delegação de eventos com $.fn.delegate
+// permite que você especifique um contexto facilmente
 $('#myList').delegate('li.trigger', 'click', handlerFn);</programlisting>
   </sect1>
 
   <sect1>
-    <title>Detach Elements to Work With Them</title>
+    <title>Desanexe elementos para trabalhar com eles</title>
 
-    <para>The DOM is slow; you want to avoid manipulating it as much as
-    possible. jQuery introduced <code>$.fn.detach</code> in version 1.4 to
-    help address this issue, allowing you to remove an element from the DOM
-    while you work with it.</para>
+    <para>O DOM é lento; você quer evitar a manipulação o tanto quanto possível.
+    O jQuery introduziu o <code>$.fn.detach</code> na versão 1.4 para ajudar 
+    a solucionar este problema, permitindo que você remova um elemento do DOM 
+    enquanto trabalha com o mesmo.</para>
 
     <programlisting>var $table = $('#myTable');
 var $parent = table.parent();
 
 $table.detach();
-// ... add lots and lots of rows to table
+// ... adiciona um bocado de linhas à tabela
 $parent.append(table);</programlisting>
   </sect1>
 
   <sect1>
-    <title>Use Stylesheets for Changing CSS on Many Elements</title>
+    <title>Use folhas de estilo para mudar o CSS em vários elementos</title>
 
-    <para>If you're changing the CSS of more than 20 elements using $.fn.css,
-    consider adding a style tag to the page instead for a nearly 60% increase
-    in speed.</para>
+    <para>Se você estiver mudando o CSS de mais de 20 elementos utilizando 
+    $.fn.css, considere adicionar uma tag de estilo à página para uma melhoria
+    de performance de aproximadamente 60$.</para>
 
-    <programlisting>// fine for up to 20 elements, slow after that
+    <programlisting>// tudo certo para até 20 elementos, lento depois disso
 $('a.swedberg').css('color', '#asd123');
 $('&lt;style type="text/css"&gt;a.swedberg { color : #asd123 }&lt;/style&gt;')
     .appendTo('head');</programlisting>
   </sect1>
 
   <sect1>
-    <title>Use <code>$.data</code> Instead of <code>$.fn.data</code></title>
+    <title>Use <code>$.data</code> ao invés de <code>$.fn.data</code></title>
 
-    <para>Using $.data on a DOM element instead of calling $.fn.data on a
-    jQuery selection can be up to 10 times faster. Be sure you understand the
-    difference between a DOM element and a jQuery selection before doing this,
-    though.</para>
+    <para>Use $.data num elemento DOM ao invés de chamar $.fn.data numa seleção
+    do jQuery pode ser até 10 vezes mais rápido. Tenha certeza que você entendeu
+    a diferença entre um elemento do DOM e uma seleção do jQuery antes de fazer
+    isso.</para>
 
     <programlisting>// regular 
 $(elem).data(key,value);  
 
-// 10x faster
+// 10x mais rápido
  $.data(elem,key,value);</programlisting>
   </sect1>
 
   <sect1>
-    <title>Don't Act on Absent Elements</title>
+    <title>Não faça nada quando não tiver elementos</title>
 
-    <para>jQuery won't tell you if you're trying to run a whole lot of code on
-    an empty selection — it will proceed as though nothing's wrong. It's up to
-    you to verify that your selection contains some elements.</para>
+    <para>O jQuery não dirá a você que você está tentando executar um monte de
+    código numa seleção vazia - ele vai proceder como se nada estivesse errado.
+    É sua responsabilidade verificar se sua seleção contém alguns elementos.</para>
 
-    <programlisting>// BAD: this runs three functions
-// before it realizes there's nothing
-// in the selection
+    <programlisting>// RUIM: executa três funções
+// antes de perceber que não a nada a se fazer com
+// a seleção
 $('#nosuchthing').slideUp();
 
-// Better
+// MELHOR
 var $mySelection = $('#nosuchthing');
 if ($mySelection.length) { mySelection.slideUp(); }
 
-// BEST: add a doOnce plugin
+// MELHOR AINDA: adiciona um plugin doOnce
 jQuery.fn.doOnce = function(func){ 
     this.length &amp;&amp; func.apply(this);
     return this; 
  }
 
  $('li.cartitems').doOnce(function(){     
-    // make it ajax! \o/ 
+    // faça com ajax! \o/ 
 });</programlisting>
 
-    <para>This guidance is especially applicable for jQuery UI widgets, which
-    have a lot of overhead even when the selection doesn't contain
-    elements.</para>
+    <para>Este guia é especialmente aplicável para UI widgets do jQuery, que
+    possuem muita sobrecarga mesmo quando a seleção não contém elementos.
+    </para>
   </sect1>
 
   <sect1>
-    <title>Variable Definition</title>
+    <title>Definição de Variável</title>
 
-    <para>Variables can be defined in one statement instead of several.</para>
+    <para>Variáveis podem ser definidas em uma declaração ao invés de várias.</para>
 
-    <programlisting>// old &amp; busted
+    <programlisting>// velho &amp; preso
 var test = 1;
 var test2 = function() { ... };
 var test3 = test2(test);
 
-// new hotness
+// nova onda
 var test = 1,
     test2 = function() { ... },
     test3 = test2(test);</programlisting>
 
-    <para>In self-executing functions, variable definition can be skipped all
-    together.</para>
+    <para>Em funções auto-executáveis, podem ser puladas todas as definições de
+    variáveis.</para>
 
     <programlisting>(function(foo, bar) { ... })(1, 2);</programlisting>
   </sect1>
 
   <sect1>
-    <title>Conditionals</title>
+    <title>Condicionais</title>
 
-    <programlisting>// old way
+    <programlisting>// forma antiga
 if (type == 'foo' || type == 'bar') { ... }
 
-// better
+// melhor
 if (/^(foo|bar)$/.test(type)) { ... }
 
-// object literal lookup 
+// procura por literal objeto
 if (({ foo : 1, bar : 1 })[type]) { ... }</programlisting>
   </sect1>
 
   <sect1>
-    <title>Don't Treat jQuery as a Black Box</title>
+    <title>Não trate o jQuery como uma Caixa Preta</title>
 
-    <para>Use the source as your documentation — bookmark <link
-    xlink:href="http://bit.ly/jqsource">http://bit.ly/jqsource</link> and
-    refer to it often.</para>
+    <para>Use os fontes como sua documentação — favorite <link
+    xlink:href="http://bit.ly/jqsource">http://bit.ly/jqsource</link> e
+    vá a ela frequentemente.</para>
   </sect1>
 </chapter>
