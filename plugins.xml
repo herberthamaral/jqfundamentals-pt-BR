@@ -137,9 +137,10 @@ $('a').showLinkLocation();</programlisting>
     pois a API do DOM nativa nos dá um acesso facilitado através da propriedade
     <code>href</code>.</para>
 
-    <para>Here's another example of a plugin. This one doesn't require us to
-    loop through every elememt with the <code>each()</code> method. Instead,
-    we're simply going to delegate to other jQuery methods directly:</para>
+    <para>Este é um outro exemplo de plugin. Este não requer que nós façamos
+    uma iteração sobre todos os elementos com o método <code>each()</code>.,
+    Ao invés disso, não simplesmente vamos delegar para outros método do jQUery
+    diretamente:</para>
 
     <programlisting>(function($){
     $.fn.fadeInAndAddClass = function(duration, className) {
@@ -149,62 +150,66 @@ $('a').showLinkLocation();</programlisting>
     };
 }(jQuery));
     
-// Usage example:
+// Exemplo de uso:
 $('a').fadeInAndAddClass(400, 'finishedFading');</programlisting>
   </section>
 
   <section>
-    <title>Finding &amp; Evaluating Plugins</title>
+    <title>Procurando &amp; Avaliando Plugins</title>
 
-    <para>Plugins extend the basic jQuery functionality, and one of the most
-    celebrated aspects of the library is its extensive plugin ecosystem. From
-    table sorting to form validation to autocompletion ... if there’s a need
-    for it, chances are good that someone has written a plugin for it.</para>
+    <para>Os plugins extendem funcionalidades básicas do jQuery, e um dos 
+    aspectos mais celebrados da biblioteca é seu extensivo ecossistema de 
+    plugins. De ordenação de tabelas à validação de formulário e autocompletamento
+    ... se há uma necessidade para algo, há boas chances que alguem já tenha
+    escrito um plugin para isso.</para>
 
-    <para>The quality of jQuery plugins varies widely. Many plugins are
-    extensively tested and well-maintained, but others are hastily created and
-    then ignored. More than a few fail to follow best practices.</para>
+    <para>A qualidade dos plugins do jQuery varia muito. Muitos plugins são
+    extensivamente testados e bem mantidos, mas outros são porcamente criados
+    e então ignorados. Mais do que algumas falhas para seguir as melhores 
+    práticas.</para>
 
-    <para>Google is your best initial resource for locating plugins, though
-    the jQuery team is working on an improved plugin repository. Once you’ve
-    identified some options via a Google search, you may want to consult the
-    jQuery mailing list or the #jquery IRC channel to get input from
-    others.</para>
+    <para>O Google é seu melhor recurso inicial para localização de plugins,
+    embora o time do jQuery esteja trabalhando em um repositório de plugin
+    melhorado. Uma vez que você identificou  algumas opções através de uma
+    busca do Google, você pode querer consultar a lista de emails do jQuery
+    ou o canal de IRC #jquery para obter informações de outros.</para>
 
-    <para>When looking for a plugin to fill a need, do your homework. Ensure
-    that the plugin is well-documented, and look for the author to provide
-    lots of examples of its use. Be wary of plugins that do far more than you
-    need; they can end up adding substantial overhead to your page. For more
-    tips on spotting a subpar plugin, read <link
+    <para>Quando estiver procurando por um plugin para preencher uma necessidade,
+    faça seu trabalho de casa. Tenha certeza que o plugin é bem documentado, e 
+    veja se o autor provê vários exemplos do seu uso. Tenha cuidado com plugins
+    que fazem muito mais do que você precisa; eles podem acabar adicionando um
+    overhead substancial à sua página. Para mais dicas sobre como identificar 
+    um plugin ruim, leia <link
     xlink:href="http://remysharp.com/2010/06/03/signs-of-a-poorly-written-jquery-plugin/">Signs
-    of a poorly written jQuery plugin</link> by Remy Sharp.</para>
+    of a poorly written jQuery plugin</link> do Remy Sharp.</para>
 
-    <para>Once you choose a plugin, you’ll need to add it to your page.
-    Download the plugin, unzip it if necessary, place it your application’s
-    directory structure, then include the plugin in your page using a script
-    tag (after you include jQuery).</para>
+    <para>Uma vez que você escolhe um plugin, você precisará adiciona-lo à
+    sua página. Baixe o plugin, descompacte-o se necessário, coloque-o no
+    diretório da sua aplicação e então inclua o plugin na sua página usando
+    uma tag script (depois que você incluir o jQuery).</para>
   </section>
 
   <section>
-    <title>Writing Plugins</title>
+    <title>Escrevendo Plugins</title>
 
-    <para>Sometimes you want to make a piece of functionality available
-    throughout your code; for example, perhaps you want a single method you
-    can call on a jQuery selection that performs a series of operations on the
-    selection. In this case, you may want to write a plugin.</para>
+    <para>Algumas vezes você quer que uma pequena funcionalidade esteja 
+    disponível pelo seu código; por exemplo, tavez você queira que um simples
+    método possa ser chamado para executar uma série de operações sobre uma 
+    seleção do jQuery. Neste caso, você pode querer escrever um plugin.</para>
 
-    <para>Most plugins are simply methods created in the <code>$.fn</code>
-    namespace. jQuery guarantees that a method called on a jQuery object will
-    be able to access that jQuery object as <code>this</code> inside the
-    method. In return, your plugin needs to guarantee that it returns the same
-    object it received, unless explicitly documented otherwise.</para>
+    <para>A maioria dos plugins do jQuery são simplesmente métodos criados no
+    namespace <code>$.fn</code>. O jQuery garante que um método chamado num 
+    objeto jQuery possa acessar aquele objeto jQuery como <code>this</code> 
+    dentro do método. Em retorno, seu plugin precisa garantir que ele retorna
+    o mesmo objeto que ele recebeu, a menos que o contrário seja explicitamente
+    documentado.</para>
 
-    <para>Here is an example of a simple plugin:</para>
+    <para>Este é um exemplo de um plugin simples:</para>
 
     <example>
-      <title>Creating a plugin to add and remove a class on hover</title>
+      <title>Criando um plugin para adicionar e remover uma classe no hover</title>
 
-      <programlisting>// defining the plugin
+      <programlisting>// definindo o plugin
 (function($){
     $.fn.hoverClass = function(c) {
         return this.hover(
@@ -213,70 +218,71 @@ $('a').fadeInAndAddClass(400, 'finishedFading');</programlisting>
     };
 }(jQuery);
 
-// using the plugin
+// utilizando o plugin
 $('li').hoverClass('hover');</programlisting>
     </example>
 
-    <para>For more on plugin development, read Mike Alsup's essential post,
+    <para>Para mais sobre desenvolvimento de plugins, leia o post essencial do
+    Mike Alsup's,
     <link
     xlink:href="http://www.learningjquery.com/2007/10/a-plugin-development-pattern">A
-    Plugin Development Pattern</link>. In it, he creates a plugin called
-    <code>$.fn.hilight</code>, which provides support for the metadata plugin
-    if it's present, and provides a centralized method for setting global and
-    instance options for the plugin.</para>
+    Plugin Development Pattern</link>. Nele, ele cria um plugin chamado
+    <code>$.fn.hilight</code>, que provê suporte para o plugin de metadados 
+    se ele estiver presente e provê um método centralizado para configuração
+    central e opções de instância para o plugin.</para>
 
     <example>
-      <title>The Mike Alsup jQuery Plugin Development Pattern</title>
+      <title>O Padrão de Desenvolvimento de Plugins do Mike Alsup</title>
 
       <programlisting>//
-// create closure
+// cria a closure
 //
 (function($) {
   //
-  // plugin definition
+  // definição do plugin
   //
   $.fn.hilight = function(options) {
     debug(this);
-    // build main options before element iteration
+    // constrói as opções principais antes da iteração com elemento
     var opts = $.extend({}, $.fn.hilight.defaults, options);
-    // iterate and reformat each matched element
+    // itera e reformata cada elemento encontrado
     return this.each(function() {
       $this = $(this);
-      // build element specific options
+      // constrói opções específicas do elemento
       var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
-      // update element styles
+      // atualiza estilos do elemento
       $this.css({
         backgroundColor: o.background,
         color: o.foreground
       });
       var markup = $this.html();
-      // call our format function
+      // chama nossa função de formatação
       markup = $.fn.hilight.format(markup);
       $this.html(markup);
     });
   };
   //
-  // private function for debugging
+  // função privada para debugging
   //
   function debug($obj) {
     if (window.console &amp;&amp; window.console.log)
       window.console.log('hilight selection count: ' + $obj.size());
   };
   //
-  // define and expose our format function
+  // define e expõe nossa função de formatação
   //
   $.fn.hilight.format = function(txt) {
     return '&lt;strong&gt;' + txt + '&lt;/strong&gt;';
   };
   //
-  // plugin defaults
+  // padrões do plugin
   //
   $.fn.hilight.defaults = {
     foreground: 'red',
     background: 'yellow'
   };
 //
-// end of closure
+// fim da closure
 //
 })(jQuery);</programlisting>
     </example>
