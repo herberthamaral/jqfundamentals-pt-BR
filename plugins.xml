@@ -646,19 +646,19 @@ alert(bar.options.value);</programlisting>
     <section>
       <title>Limpando</title>
 
-      <para>In some cases, it will make sense to allow users to apply and then
-      later unapply your plugin. You can accomplish this via the destroy
-      method. Within the <code>destroy</code> method, you should undo anything
-      your plugin may have done during initialization or later use. The
-      <code>destroy</code> method is automatically called if the element that
-      your plugin instance is tied to is removed from the DOM, so this can be
-      used for garbage collection as well. The default <code>destroy</code>
-      method removes the link between the DOM element and the plugin instance,
-      so it’s important to call the base function from your plugin’s
-      <code>destroy</code> method. </para>
+      <para>Em alguns casos, faz sentido permitir usuários aplicar seu plugin
+      e desaplica-lo depois. Você pode fazer isso pelo método destroy. Dentro
+      do método <code>destroy</code>, você deve desfazer qualquer coisa que seu
+      plugin possa ter feito desde o início. O método <code>destroy</code> é 
+      automaticamente chamado se o elemento que a instância do seu plugin está
+      amarrado é removido do DOM, para que isso seja usado para coleção de lixo
+      (garbage collection). O método  <code>destroy</code> padrão remove a
+      ligação entre o elemento DOM e a instância do plugin, então é importante
+      chamar a função <code>destroy</code> base dentro do <code>destroy</code>
+      do seu plugin. </para>
 
       <example>
-        <title>Adding a destroy method to a widget</title>
+        <title>Adicionando um método destroy à um widget</title>
 
         <programlisting>$.widget( "nmk.progressbar", {
     options: {
@@ -688,7 +688,7 @@ alert(bar.options.value);</programlisting>
             .removeClass("progressbar")
             .text("");
 
-        // call the base destroy function
+        // chama função destroy base
         $.Widget.prototype.destroy.call(this);
     }
 });</programlisting>
@@ -696,19 +696,19 @@ alert(bar.options.value);</programlisting>
     </section>
 
     <section>
-      <title>Conclusion</title>
+      <title>Conclusão</title>
 
-      <para>The widget factory is only one way of creating stateful plugins.
-      There are a few different models that can be used and each have their
-      own advantages and disadvantages. The widget factory solves lots of
-      common problems for you and can greatly improve productivity, it also
-      greatly improves code reuse, making it a great fit for jQuery UI as well
-      as many other stateful plugins. </para>
+      <para>A fábrica de widget é o único jeito de criar plugins com estado.
+      Há alguns poucos modelos diferentes que podem ser usados e cada um tem
+      suas vantagens e desvantagens. A fábrica de widget resolve muitos dos
+      problemas comuns para você e pode melhorar muito a produtividade e também
+      melhora bastante o reuso de código, fazendo com que se funcione bem para o 
+      jQuery UI e para outros plugins com estado. </para>
     </section>
   </section>
 
   <section>
-    <title>Exercises</title>
+    <title>Exercícios</title>
 
     <xi:include href="exercises/sortable-plugin.xml" xpointer="element(/1)" />
 
