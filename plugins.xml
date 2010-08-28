@@ -289,41 +289,42 @@ $('li').hoverClass('hover');</programlisting>
   </section>
 
   <section>
-    <title>Writing Stateful Plugins with the jQuery UI Widget Factory</title>
+    <title>Escrevendo plugins com estado com a fábrica de widgets do jQuery UI</title>
 
     <para>
       <note>
-        <para>This section is based, with permission, on the blog post <link
+        <para>Esta seção é baseada, com permissão, no post de blog <link
         xlink:href="http://blog.nemikor.com/2010/05/15/building-stateful-jquery-plugins/">Building
-        Stateful jQuery Plugins</link> by Scott Gonzalez.</para>
-      </note>While most existing jQuery plugins are stateless — that is, we
-    call them on an element and that is the extent of our interaction with the
-    plugin — there’s a large set of functionality that doesn’t fit into the
-    basic plugin pattern.</para>
+        Stateful jQuery Plugins</link> de Scott Gonzalez.</para>
+      </note>Enquanto a maioria dos plguins para jQuery são stateless - isto é,
+      nós os chamamos num elemento e isso é a estenção de nossa interação com 
+      o plugin - há um grande conjunto de funcionalidades que não se encaixam
+      no padrão básico de plguins.</para>
 
-    <para>In order to fill this gap, jQuery UI has implemented a more advanced
-    plugin system. The new system manages state, allows multiple functions to
-    be exposed via a single plugin, and provides various extension points.
-    This system is called the widget factory and is exposed as
-    <code>jQuery.widget</code> as part of jQuery UI 1.8; however, it can be
-    used independently of jQuery UI. </para>
+    <para>Como forma de preencher esta lacula, o jQuery UI implementa um sistema
+    de plugin mais avançado. O novo sistema gerencia estado, permite múltiplas
+    funções sendo expostas através de um plugin simples, e provê vários pontos
+    de estenção. Este sistema é chamado de fábrica de widgets e é exposto como 
+    <code>jQuery.widget</code> e faz parte do jQuery UI 1.8; entretanto, pode 
+    ser usado independentemente do jQuery UI. </para>
 
-    <para>To demonstrate the capabilities of the widget factory, we'll build a
-    simple progress bar plugin. </para>
+    <para>Para demonstrar as capacidades da fábrica de widget, nós iremos 
+    fazer um simples plugin para barra de progresso.</para>
 
-    <para>To start, we’ll create a progress bar that just lets us set the
-    progress once. As we can see below, this is done by calling
-    <code>jQuery.widget</code> with two parameters: the name of the plugin to
-    create and an object literal containing functions to support our plugin.
-    When our plugin gets called, it will create a new plugin instance and all
-    functions will be executed within the context of that instance. This is
-    different from a standard jQuery plugin in two important ways. First, the
-    context is an object, not a DOM element. Second, the context is always a
-    single object, never a collection. </para>
+    <para>Para iniciar, nós iremos criar uma barra de progresso que nos
+    permite especificar o progresso uma só vez. Como podemos ver abaixo,
+    isso pode ser feito através da chamada à <code>jQuery.widget</code>
+    com dois parâmetros: o nome do plugin a ser criado e um literal objeto
+    contendo funções para dar suporte ao nosso plugin. Quando nosso plugin
+    é chamado, ele irá criar uma nova instância do plugin e todas as funções
+    serão executadas dentro do contexto desta instância. Isso é diferente de
+    de um plugin padrão do jQuery em duas formas importantes. Primeiro, o 
+    contexto é um objeto, não um elemento do DOM. Segundo, o contexto é sempre
+    um objeto, nunca uma coleção. </para>
 
     <example>
-      <title>A simple, stateful plugin using the jQuery UI widget
-      factory</title>
+      <title>Um plugin simples, stateful utilizando a fábrica de Widgets do 
+      jQuery UI.</title>
 
       <programlisting>$.widget("nmk.progressbar", {
     _create: function() {
@@ -335,47 +336,47 @@ $('li').hoverClass('hover');</programlisting>
 });</programlisting>
     </example>
 
-    <para>The name of the plugin must contain a namespace; in this case we’ve
-    used the <code>nmk</code> namespace. There is a limitation that namespaces
-    be exactly one level deep — that is, we can't use a namespace like
-    <code>nmk.foo</code>. We can also see that the widget factory has provided
-    two properties for us. <code>this.element</code> is a jQuery object
-    containing exactly one element. If our plugin is called on a jQuery object
-    containing multiple elements, a separate plugin instance will be created
-    for each element, and each instance will have its own
-    <code>this.element</code>. The second property, <code>this.options</code>,
-    is a hash containing key/value pairs for all of our plugin’s options.
-    These options can be passed to our plugin as shown here. </para>
+    <para>O nome do plugin precisa conter um namespace; neste caso nós usamos
+    o namespace <code>nmk</code>. Há uma limitação que namespaces tem que ter
+    exatamente um nível de profundidade - isto é, nós não podemos usar um 
+    namespace como <code>nmk.foo</code>. Nós podemos também ver  que o 
+    fábrica de widgets nos deu duas propriedades. <code>this.element</code> é
+    um objeto jQuery contendo exatamente um elemento. Se nosso plugin é chamado
+    num objeto do jQuery contendo mútiplos elementos, uma instância nova será
+    criada para cada elemento e cada instância terá seu próprio <code>this.element</code>. 
+    A segunda propriedade, <code>this.options</code>, é um hash contendo pares
+    chave/valor para todas as nossas opções do plugin. Estas opções podem ser 
+    passadas para nosso plugin como mostrado aqui. </para>
 
     <note>
-      <para>In our example we use the <code>nmk</code> namespace. The
-      <code>ui</code> namespace is reserved for official jQuery UI plugins.
-      When building your own plugins, you should create your own namespace.
-      This makes it clear where the plugin came from and whether it is part of
-      a larger collection.</para>
+      <para>No nosso exemplo, nós usamos o namespace <code>nmk</code>. O
+      namespace <code>ui</code> é reservado para plugins oficiais do jQuery UI.
+      Quando fizer seus próprios plugins, você deve criar seu próprio namespace.
+      Isso deixa claro de onde o plugin veio e se ele faz parte de uma coleção
+      maior.</para>
     </note>
 
     <example>
-      <title>Passing options to a widget</title>
+      <title>Passando opções para um widget</title>
 
       <programlisting>$("&lt;div&gt;&lt;/div&gt;")
     .appendTo( "body" )
     .progressbar({ value: 20 });</programlisting>
     </example>
 
-    <para>When we call <code>jQuery.widget</code> it extends jQuery by adding
-    a method to <code>jQuery.fn</code> (the same way we'd create a standard
-    plugin). The name of the function it adds is based on the name you pass to
-    <code>jQuery.widget</code>, without the namespace; in our case it will
-    create <code>jQuery.fn.progressbar</code>. The options passed to our
-    plugin get set in <code>this.options</code> inside of our plugin instance.
-    As shown below, we can specify default values for any of our options. When
-    designing your API, you should figure out the most common use case for
-    your plugin so that you can set appropriate default values and make all
-    options truly optional. </para>
+    <para>Quando nós chamamos <code>jQuery.widget</code>, ele estende o jQuery
+    adicionando um método em <code>jQuery.fn</code> (da mesma forma que nós
+    criamos um plugin padrão). O nome da função que ele adiciona é baseado no
+    nome que você passa para o <code>jQuery.widget</code>, sem o namespace; no
+    nosso caso ele irá criar <code>jQuery.fn.progressbar</code>. As opções 
+    passadas para nosso plugins estão em <code>this.options</code>, dentro de
+    nossa instância do plugin. Como mostrado abaixo, nós podemos especificar 
+    valores default para qualquer uma das nossas opções. Quando estiver projetando
+    sua API, você deve perceber o caso mais comum para seu plugin para que você
+    possa setar valores padrão e fazer todas as opções verdadeiramente opcionais. </para>
 
     <example>
-      <title>Setting default options for a widget</title>
+      <title>Setando opções default para um widget</title>
 
       <programlisting>$.widget("nmk.progressbar", {
     // default options
@@ -393,16 +394,18 @@ $('li').hoverClass('hover');</programlisting>
     </example>
 
     <section>
-      <title>Adding Methods to a Widget</title>
+      <title>Adicionando métodos a um Widget</title>
 
-      <para>Now that we can initialize our progress bar, we’ll add the ability
-      to perform actions by calling methods on our plugin instance. To define
-      a plugin method, we just include the function in the object literal that
-      we pass to <code>jQuery.widget</code>. We can also define “private”
-      methods by prepending an underscore to the function name. </para>
+      <para>Agora que nós podemos inicializar nossa barra de progresso, nós
+      iremos adicionar a habilidade de executar ações através da chamada de
+      métodos na instância do nosso plugin. Para definir um método do plugin
+      nós simplesmente incluímos a função num literal objeto que nós passamos
+      para <code>jQuery.widget</code>. Nós também podemos definir métodos
+      “privados” se adicionarmos um underscore ("_") antes do nome da função. 
+      </para>
 
       <example>
-        <title>Creating widget methods</title>
+        <title>Criando métodos widget</title>
 
         <programlisting>$.widget("nmk.progressbar", {
     options: {
@@ -416,12 +419,12 @@ $('li').hoverClass('hover');</programlisting>
             .text(progress);
     },
 
-    // create a public method
+    // cria um método público
     value: function(value) {
-        // no value passed, act as a getter
+        // nenhum valor passado, atuando como um getter
         if (value === undefined) {
             return this.options.value;
-        // value passed, act as a setter
+        // valor passado, atuando como um setter
         } else {
             this.options.value = this._constrain(value);
             var progress = this.options.value + "%";
@@ -429,7 +432,7 @@ $('li').hoverClass('hover');</programlisting>
         }
     },
 
-    // create a private method
+    // criando um método privado
     _constrain: function(value) {
         if (value &gt; 100) {
             value = 100;
@@ -443,53 +446,55 @@ $('li').hoverClass('hover');</programlisting>
 </programlisting>
       </example>
 
-      <para>To call a method on a plugin instance, you pass the name of the
-      method to the jQuery plugin. If you are calling a method that accepts
-      parameters, you simply pass those parameters after the method name.
+      <para>Para chamar um método numa instância do plugin, você precisa passar
+      o nome do método para o plugin do jQuery. Se você estiver chamando um 
+      método que aceita parâmetros, você simplemente passa estes parâmetros
+      depois do nome do método. 
       </para>
 
       <example>
-        <title>Calling methods on a plugin instance</title>
+        <title>Chamando métodos numa instância do plugin</title>
 
         <programlisting>var bar = $("&lt;div&gt;&lt;/div&gt;")
     .appendTo("body")
     .progressbar({ value: 20 });
 
-// get the current value
+// pega o valor atual
 alert(bar.progressbar("value"));
 
-// update the value
+// atualiza o valor
 bar.progressbar("value", 50);
 
-// get the current value again
+// pega o valor atual denovo
 alert(bar.progressbar("value"));</programlisting>
       </example>
 
       <note>
-        <para>Executing methods by passing the method name to the same jQuery
-        function that was used to initialize the plugin may seem odd. This is
-        done to prevent pollution of the jQuery namespace while maintaining
-        the ability to chain method calls. </para>
+        <para>Executar métodos através da passagem do nome do mesmo para a mesma
+        função do jQuery que foi usada para inicializar o plugin pode parecer
+        estranho. Isso é feito para previnir a poluição do namespace do jQuery 
+        enquanto mantém a habilidade de encadear chamadas de métodos. </para>
       </note>
     </section>
 
     <section>
-      <title>Working with Widget Options</title>
+      <title>Trabalhando com Opções de Widget</title>
 
-      <para>One of the methods that is automatically available to our plugin
-      is the <code>option</code> method. The option method allows you to get
-      and set options after initialization. This method works exactly like
-      jQuery’s css and attr methods: you can pass just a name to use it as a
-      setter, a name and value to use it as a single setter, or a hash of
-      name/value pairs to set multiple values. When used as a getter, the
-      plugin will return the current value of the option that corresponds to
-      the name that was passed in. When used as a setter, the plugin’s
-      <code>_setOption</code> method will be called for each option that is
-      being set. We can specify a <code>_setOption</code> method in our plugin
-      to react to option changes. </para>
+      <para>Um dos métodos que é autimaticamento disponível para nosso plugin
+      é o método <code>option</code>. A o método option permite que você obtenha
+      e sete opções depois da inicialização. Este método funciona exatamente
+      como o métodos <code>css</code> e <code>attr</code> do jQuery: você pode
+      passar somente o nome para usa-lo como um getter, um nome e um valor para
+      usa-lo com um setter único, ou um hash de pares nome/valor para setar 
+      múltiplos valores. Quando usado como um getter, o plugin irá retornar o 
+      valor atual da opção que corresponde ao nome que foi passado. Quando usado
+      como um setter, o método <code>_setOption</code> do plugin será chamado
+      para cada opção que estiver sendo setada. Nós podemos especificar um 
+      método <code>_setOption</code> no nosso plugin para reagir a mudanças 
+      de opção. </para>
 
       <example>
-        <title>Responding when an option is set</title>
+        <title>Respondendo quando a opção é setada</title>
 
         <programlisting>$.widget("nmk.progressbar", {
     options: {
@@ -515,23 +520,24 @@ alert(bar.progressbar("value"));</programlisting>
     </section>
 
     <section>
-      <title>Adding Callbacks</title>
+      <title>Adicionando Callbacks</title>
 
-      <para>One of the easiest ways to make your plugin extensible is to add
-      callbacks so users can react when the state of your plugin changes. We
-      can see below how to add a callback to our progress bar to signify when
-      the progress has reached 100%. The <code>_trigger</code> method takes
-      three parameters: the name of the callback, a native event object that
-      initiated the callback, and a hash of data relevant to the event. The
-      callback name is the only required parameter, but the others can be very
-      useful for users who want to implement custom functionality on top of
-      your plugin. For example, if we were building a draggable plugin, we
-      could pass the native mousemove event when triggering a drag callback;
-      this would allow users to react to the drag based on the x/y coordinates
-      provided by the event object. </para>
+      <para>Uma das formas mais fáceis de fazer seu plugin estensível é 
+      adicionar callbacks para que os usuários possam reagir quando o estado
+      do plugin muda. Nós podemos ver abaixo como adicionar um callback à nossa
+      barra de progresso para enviar um sinal quando a barra de progresso
+      chegar à 100%. O método <code>_trigger</code> requer três parâmetros:
+      o nome do callback, um objeto de evento nativo que iniciou o callback, e
+      um hash de dados relevantes para o evento. O nome do callback é o único
+      parâmetro requerido, mas os outros podem ser muito úteis para usuários
+      que querem implementar funcionalidades customizadas no topo do seu plugin.
+      Por exemplo, se nós construíssemos um plugin arrastável, nós poderíamos
+      passar o evento mouseove nativo quando dispararmos o callback de arrastar;
+      Isso permitiria que usuários reagissem ao arraste baseado nas coordenadas
+      x/y providas pelo objeto do evento. </para>
 
       <example>
-        <title>Providing callbacks for user extension</title>
+        <title>Provendo callbacks para estensão do usuário</title>
 
         <programlisting>$.widget("nmk.progressbar", {
     options: {
@@ -558,77 +564,78 @@ alert(bar.progressbar("value"));</programlisting>
 });</programlisting>
       </example>
 
-      <para>Callback functions are essentially just additional options, so you
-      can get and set them just like any other option. Whenever a callback is
-      executed, a corresponding event is triggered as well. The event type is
-      determined by concatenating the plugin name and the callback name. The
-      callback and event both receive the same two parameters: an event object
-      and a hash of data relevant to the event, as we’ll see below. </para>
+      <para>Funções de callback são essencialmente opções adicionais, então
+      você pode obter e seta-las como qualquer outra opção. Quando um callback
+      é executado, um evento correspondente é executado também. O tipo do evento
+      é determinado pela concatenação do nome do plugin e do nome do callback.
+      O callback e o evento recebem os mesmos dois parâmetros: um objeto evento
+      e um hash dos dados relevantes para o evento, como veremos a seguir. </para>
 
-      <para>If your plugin has functionality that you want to allow the user
-      to prevent, the best way to support this is by creating cancelable
-      callbacks. Users can cancel a callback, or its associated event, the
-      same way they cancel any native event: by calling
-      <code>event.preventDefault()</code> or using <code>return false</code>.
-      If the user cancels the callback, the <code>_trigger</code> method will
-      return false so you can implement the appropriate functionality within
-      your plugin. </para>
+      <para>Se seu plugin tem funcionalidade que você deseja permitir que
+      o usuário previna, a melhor forma de suportar isso é criando callbacks
+      canceláveis. Usuários podem cancelar um callback, ou seu evento associado,
+      da mesma forma que eles cancelam qualquer evento nativo: chamando
+      <code>event.preventDefault()</code> ou usando <code>return false</code>.
+      Se o usuário cancelar o callback, o método <code>_trigger</code> irá 
+      retornar falso para que você implemente a funcionalidade apropriada
+      dentro do seu plugin. </para>
 
       <example>
-        <title>Binding to widget events</title>
+        <title>Vinculando à eventos do widget</title>
 
         <programlisting>var bar = $("&lt;div&gt;&lt;/div&gt;")
     .appendTo("body")
     .progressbar({
         complete: function(event, data) {
-            alert( "Callbacks are great!" );
+            alert( "Callbacks são ótimos!" );
         }
     })
     .bind("progressbarcomplete", function(event, data) {
-        alert("Events bubble and support many handlers for extreme flexibility.");
-        alert("The progress bar value is " + data.value);
+        alert("Eventos borbulham e suportam muitos manipuladores para extrema flexibilidade.");
+        alert("O valor da barra de progresso é " + data.value);
     });
 
 bar.progressbar("option", "value", 100);</programlisting>
       </example>
 
       <sidebar>
-        <title>The Widget Factory: Under the Hood</title>
+        <title>A Fábrica de Widget: Nos Bastidores</title>
 
-        <para>When you call <code>jQuery.widget</code>, it creates a
-        constructor function for your plugin and sets the object literal that
-        you pass in as the prototype for your plugin instances. All of the
-        functionality that automatically gets added to your plugin comes from
-        a base widget prototype, which is defined as
-        <code>jQuery.Widget.prototype</code>. When a plugin instance is
-        created, it is stored on the original DOM element using
-        <code>jQuery.data</code>, with the plugin name as the key.</para>
+        <para>Quando você chama <code>jQuery.widget</code>, ele cria uma função
+        construtora para seu plugin e seta o literal objeto que você passou 
+        como protótipo para suas instâncias do plugin. Todas as funcionalidades
+        que são automaticamente adicionadas a seu plugin vem de um protótipo
+        base de widget, que é definido como <code>jQuery.Widget.prototype</code>.
+        Quando uma instância do plugin é criada, ela é armazenada no elemento
+        DOM original utilizando <code>jQuery.data</code>, com o plugin tendo o
+        mesmo nome da chave.</para>
 
-        <para>Because the plugin instance is directly linked to the DOM
-        element, you can access the plugin instance directly instead of going
-        through the exposed plugin method if you want. This will allow you to
-        call methods directly on the plugin instance instead of passing method
-        names as strings and will also give you direct access to the plugin’s
-        properties. </para>
+        <para>Pelo fato da instância do plugin estar diretamente ligada ao
+        elemento DOM, você pode acessar a instância do plugin diretamente ao
+        invés de ir ao método exposto do plugin. Isso permitirá que você chame
+        chame métodos diretamente na instância do plugin ao invés de passar 
+        nomes de métodos como strings e também lhe dará acesso direto às
+        propriedades do plugin. </para>
 
         <programlisting>var bar = $("&lt;div&gt;&lt;/div&gt;")
     .appendTo("body")
     .progressbar()
     .data("progressbar" );
 
-// call a method directly on the plugin instance
+// chama um método diretamente na instância do plugin
 bar.option("value", 50);
 
-// access properties on the plugin instance
+// acessa propriedades na instância do plugin
 alert(bar.options.value);</programlisting>
 
-        <para>One of the biggest benefits of having a constructor and
-        prototype for a plugin is the ease of extending the plugin. By adding
-        or modifying methods on the plugin’s prototype, we can modify the
-        behavior of all instances of our plugin. For example, if we wanted to
-        add a method to our progress bar to reset the progress to 0% we could
-        add this method to the prototype and it would instantly be available
-        to be called on any plugin instance. </para>
+        <para>Um dos maiores benefícios de ter um construtor e um protótipo
+        para um plugin é a facilidade de estende-lo. Podemos modificar o
+        comportamento de todas as instâncias do nosso plugin adicionando ou 
+        modificando métodos no protótipo do plugin. Por exemplo, se quiséssemos
+        adicionar um método à nossa barra de progresso para resetar o progresso
+        pra 0%, nós poderíamos adicionar este método ao protótipo e ele estaria
+        instantaneamente disponível para ser chamado em qualquer instância do
+        plugin. </para>
 
         <programlisting>$.nmk.progressbar.prototype.reset = function() {
     this._setOption("value", 0);
@@ -637,7 +644,7 @@ alert(bar.options.value);</programlisting>
     </section>
 
     <section>
-      <title>Cleaning Up</title>
+      <title>Limpando</title>
 
       <para>In some cases, it will make sense to allow users to apply and then
       later unapply your plugin. You can accomplish this via the destroy
