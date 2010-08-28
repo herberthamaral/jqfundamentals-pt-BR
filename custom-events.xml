@@ -59,7 +59,7 @@
     switches. Os switches e o clapper não se importam em qual estado a lâmpada
     está; eles somente querem mudar o estado.</para>
 
-    <para>Without custom events, you might write some code like this: </para>
+    <para>Sem eventos customizados, você talvez poderia escrever algo assim: </para>
 
     <programlisting>$('.switch, .clapper').click(function() {
     var $light = $(this).parent().find('.lightbulb');
@@ -70,7 +70,7 @@
     }
 });</programlisting>
 
-    <para>With custom events, your code might look more like this: </para>
+    <para>Com eventos customizados, seu código pode ficar parecido com este: </para>
 
     <programlisting>$('.lightbulb').bind('changeState', function(e) {
     var $light = $(this);
@@ -85,12 +85,13 @@ $('.switch, .clapper').click(function() {
     $(this).parent().find('.lightbulb').trigger('changeState');
 });</programlisting>
 
-    <para>This last bit of code is not that exciting, but something important
-    has happened: we’ve moved the behavior of the lightbulb to the lightbulb,
-    and away from the switches and the clapper. </para>
+    <para>Este último pedaço de código não é lá essas coisas, mas algo importante
+    aconteceu: nós movemos o comportamento da lâmpada para a lâmpada, e ficamos
+    longe dos switches e do clapper. </para>
 
-    <para>Let’s make our example a little more interesting. We’ll add another
-    room to our house, along with a master switch, as shown here: </para>
+    <para>Vamos tornar nosso exemplo um pouco mais interessante. Nós vamos 
+    adicionar outro quarto à nossa casa, junto com o switch mestre, como
+    mostrado a seguir: </para>
 
     <programlisting>&lt;div class="room" id="kitchen"&gt;
     &lt;div class="lightbulb on"&gt;&lt;/div&gt;
@@ -106,12 +107,12 @@ $('.switch, .clapper').click(function() {
 &lt;/div&gt;
 &lt;div id="master_switch"&gt;&lt;/div&gt;</programlisting>
 
-    <para>If there are any lights on in the house, we want the master switch
-    to turn all the lights off; otherwise, we want it to turn all lights on.
-    To accomplish this, we’ll add two more custom events to the lightbulbs:
-    <code>turnOn</code> and <code>turnOff</code>. We’ll make use of them in
-    the <code>changeState</code> custom event, and use some logic to decide
-    which one the master switch should trigger:</para>
+    <para>Se há várias luzes na casa, nós queremos que o switch mestre desligue
+    todas as luzes; de outra forma, nós queremos todas as luzes acesas. Para
+    fazer isso, nós iremos adicionar dois ou mais eventos customizados às
+    lâmpadas: <code>turnOn</code> e <code>turnOff</code>. Nós iremos fazer uso
+    deles no evento customizado <code>changeState</code>, e usar alguma lógica
+    para decidir qual que o switch mestre vai disparar:</para>
 
     <programlisting>$('.lightbulb')
     .bind('changeState', function(e) {
@@ -141,45 +142,45 @@ $('#master_switch').click(function() {
     }
 });</programlisting>
 
-    <para>Note how the behavior of the master switch is attached to the master
-    switch; the behavior of a lightbulb belongs to the lightbulbs. </para>
+    <para>Note como o comportamento do switch mestre está vinculado ao switch 
+    mestre; O comportamento de uma lâmpada pertence às lâmpadas.</para>
 
     <note>
-      <para>If you’re accustomed to object-oriented programming, you may find
-      it useful to think of custom events as methods of objects. Loosely
-      speaking, the object to which the method belongs is created via the
-      jQuery selector. Binding the changeState custom event to all
-      <code>$(‘.light’)</code> elements is akin to having a class called
-      <code>Light</code> with a method of <code>changeState</code>, and then
-      instantiating new <code>Light</code> objects for each element with a
-      classname of light.</para>
+      <para>Se você está acostumado com programação orientada a objetos,
+      talvez seja útil pensar em evetos como se fossem métodos de objetos.
+      Grosseiramente falando, o objeto que o método pertence é criado pelo
+      seletor do jQuery. Vinculando o evento customizado changeState para
+      todos os elementos <code>$(‘.light’)</code> é similar a ter uma classe
+      chamada <code>Light</code> com um método <code>changeState</code>, e 
+      então instanciamos novos objetos <code>Light</code> para cada elemento
+      com o nome de classe light.</para>
     </note>
 
     <sidebar>
-      <title>Recap: $.fn.bind and $.fn.trigger</title>
+      <title>Recapitulando: $.fn.bind e $.fn.trigger</title>
 
-      <para>In the world of custom events, there are two important jQuery
-      methods: <code>$.fn.bind</code> and <code>$.fn.trigger</code>. In the
-      Events chapter, we saw how to use these methods for working with user
-      events; for this chapter, it's important to remember two things:</para>
+      <para>No mundo dos eventos customizados, há dois métodos importantes do
+      jQuery: <code>$.fn.bind</code> e <code>$.fn.trigger</code>. No capítulo
+      Eventos, nós vimos como usar estes métodos para trabalhar com eventos
+      do usuário; neste capítulo, é importante relemebrar duas coisas:</para>
 
       <itemizedlist>
         <listitem>
-          <para>The <code>$.fn.bind</code> method takes an event type and an
-          event handling function as arguments. Optionally, it can also
-          receive event-related data as its second argument, pushing the event
-          handling function to the third argument. Any data that is passed
-          will be available to the event handling function in the
-          <code>data</code> property of the event object. The event handling
-          function always receives the event object as its first
-          argument.</para>
+          <para>O método <code>$.fn.bind</code> recebe o tipo do evento e
+          uma função manipuladora do mesmo como argumentos. Opcionalmente, ele
+          pode também receber dados relacionados ao eventos como seu segundo
+          argumento, passando a função manipuladora do evento para o terceiro
+          argumento. Qualquer dado que é passado será disponível para a função
+          manipuladora do evento na propriedade <code>data</code> do objeto do
+          evento. A função manipuladora do evento sempre recebe o objeto do 
+          evento como seu primeiro argumento.</para>
         </listitem>
 
         <listitem>
-          <para>The <code>$.fn.trigger</code> method takes an event type as
-          its argument. Optionally, it can also take an array of values. These
-          values will be passed to the event handling function as arguments
-          after the event object.</para>
+          <para>O método <code>$.fn.trigger</code> recebe um tipo de evento como
+          argumento. Opcionalmente, ele também pode receber um arrayt de valores.
+          Estes valores serão passados para a função manipuladora de eventos como
+          argumentos depois do objeto de evento.</para>
         </listitem>
       </itemizedlist>
 
