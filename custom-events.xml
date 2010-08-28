@@ -6,44 +6,46 @@
          xmlns:m="http://www.w3.org/1998/Math/MathML"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns:db="http://docbook.org/ns/docbook">
-  <title>Custom Events</title>
+  <title>Eventos Customizados</title>
 
   <section>
-    <title>Introducing Custom Events</title>
+    <title>Introduzindo Eventos Customizados</title>
 
-    <para>We’re all familiar with the basic events — click, mouseover, focus,
-    blur, submit, etc. — that we can latch on to as a user interacts with the
-    browser. Custom events open up a whole new world of event-driven
-    programming. In this chapter, we’ll use jQuery’s custom events system to
-    make a simple Twitter search application. </para>
+    <para>Nós todos estamos familiares com eventos básicos - click, mouseover,
+    focus, blur, submit, etc. - estes que nós podemos usar para interações
+    entre o usuário e o navegador. Eventos customizados abrem um mundo 
+    completamente novo de programação orientada a eventos. Neste capítulo,
+    nós iremos utilizar o sistema de eventos customizados do jQuery para fazer
+    uma aplicação de busca simples no Twitter.</para>
 
-    <para>It can be difficult at first to understand why you'd want to use
-    custom events, when the built-in events seem to suit your needs just fine.
-    It turns out that custom events offer a whole new way of thinking about
-    event-driven JavaScript. Instead of focusing on the element that triggers
-    an action, custom events put the spotlight on the element being acted
-    upon. This brings a bevy of benefits, including:</para>
+    <para>Pode ser difícil à primeira instância entender por que você iria
+    querer utilizar eventos customizados, quando os eventos já prontos parecem
+    satisfazer bem suas necessidades. Acontece que eventos customizados oferecem
+    um jeito completamente novo de pensar sobre JavaScript orientado a eventos.
+    Ao invés de focar no elemento que dispara uma ação, eventos customizados
+    colocam o holoforte  no elemento em ação. Isso traz muitos benefícios,
+    incluindo:</para>
 
     <itemizedlist>
       <listitem>
-        <para>Behaviors of the target element can easily be triggered by
-        different elements using the same code.</para>
+        <para>Comportamentos do elemento alvo podem ser facilmente disparados
+        por elementos diferentes utilizando o mesmo código.</para>
       </listitem>
 
       <listitem>
-        <para>Behaviors can be triggered across multiple, similar, target
-        elements at once.</para>
+        <para>Comportamentos podem ser disparados através de elementos-alvo
+        múltiplos e similares de uma vez.</para>
       </listitem>
 
       <listitem>
-        <para>Behaviors are more clearly associated with the target element in
-        code, making code easier to read and maintain. </para>
+        <para>Comportamentos podem ser mais facilmente associados com o elemento
+        alvo no código, tornando o código mais fácil de ler e manter.</para>
       </listitem>
     </itemizedlist>
 
-    <para>Why should you care? An example is probably the best way to explain.
-    Suppose you have a lightbulb in a room in a house. The lightbulb is
-    currently turned on, and it’s controlled by two three-way switches and a
+    <para>Por que você deveria se importar? Um exemplo é provavelmente a melhor
+    forma de explicar. Suponha que você tenha uma lâmpada num quarto na casa. A
+    lâmpada está ligada e ela é controlada por dois switches de três vias e um
     clapper:</para>
 
     <programlisting>&lt;div class="room" id="kitchen"&gt;
@@ -53,9 +55,9 @@
     &lt;div class="clapper"&gt;&lt;/div&gt;
 &lt;/div&gt;</programlisting>
 
-    <para>Triggering the clapper or either of the switches will change the
-    state of the lightbulb. The switches and the clapper don’t care what state
-    the lightbulb is in; they just want to change the state.</para>
+    <para>O estado da lâmpada irá mudar disparando o clapper ou mesmo os 
+    switches. Os switches e o clapper não se importam em qual estado a lâmpada
+    está; eles somente querem mudar o estado.</para>
 
     <para>Without custom events, you might write some code like this: </para>
 
