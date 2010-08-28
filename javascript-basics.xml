@@ -15,21 +15,21 @@
       jQuery é construído sobre JavaScript, uma linguagem rica e expressiva
       por si só. Esta sessão cobre os conceitos básicos de JavaScript, assim
       como algumas pegadinhas que aparecem com freqüência para pessoas
-      que ainda não usaram JavaScript. Por enquanto para pessoas sem experiência
+      que ainda não usaram JavaScript. Por enquanto, para pessoas sem experiência
       em programação, até mesmo para aquelas que já programam em outras
-      linguagens, podem se beneficiar de aprender um pouco sobre
+      linguagens, podem se beneficiar ao aprender um pouco sobre
       algumas particularidades de JavaScript.
     </para>
 
     <para>Se você está interessado em aprender mais sobre a linguagem JavaScript,
-    eu recomento fortemente o livro <citetitle>JavaScript: The Good Parts</citetitle> de
+    eu recomento fortemente o livro <citetitle>JavaScript: The Good Parts</citetitle> do
     Douglas Crockford.</para>
   </section>
 
   <section>
     <title>O Básico de sintaxe</title>
 
-    <para>Entendendo declarações, nomes de variáveis, espaço, e outras sintxes
+    <para>Entendendo declarações, nomes de variáveis, espaço, e outras sintaxes
     básicas do JavaScript.</para>
 
     <example id="javascript-basics.examples.variable-declaration">
@@ -93,7 +93,7 @@ var k = i++;  // pós-incremento: k é igual a 2; i é igual a 3</programlisting
     <section>
       <title>Operações sobre números &amp; Strings</title>
 
-      <para>Em JavaScript, números e strings ocasionalmente irá se comportar 
+      <para>Em JavaScript, números e strings ocasionalmente irão se comportar 
       de formas inesperadas.</para>
 
       <example id="javascript-basics.examples.addition-concatenation">
@@ -152,19 +152,19 @@ baz &amp;&amp; foo;   // retorna 1, que é verdadeiro</programlisting>
         </example></para>
 
       <para>Apesar de não estar claro pelo exemplo, o operador <code>||</code>
-      retorna o valor do do primeiro operador verdadeiro, ou, em casos que nenhum
-      operador é verdadeiro, ele irá retornar o último dos operandos. O operador
+      retorna o valor do primeiro operador verdadeiro, ou, em casos em que nenhum
+      operador seja verdadeiro, ele irá retornar o último dos operandos. O operador
       <code>&amp;&amp;</code> retorna o valor do primeiro operando falso, ou o valor
       do último operador se ambos operadores forem verdadeiros.</para>
 
       <para>Tenha certeza de consultar<xref
-      linkend="javascript-basics.sections.truthy-falsy" />para maiores detalhes
-      em quais são interpretados como <code>true</code> e quais são interpretados <!-- Qual a melhor tradução para evaluate? -->
+      linkend="javascript-basics.sections.truthy-falsy" /> para maiores detalhes
+      sobre quais valores são avaliados como <code>true</code> e quais são avaliados <!-- Qual a melhor tradução para evaluate? -->
       como  <code>false</code>.</para>
-
+      
       <note>
         <para>Algumas vezes, você verá alguns desenvolvedores usando estes
-        operadores lógicos para controle de fluxo ao invés de utilizar o<code>if</code>. 
+        operadores lógicos para controle de fluxo ao invés de utilizar o <code>if</code>. 
         Por exemplo:</para>
 
         <programlisting>// faz alguma coisa com foo se foo for verdadeiro
@@ -178,7 +178,7 @@ var bar = baz || createBar();</programlisting>
         <para>Este estilo é elegante e agradevelmente curto; por isso, pode 
         ser difícil ler, especialmente por iniciantes. Eu o mostro aqui para
         que você possa reconhece-lo no código que você lê, mas eu não recomendo
-        o uso até que você esteja extremamente confortavel com o que isto 
+        o uso até que você esteja extremamente confortável com o que isto 
         significa e como você espera que se comporte.</para>
       </note>
     </section>
@@ -257,12 +257,12 @@ if (bar) {
       <title>Coisas Verdadeiras e Falsas</title>
 
       <para>De forma a usar o controle de fluxo com sucesso, é importante
-      entender quais tipos de valores são "verdadeiros" e quais tipo s de 
-      valores são "falsos". Algumas vezes, valores que parecem ser interpretados
-      de uma forma, interpretam de outra.</para>
+      entender quais tipos de valores são "verdadeiros" e quais tipos de 
+      valores são "falsos". Algumas vezes, valores que parecem ser avaliados
+      de uma forma, são avaliados de outra.</para>
 
       <example>
-        <title>Valores que são interpretados como <code>true</code></title>
+        <title>Valores que são avaliados como <code>true</code></title>
 
         <programlisting>'0'; 
 'qualquer string';
@@ -272,7 +272,7 @@ if (bar) {
       </example>
 
       <example>
-        <title>Valores que são interpretados como <code>false</code></title>
+        <title>Valores que são avaliados como <code>false</code></title>
 
         <programlisting>0;
 '';  // uma string vazia
@@ -534,7 +534,7 @@ while (++i &lt; 100) {
   <section>
     <title>Palavras Reservadas</title>
 
-    <para>JavaScript tem um número de “palavras reservadas,” ou palacras 
+    <para>JavaScript tem um número de “palavras reservadas,” ou palavras 
     que tem significado especial na linguagem. Você deve evitar usar estas
     palavras em seu código, exceto quando você as usar com seu significado
     desejado.</para>
@@ -959,7 +959,7 @@ console.log(foo);   // undefined!</programlisting>
     <section>
       <title>Funções como argumento</title>
 
-      <para>Em JavaScript, funções são "cidadções de primeira classe" -- eles
+      <para>Em JavaScript, funções são "cidadões de primeira classe" -- eles
       podem ser atribuídos a variáveis ou passados para outras funções como
       argumentos. Passar funções como argumento é um idioma extremamente comum
       em jQuery.</para>
@@ -1165,7 +1165,7 @@ bim();  // bim não está definido fora da função anônima,
     <example>
       <title>Como travar no valor de <code>i</code>?</title>
 
-      <programlisting>/* isso não irá comportar como nós quisermos; */
+      <programlisting>/* isso não se comportará como nós quisermos; */
 /* todo clique irá alertar 5 */
 for (var i=0; i&lt;5; i++) {
     $('&lt;p&gt;click me&lt;/p&gt;').appendTo('body').click(function() {
