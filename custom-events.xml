@@ -9,7 +9,7 @@
   <title>Eventos Customizados</title>
 
   <section>
-    <title>Introduzindo Eventos Customizados</title>
+    <title>Introdução à Eventos Customizados</title>
 
     <para>Nós todos estamos familiares com eventos básicos - click, mouseover,
     focus, blur, submit, etc. - estes que nós podemos usar para interações
@@ -197,22 +197,22 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
     </sidebar>
 
     <section>
-      <title>A Sample Application</title>
+      <title>Uma aplicação de amostra</title>
 
-      <para>To demonstrate the power of custom events, we’re going to create a
-      simple tool for searching Twitter. The tool will offer several ways for
-      a user to add search terms to the display: by entering a search term in
-      a text box, by entering multiple search terms in the URL, and by
-      querying Twitter for trending terms. </para>
+      <para>Para demonstrar o poder dos eventos customizados, nós vamos criar
+      uma ferramenta simples para buscar no Twitter. A ferramenta irá oferecer
+      várias formas de um usuário fazer a busca por um termo: digitando numa 
+      caixa de texto, múltiplos termos de busca na URL e por requisitar os
+      termos do trending topics. </para>
 
-      <para>The results for each term will be shown in a results container;
-      these containers will be able to be expanded, collapsed, refreshed, and
-      removed, either individually or all at once. </para>
+      <para>Os resultados para cada termo serão mostrados em um container de 
+      resultados; Estes containers poderão ser expandidos, contraidos, atualizados,
+      e removidos, individualmente ou todos de uma vez. </para>
 
-      <para>When we’re done, it will look like this: </para>
+      <para>Quando terminarmos, a applicação irá se ficar dessa forma: </para>
 
       <figure>
-        <title>Our finished application</title>
+        <title>Nossa aplicação concluída</title>
 
         <screenshot>
           <mediaobject>
@@ -224,9 +224,9 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
       </figure>
 
       <section>
-        <title>The Setup</title>
+        <title>O Setup</title>
 
-        <para>We’ll start with some basic HTML: </para>
+        <para>Nós iniciaremos com HTML básico: </para>
 
         <programlisting>&lt;h1&gt;Twitter Search&lt;/h1&gt;
 &lt;input type="button" id="get_trends" 
@@ -246,16 +246,18 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
     &lt;/div&gt;
 &lt;/div&gt;</programlisting>
 
-        <para>This gives us a container (#twitter) for our widget, a template
-        for our results containers (hidden via CSS), and a simple form where
-        users can input a search term. (For the sake of simplicity, we’re
-        going to assume that our application is JavaScript-only and that our
-        users will always have CSS.)</para>
+        <para>Isso nos dá um container (#twitter) para nosso widget, um template
+        para nossos resultados (escondido via CSS), e um formulário simples,
+        onde usuários podem entrar com um termo de busca. (Para o bem da 
+        simplicidade, nós iremos assumir que a aplicação é somente em JavaScript
+        e que nossos usuários sempre terão CSS.)</para>
 
-        <para>There are two types of objects we’ll want to act on: the results
-        containers, and the Twitter container.</para>
+        <para>Há dois tipos de objetos que nós iremos atuar sobre: os containers
+        de resultados e o container do Twitter.</para>
 
-        <para>The results containers are the heart of the application. We’ll
+        <para>Os containers de resultados são o coração da aplicação. Nós 
+        iremos criar um plugin que irá preparar cada container de resultados
+        The results containers are the heart of the application. We’ll
         create a plugin that will prepare each results container once it’s
         added to the Twitter container. Among other things, it will bind the
         custom events for each container and add the action buttons at the top
@@ -267,8 +269,8 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
             <term>refresh</term>
 
             <listitem>
-              <para>Mark the container as being in the “refreshing” state, and
-              fire the request to fetch the data for the search term.</para>
+              <para>Coloca o container no estado “atualizando”, e dispara a 
+              requisição para obter os dados para o termo de busca.</para>
             </listitem>
           </varlistentry>
 
@@ -276,8 +278,8 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
             <term>populate</term>
 
             <listitem>
-              <para>Receive the returned JSON data and use it to populate the
-              container.</para>
+              <para>Recebe os dados retornados em JSON e usa-os para para
+              alimentar o container.</para>
             </listitem>
           </varlistentry>
 
@@ -285,12 +287,12 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
             <term>remove</term>
 
             <listitem>
-              <para>Remove the container from the page after the user verifies
-              the request to do so. Verification can be bypassed by passing
-              true as the second argument to the event handler. The remove
-              event also removes the term associated with the results
-              container from the global object containing the search
-              terms.</para>
+              <para>Remove o container da página depois que o usuário efetua
+              a requisição para faze-lo. A verificação pode ser ignorada
+              se true for passado como segundo argumento do manipulador de
+              eventos. O evento remove também remove o termo associado com o
+              container de resultados do objeto global contendo o termo de 
+              busca.</para>
             </listitem>
           </varlistentry>
 
@@ -298,9 +300,9 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
             <term>collapse</term>
 
             <listitem>
-              <para>Add a class of collapsed to the container, which will hide
-              the results via CSS. It will also turn the container’s
-              “Collapse” button into an “Expand” button.</para>
+              <para>Adiciona a classe collapsed ao container, que esconderá
+              os resultados via CSS. Ele também irá mudar o botão  “Collapse”
+              do container em um botão “Expand”.</para>
             </listitem>
           </varlistentry>
 
@@ -308,17 +310,16 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
             <term>expand</term>
 
             <listitem>
-              <para>Remove the collapsed class from the container. It will
-              also turn the container’s “Expand” button into a “Collapse”
-              button.</para>
+              <para>Remove a classe collapsed do container. Ele também irá 
+              mudar o botão “Expand” em um botão “Collapse”.</para>
             </listitem>
           </varlistentry>
         </variablelist>
 
-        <para>The plugin is also responsible for adding the action buttons to
-        the container. It binds a click event to each action’s list item, and
-        uses the list item’s class to determine which custom event will be
-        triggered on the corresponding results container. </para>
+        <para>O plugin é responsável por adicionar os botões de ação ao container.
+        Ele vinvula cada evento de clique à cada item da lista de ações e usa
+        a classe do item de lista para determinar qual evento customizado será
+        disparado no container de resultados correspondente. </para>
 
         <programlisting>$.fn.twitterResult = function(settings) {
     return $(this).each(function() {
@@ -342,11 +343,11 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
             }
         );
 
-        // use the class of each action to figure out 
-        // which event it will trigger on the results panel
+        // usa a classe de cada ação para determinar qual
+        // evento ele irá disparar no painel de resultados.
         $a.find('li').click(function() {
-            // pass the li that was clicked to the function
-            // so it can be manipulated if needed
+            // passa o li que foi clicado para a função 
+            // para que o mesmo possa manipulado se necessário
             $results.trigger($(this).attr('class'), [ $(this) ]);
         });
     });
@@ -362,13 +363,13 @@ $.fn.twitterResult.createActions = function() {
 
 $.fn.twitterResult.events = {
     refresh : function(e) {
-           // indicate that the results are refreshing
+           // indica que os resultados estão sendo atualizados
         var $this = $(this).addClass('refreshing');
 
         $this.find('p.tweet').remove();
         $results.append('&lt;p class="loading"&gt;Loading ...&lt;/p&gt;');
 
-        // get the twitter data using jsonp
+        // obtém os dados do Twitter via jsonp
         $.getJSON(
             'http://search.twitter.com/search.json?q=' +                     
                 escape(e.data.term) + '&amp;rpp=5&amp;callback=?', 
@@ -433,7 +434,7 @@ $.fn.twitterResult.events = {
     }
 };</programlisting>
 
-        <para>The Twitter container itself will have just two custom events:
+        <para>O container do Twitter terá somente dois eventos:
         </para>
 
         <variablelist>
@@ -441,14 +442,14 @@ $.fn.twitterResult.events = {
             <term>getResults</term>
 
             <listitem>
-              <para>Receives a search term and checks to determine whether
-              there’s already a results container for the term; if not, adds a
-              results container using the results template, set up the results
-              container using the <code>$.fn.twitterResult</code> plugin
-              discussed above, and then triggers the <code>refresh</code>
-              event on the results container in order to actually load the
-              results. Finally, it will store the search term so the
-              application knows not to re-fetch the term.</para>
+              <para>Recebe um termo de busca e checa se há um container de 
+              resultados para o termo; Se não, adiciona um container de 
+              resultados utilizando o template de resultados, configura o 
+              container utilizando o plugin <code>$.fn.twitterResult</code>
+              discutido acima, e então dispara o evento <code>refresh</code>
+              no container de resultados para carregar de fato os resultados.
+              Finalmente, ele armazena o termo de busca para que a aplicação
+              não obtenha novamente o termo.</para>
             </listitem>
           </varlistentry>
 
@@ -456,25 +457,25 @@ $.fn.twitterResult.events = {
             <term>getTrends</term>
 
             <listitem>
-              <para>Queries Twitter for the top 10 trending terms, then
-              iterates over them and triggers the <code>getResults</code>
-              event for each of them, thereby adding a results container for
-              each term. </para>
+              <para>Consulta o Twitter para obter os top 10 trending topics,
+              depois itera sobre os resultados e dispara o evento 
+              <code>getResults</code> para cada um deles, adicionando assim
+              um container de resultados para cada um dos termos. </para>
             </listitem>
           </varlistentry>
         </variablelist>
 
-        <para>Here's how the Twitter container bindings look:</para>
+        <para>As vinculações do container do Twitter vão ficar parecidas com isso:</para>
 
         <programlisting>$('#twitter')
     .bind('getResults', function(e, term) {
-        // make sure we don't have a box for this term already
+        // certifica que nós já não temos um box para este termo
         if (!search_terms[term]) { 
             var $this = $(this);
             var $template = $this.find('div.template');
 
-            // make a copy of the template div
-            // and insert it as the first results box
+            // faz uma cópia da div do template
+            // e insere-a como primeiro box de resultados
             $results = $template.clone().
                 removeClass('template').
                 insertBefore($this.find('div:first')).
@@ -482,8 +483,8 @@ $.fn.twitterResult.events = {
                     'term' : term
                 });
 
-            // load the content using the "refresh" 
-            // custom event that we bound to the results container
+            // carrega o conteúdo utilizando o evento customizado
+            // "refresh" que nós vinculamos ao container de resultados
             $results.trigger('refresh');
             search_terms[term] = 1;
         }
@@ -498,16 +499,16 @@ $.fn.twitterResult.events = {
             });
     });</programlisting>
 
-        <para>So far, we’ve written a lot of code that does approximately
-        nothing, but that’s OK. By specifying all the behaviors that we want
-        our core objects to have, we’ve created a solid framework for rapidly
-        building out the interface. </para>
+        <para>Até agora, nós escrevemos muito código que não faz quase nada,
+        mas ok. Ao especificar todos os comportamentos que nós queremos que 
+        nossos objetos de base tenham, nós criamos um framework sólido para 
+        construir rapidamente a interface. </para>
 
-        <para>Let’s start by hooking up our text input and the “Load Trending
-        Terms” button. For the text input, we’ll capture the term that was
-        entered in the input and pass it as we trigger the Twitter container’s
-        <code>getResults</code> event. Clicking the “Load Trending Terms” will
-        trigger the Twitter container’s <code>getTrends</code> event: </para>
+        <para>Vamos começar ligando nossa caixa de texto e o botão “Load Trending
+        Terms”. Para a caixa de texto, nós iremos capturar o termo que foi 
+        digitado e iremos passa-lo para o evento <code>getResults</code> do
+        container do Twitter. O evento <code>getTrends</code> será disparado
+        ao clicarmos no botão “Load Trending Terms”: </para>
 
         <programlisting>$('form').submit(function(e) {
     e.preventDefault();
@@ -519,12 +520,12 @@ $('#get_trends').click(function() {
     $('#twitter').trigger('getTrends'); 
 });</programlisting>
 
-        <para>By adding a few buttons with the appropriate IDs, we can make it
-        possible to remove, collapse, expand, and refresh all results
-        containers at once, as shown below. For the remove button, note how
-        we’re passing a value of true to the event handler as its second
-        argument, telling the event handler that we don’t want to verify the
-        removal of individual containers. </para>
+        <para>Nós podemos remover, contrair, expandir e atualizar todos os
+        resultados se adicionarmos alguns botões com IDs apropriados, assim
+        como mostrado abaixo. Perceba como nós estamos passando o valor true 
+        para o manipulador de evento como seu segundo argumento, dizendo ao
+        mesmo que que nós não queremos verificar a remoção de containers
+        individuais. </para>
 
         <programlisting>$.each(['refresh', 'expand', 'collapse'], function(i, ev) {
     $('#' + ev).click(function(e) { $('#twitter div.results').trigger(ev); });
@@ -538,24 +539,26 @@ $('#remove').click(function(e) {
       </section>
 
       <section>
-        <title>Conclusion</title>
+        <title>Conclusão</title>
 
-        <para>Custom events offer a new way of thinking about your code: they
-        put the emphasis on the target of a behavior, not on the element that
-        triggers it. If you take the time at the outset to spell out the
-        pieces of your application, as well as the behaviors those pieces need
-        to exhibit, custom events can provide a powerful way for you to “talk”
-        to those pieces, either one at a time or en masse. Once the behaviors
-        of a piece have been described, it becomes trivial to trigger those
-        behaviors from anywhere, allowing for rapid creation of and
-        experimentation with interface options. Finally, custom events can
-        enhance code readability and maintainability, by making clear the
-        relationship between an element and its behaviors. </para>
+        <para>Eventos customizados oferecem uma nova forma de pensar sobre seu
+        código: eles colocam ênfase no comportamento, não no elemento que o 
+        dispara. Se você gastar um tempo no início para estabelecer as partes
+        da sua aplicação e os comportamentos que essas partes necessitam ter,
+        os eventos customizados podem fornecer um método poderoso para você
+        fazer com que estas partes "conversem", seja uma de cada vez ou uma
+        conversa em massa. Uma vez que os comportamentos de uma parte foram
+        descritos, torna-se trivial disparar estes comportamentos de qualquer
+        parte, permitindo uma criação rápida da lógica da aplicação e que 
+        experimentos com opções da interface sejam triviais. Por último, 
+        eventos customizados podem melhorar a clareza do código e facilitar
+        sua manutenção, pois eles deixam claro o relacionamento entre um
+        elemento e seus comportamentos. </para>
 
-        <para>You can see the full application at
-        <filename>demos/custom-events.html</filename> and
-        <filename>demos/js/custom-events.js</filename> in the sample
-        code.</para>
+        <para>Você pode ver a aplicação completa em
+        <filename>demos/custom-events.html</filename> e
+        <filename>demos/js/custom-events.js</filename> no código de 
+        amostra.</para>
       </section>
     </section>
   </section>
