@@ -9,7 +9,7 @@
   <title>Bem vindo</title>
   
   <para>jQuery está se tornando rapidamente uma habilidade fundamental para
-  desenvolvedores front-end. O objetivo deste livro é prover uma visão geral
+  desenvolvedores de interface. O objetivo deste livro é prover uma visão geral
   da biblioteca JavaScript jQuery; quando você terminar com este livro, você
   deverá conseguir completar tarefas básicas usando jQuery, e conseguirá uma
   base sólida se continuar estudando. Este livro foi feito para servir de
@@ -17,10 +17,10 @@
   
   <para>Esta é uma aula prática. Nós vamos usar um pouco de tempo para cobrir
   conceitos, e então você terá a chance de trabalhar num exercício relacionado
-  ao conceito. Algum dos exercícios podem parecer triviais; outros podem ser
+  ao conceito. Alguns dos exercícios podem parecer triviais; outros podem ser
   assustadores. Em ambos os casos, não há problema; o objetivo é simplesmente
-  fazer você ficar confortável em problemas comuns que você irá resolver no 
-  uso de jQuery. Soluções de exemplo para todos os exercícios estão inclusos
+  fazer você ficar confortável com problemas comuns que você irá resolver no 
+  uso de jQuery. As Soluções de exemplo para todos os exercícios estão inclusos
   no código de amostra.</para>
 
   <section>
@@ -63,7 +63,7 @@
     <title>Adicionando JavaScript à sua página</title>
 
     <para>JavaScript pode ser incluído inline ou incluindo um arquivo externo
-	através de um tag script. A ordem em que você inclui o JavaScript é muito
+	através de uma tag script. A ordem em que você inclui o JavaScript é muito
 	importante: as dependências precisam ser incluídas antes do script que
 	depende dela.</para>
 
@@ -97,16 +97,16 @@ console.log('olah');
 
     <itemizedlist>
       <listitem>
-        <para>Editores para experimentar JavaScript.</para>
+        <para>Editores para testar JavaScript.</para>
       </listitem>
 
       <listitem>
-        <para>um inspetor para analisar o código gerado da sua 
+        <para>Um inspetor para analisar o código gerado da sua 
 		página</para>
       </listitem>
 
       <listitem>
-        <para>um visualizador de rede ou recursos, para examinar
+        <para>Um visualizador de rede ou recursos, para examinar
 		as requisições de rede</para>
       </listitem>
     </itemizedlist>
@@ -121,18 +121,18 @@ console.log('olah');
       </listitem>
 
       <listitem>
-        <para><code>console.dir()</code> para logar um objeto
-		navegável</para>
+        <para><code>console.dir()</code> para registrar um objeto
+		navegável no log</para>
       </listitem>
 
       <listitem>
-        <para><code>console.warn()</code> para logar avisos
-		(warnings)</para>
+        <para><code>console.warn()</code> para registrar avisos
+		(warnings) no log</para>
       </listitem>
 
       <listitem>
-        <para><code>console.error()</code> para logar mensagens 
-		de erro</para>
+        <para><code>console.error()</code> para registrar mensagens 
+		de erro no log</para>
       </listitem>
     </itemizedlist>
 
@@ -152,12 +152,12 @@ console.log('olah');
 	da tag de script do jQuery nos exercícios individuais.</para>
 
     <para>Em alguns casos, você precisará consultar a documentação do jQuery
-	para concluir um exercício, pois não cobriremos todas as informações que
-	são relevantes no livro. Isso é por praticidade; jQuery é uma biblioteca
+	para concluir um exercício, pois, por praticidade, não cobriremos 
+	todas as informações ques são relevantes no livro. O jQuery é uma biblioteca
 	grande, e aprender a encontrar respostas na documentação é uma parte 
 	importante no processo.</para>
 
-    <para>Aqui vão algumas sugestões para cobater estes problemas:</para>
+    <para>Aqui vão algumas sugestões para combater estes problemas:</para>
 
     <itemizedlist>
       <listitem>
@@ -167,15 +167,15 @@ console.log('olah');
 
       <listitem>
         <para>Depois, descubra quais elementos você precisará acessar para
-		conseguir resolver o problema e determina como você irá conseguir
-		estes elementos. Use o Firebug para verificar que você está obtendo
+		conseguir resolver o problema e determine como você irá conseguir
+		estes elementos. Use o Firebug para verificar se você está obtendo
 		os elementos que está procurando.</para>
       </listitem>
 
       <listitem>
         <para>Por último, descrubra o que você precisa fazer com os elementos
 		para resolver o problema. Pode ser útil escrever comentários explicando
-		o que você irá fazer antes de tentar escrever código para fazer.</para>
+		o que você irá fazer antes de tentar escrever código.</para>
       </listitem>
     </itemizedlist>
 
@@ -213,9 +213,9 @@ console.log('olah');
     <title>Material de referência</title>
 
     <para>Há muitos artigos e posts de blog por aí que falam de alguma
-	forma de jQuery. Alguns são fenomenais; alguns são certamente errados.
+	forma de jQuery. Alguns são fenomenais; outros são certamente errados.
 	Quando você ler um artigo sobre jQuery, tenha certeza que está falando
-	sobre a mesma versão que você está usando e resita à tentação de somente
+	sobre a mesma versão que você está usando e resista à tentação de somente
 	copiar e colar - leve um tempo para entender o código no artigo.</para>
 
     <para>Aqui vão alguns excelentes recursos para usar durante seu 
@@ -224,7 +224,7 @@ console.log('olah');
 	da biblioteca. Não é uma caixa preta - seu conhecimento sobre a biblioteca
 	crescerá exponencialmente se você gastar um tempo visitando-o agora e 
 	novamente - e eu recomendo fortemente que você favorite-o no seu navegador
-	e visite-o com frequencia.</para>
+	e visite-o com frequência.</para>
 
     <itemizedlist>
       <listitem>

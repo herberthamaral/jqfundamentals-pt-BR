@@ -71,7 +71,7 @@
   </part>
 
   <part>
-    <title>jQuery: Basic Concepts</title>
+    <title>jQuery: Conceitos básicos</title>
 
     <xi:include href="jquery-basics.xml" />
 
