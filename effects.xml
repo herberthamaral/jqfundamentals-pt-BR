@@ -95,7 +95,7 @@
 
       <para>Com exceção de <code>$.fn.show</code> e
       <code>$.fn.hide</code>, todos os métodos embutidos são animados ao longo
-      de 400ms por default. Mudar a duração de um efeito é
+      de 400ms por padrão. Mudar a duração de um efeito é
       simples.</para>
 
       <example>
