@@ -75,9 +75,9 @@
   <section>
     <title>Encapsulamento</title>
 
-    <para>O primeiro passo para organização de código é separar partes da
-    sua aplicação em partes distintas; algumas vezes, mesmo este esforço
-    é suficiente para ceder</para> <!-- lend = ceder? -->
+    <para>O primeiro passo para organização de código é separar as partes de
+    sua aplicação em peças distintas; algumas vezes, mesmo este esforço
+    é suficiente para ceder</para> <!-- lend = ceder? emprestar? -->
 
     <section>
       <title>O literal objeto</title>
@@ -164,7 +164,7 @@ $(document).ready(function() {
             urlBase : '/foo.php?item='
         };
 
-        // permite a sobreposição da da configuração padrão
+        // permite a sobreposição da configuração padrão
         $.extend(myFeature.config, settings);
 
         myFeature.setup();        
@@ -236,7 +236,7 @@ $(document).ready(myFeature.init);</programlisting>
         </listitem>        
         
         <listitem>
-          <para>Nós movemos as as opções de configuração para fora do 
+          <para>Nós movemos as opções de configuração para fora do 
           corpo do código e colocamos em uma localização central.</para>
         </listitem>
 
@@ -398,7 +398,7 @@ feature.sayPrivateThing();
     <para>O RequireJS tem um sistema de módulos que permite que você defina
     módulos com escopo bem definido, mas você não precisa seguir o sistema 
     para obter os benefícios do gerenciamento de dependências e otimizações 
-    em tempo de build. Através do tempo, se você começar a criar código mais 
+    em tempo de build. Com o tempo, se você começar a criar código mais 
     modular que precisa ser reutilizado em algumas outras partes, o formato de
     módulo do RequireJS torna fácil escrever código encapsulado que pode ser 
     carregado sob demanda. Ele pode crescer com sua aplicação, particularmente 
@@ -506,7 +506,7 @@ feature.sayPrivateThing();
         passar uma função como terceiro argumento. A função será chamada para definir
         o módulo quando todas as dependências tiverem sido carregadas.
         A função recebe os valores retornados pelas dependências como seus argumentos.
-        (na mesma orgem que elas são requeridas no array), e a função deve retornar 
+        (na mesma ordem que elas são requeridas no array), e a função deve retornar 
         um objeto que define o módulo.</para>
 
         <example>
@@ -599,7 +599,7 @@ webapp/scripts/jquery.beta.js</programlisting>
     baseUrl: "scripts/",
     dir: "../../webapp-build",
     //Comente a linha de otimização se você quer 
-    //o código minificado pelo Compilador Closure Closure Compiler utilizando
+    //o código minificado pelo Compilador Closure Compiler utilizando
     //o modo de otimização "simple"
     optimize: "none",
 
@@ -612,7 +612,7 @@ webapp/scripts/jquery.beta.js</programlisting>
       </example>
 
       <para>Para usar a ferramenta de build, você precisa do Java6 instalado. O
-      Compilador Clojure é usado para o passo de minificação do JavaScirpt 
+      Compilador Closure é usado para o passo de minificação do JavaScirpt 
       (se <code>optimize:
       "none"</code> estiver comentado), e requer o Java 6. </para>
 
