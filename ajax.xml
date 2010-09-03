@@ -11,17 +11,17 @@
   <section>
     <title>Introdução</title>
 
-    <para>O método XMLHttpRequest permite que navegadores comuniquem com o
-    servidor sem precisar um reload na página. Este método, também conhecido
+    <para>O método XMLHttpRequest permite que navegadores se comuniquem com o
+    servidor sem precisar recarregar a página. Este método, também conhecido
     como Ajax(Asynchronous JavaScript and XML - JavaScript Assíncrono e XML),
     permite ter experiências ricas e interativas nas páginas web.</para>
 
     <para>Requisições Ajax são disparadas por código JavaScript; seu código 
-    envia uma requisição a uma URL, e quando recebe uma resposta, uma função
-    callback pode ser acionada para lidar com a resposta. Pelo motivo da requisição
-    ser assíncrona, o resto do seu código continua a executar enquanto a requisição
-    estiver sendo processada, então é imperativo que um callback seja usado para
-    lidar com a resposta.</para>
+    envia uma requisição a uma URL, e quando recebe uma resposta, uma função de
+    callback pode ser acionada para trata-la. Pelo motivo da requisição
+    ser assíncrona, o resto do seu código continurá a executando enquanto a 
+    requisição é processada, sendo assim, imperativo que um callback seja usado 
+    para lidar com a resposta.</para>
 
     <para>O jQuery provê suporte Ajax que abstrai as dolorosas diferenças entre
     navegadores. Ele oferece métodos completos como o <code>$.ajax()</code>,
@@ -41,8 +41,8 @@
   <section>
     <title>Conceitos Chave</title>
 
-    <para>O uso apropriado de métodos relacionados ao Ajax requer alguns
-    conceitos-chave primeiro</para>
+    <para>O uso apropriado de métodos relacionados ao Ajax requer o
+    conhecimento de alguns conceitos-chave.</para>
 
     <section>
       <title>GET vs. POST</title>
@@ -71,8 +71,8 @@
 
       <para>O jQuery geralmente requer alguma instrução a respeito do tipo de 
       dados que você espera obter com uma requisição Ajax; em alguns casos, o
-      tipo de dados é especificado no nome do método e em outros casos é provido
-      como parte do objeto de configuração. Há várias opções:</para>
+      tipo de dado é especificado no nome do método e em outros casos é 
+      fornecido como parte do objeto de configuração. Há várias opções:</para>
 
       <variablelist>
         <varlistentry>
@@ -177,7 +177,7 @@ console.log(response);</programlisting>
       <title>Ajax e o Firebug</title>
 
       <para>O Firebug (ou o Webkit Inspector no Chrome ou Safari) é uma
-      ferramenta indispensável para trabalhar com requisições Aajax. Você
+      ferramenta indispensável para trabalhar com requisições Ajax. Você
       pode ver as requisições Ajax no mesmo instante que elas acontecem na
       tab Console do Firebug  (e no painel Resources &gt; XHR do Webkit Inspector), 
       e você pode clicar numa requisição para expandi-la e ver os detalhes como
@@ -277,10 +277,10 @@ console.log(response);</programlisting>
             <term>async</term>
 
             <listitem>
-              <para>Sete para <code>false</code> se a requisição deve ser
+              <para>Configure para <code>false</code> se a requisição deve ser
               enviada de forma síncrona. O padrão é <code>true</code>. Perceba
-              que se você setar esta opção para falso, sua requisição irá 
-              bloquear a execução de outro código até que a resposta seja
+              que se você configurar esta opção para falso, sua requisição
+              bloqueará a execução de outro código até que a resposta seja
               recebida.</para>
             </listitem>
           </varlistentry>
@@ -291,7 +291,7 @@ console.log(response);</programlisting>
             <listitem>
               <para>Usado se resposta disponível for cacheável. O padrão é
               <code>true</code> para todos os tipos de dados, exceto  "script"
-              e "jsonp". Quando setado para falso, a URL simplemente terá um 
+              e "jsonp". Quando setado para falso, a URL simplesmente terá um 
               parâmetro a mais anexado a ela para evitar o cache.</para>
             </listitem>
           </varlistentry>
@@ -300,7 +300,7 @@ console.log(response);</programlisting>
             <term>complete</term>
 
             <listitem>
-              <para>Uma funcção callback para executar quando a requisição
+              <para>Uma função callback para executar quando a requisição
               estiver completa, independetemente de sucesso ou falha. A função
               recebe o objeto bruto da requisição e o texto de status da mesma.</para>
             </listitem>
@@ -381,7 +381,7 @@ console.log(response);</programlisting>
             <term>traditional</term>
 
             <listitem>
-              <para>Sete para true para usar o tipo de serialização param em
+              <para>Configure para true para usar o tipo de serialização param em
               versões anteriores ao jQuery 1.4. Para detalhes, veja: <link
               xlink:href="http://api.jquery.com/jQuery.param/">http://api.jquery.com/jQuery.param/</link>.</para>
             </listitem>
@@ -602,7 +602,7 @@ $.getJSON('/details.php', function(resp) {
     <para>O advendo do JSONP -- essencialmente um hack consensual para cross-site
     scripting -- abriu a porta para mashups de conteúdo bem poderosos. Muitos 
     sites provêem serviços JSONP, permitindo que você acesse o conteúdo deles
-    através de uma API pré-definida. Uma boa fronte de dados formatados em
+    através de uma API pré-definida. Uma boa fonte de dados formatados em
     JSONP é o <link xlink:href="http://developer.yahoo.com/yql/console/">Yahoo! Query
     Language</link>, que nós iremos usar no próximo exemplo para pegar notícias
     a respeito de gatos.</para>

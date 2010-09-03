@@ -178,14 +178,14 @@ $('#master_switch').click(function() {
 
         <listitem>
           <para>O método <code>$.fn.trigger</code> recebe um tipo de evento como
-          argumento. Opcionalmente, ele também pode receber um arrayt de valores.
+          argumento. Opcionalmente, ele também pode receber um array de valores.
           Estes valores serão passados para a função manipuladora de eventos como
           argumentos depois do objeto de evento.</para>
         </listitem>
       </itemizedlist>
 
-      <para>Here is an example of the usage of <code>$.fn.bind</code> and
-      <code>$.fn.trigger</code> that uses custom data in both cases:</para>
+      <para>Aqui há um exemplo de uso do <code>$.fn.bind</code> e
+      <code>$.fn.trigger</code> que usa dados customizados em ambos os casos:</para>
 
       <programlisting>$(document).bind('myCustomEvent', { foo : 'bar' }, function(e, arg1, arg2) {
     console.log(e.data.foo); // 'bar'
@@ -209,7 +209,7 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
       resultados; Estes containers poderão ser expandidos, contraidos, atualizados,
       e removidos, individualmente ou todos de uma vez. </para>
 
-      <para>Quando terminarmos, a applicação irá se ficar dessa forma: </para>
+      <para>Quando terminarmos, a applicação ficará dessa forma: </para>
 
       <figure>
         <title>Nossa aplicação concluída</title>
@@ -256,13 +256,11 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
         de resultados e o container do Twitter.</para>
 
         <para>Os containers de resultados são o coração da aplicação. Nós 
-        iremos criar um plugin que irá preparar cada container de resultados
-        The results containers are the heart of the application. We’ll
-        create a plugin that will prepare each results container once it’s
-        added to the Twitter container. Among other things, it will bind the
-        custom events for each container and add the action buttons at the top
-        right of each container. Each results container will have the
-        following custom events: </para>
+        criaremos um plugin que preparará cada container de resultados assim
+        que eles forem adicionados ao container do Twitter. Entre outras coisas,
+        ele vinculará os eventos customizados para cada container e adicionará
+        os botões de ação no topo a direita de cada container. Cada container de
+        resultado terá os seguintes eventos customizados: </para>
 
         <variablelist>
           <varlistentry>
@@ -400,8 +398,8 @@ $.fn.twitterResult.events = {
             $this.append(tweet);
         });
 
-        // indicate that the results 
-        // are done refreshing
+        // indica que a atualização dos 
+        // resultados está terminada
         $this.removeClass('refreshing');
     },
 
@@ -414,8 +412,8 @@ $.fn.twitterResult.events = {
         }
         $(this).remove();
 
-        // indicate that we no longer 
-        // have a panel for the term
+        // indica que nós não temos mais
+        // um painel para o termo
         search_terms[e.data.term] = 0;
     },
 
