@@ -153,7 +153,7 @@ console.log('olah');
 
     <para>Em alguns casos, você precisará consultar a documentação do jQuery
 	para concluir um exercício, pois, por praticidade, não cobriremos 
-	todas as informações ques são relevantes no livro. O jQuery é uma biblioteca
+	todas as informações que são relevantes no livro. O jQuery é uma biblioteca
 	grande, e aprender a encontrar respostas na documentação é uma parte 
 	importante no processo.</para>
 

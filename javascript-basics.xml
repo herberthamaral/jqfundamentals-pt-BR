@@ -334,7 +334,7 @@ var foo = bar ? 1 : 0;</programlisting>
 
       <para>As declarações Switch de alguma forma favorecem o JavaScript,
       pois frequentemente o mesmo comportamento pode ser obtido através da 
-      criação de um objeto que que tem um maior potencial para reuso, teste,
+      criação de um objeto que tem um maior potencial para reuso, teste,
       etc. Por exemplo:</para>
 
       <programlisting>var stuffToDo = {
