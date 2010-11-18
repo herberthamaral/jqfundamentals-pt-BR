@@ -218,23 +218,23 @@ $("a[rel$='thinger']");</programlisting>
       </example>
 
       <note>
-        <para>Em <xref linkend="jquery-basics.examples.storing-selections" />,
+        <para>No <xref linkend="jquery-basics.examples.storing-selections" />,
         o nome da variável começa com um sinal de dólar. Ao invés de outras
 		linguagens, não há nada especial sobre o sinal de dólar em JavaScript
-        -- é apenas outro caractere. Nós o usamos para indicar que a varíavel
+        -- é apenas outro caracter. Nós o usamos para indicar que a varíavel
 		contém um objeto jQuery. Esta prática -- um tipo de <link
         xlink:href="http://en.wikipedia.org/wiki/Hungarian_notation">Notação
 		Húngara</link> -- é meramente uma convenção, e não é obrigatória.</para>
       </note>
 
       <para>Uma vez que você armazenou sua seleção, você pode chamar os métodos
-	  do jQuery na varoável que você armazenou, da mesma forma que você faria
+	  do jQuery na variável que você armazenou, da mesma forma que você faria
 	  na seleção original.</para>
 
       <note>
         <para>Uma seleção somente obtém os elementos que estão na página quando
 		você faz a seleção. Se você adicionar elementos na página depois,
-		você terá que repetir a seleção ou então adiciona-la à seleção armazenada
+		você terá que repetir a seleção ou então adicioná-la à seleção armazenada
 		na variável. Seleções armazenadas não atualizam automaticamente quando
 		o DOM muda.</para>
       </note>
@@ -251,7 +251,7 @@ $("a[rel$='thinger']");</programlisting>
         <title>Refinando seleções</title>
 
         <programlisting>$('div.foo').has('p');          // o elemento div.foo que contém &lt;p&gt;'s
-$('h1').not('.bar');            // elementos h1 que não tem a classe bar
+$('h1').not('.bar');            // elementos h1 que não têm a classe bar
 $('ul li').filter('.current');  // itens de listas não-ordenadas com a classe current
 $('ul li').first();             // somente o primeiro item da lista não ordenada
 $('ul li').eq(5);               // o sexto item da lista </programlisting>
@@ -461,7 +461,7 @@ $('ul li').eq(5);               // o sexto item da lista </programlisting>
 	  <termdef>Quando um método é usado para setar um valor, ele é chamado de
       <firstterm>setter</firstterm></termdef>. <termdef>Quando um método é 
 	  usado para pegar (ou ler) um valor, ele é chamado de <firstterm>getter</firstterm></termdef>. 
-	  Os setters afetam todos os elementos na seleção; getters obtém o valor
+	  Os setters afetam todos os elementos na seleção; getters obtêm o valor
       requisitado somente do primeiro elemento na seleção.</para>
 
       <example>
@@ -546,10 +546,9 @@ if ($h1.hasClass('big')) { ... }</programlisting>
       <para>O jQuery oferece uma variedade de médotos para obter e modificar
 	  informações sobre dimensões e posições de um elemento.</para>
 
-      <para>O código em <xref linkend="jquery-basics.examples.dimensions" />
-      é somente uma introdução muito curta sobre a funcionalidade de dimensões
-	  do jQuery; para detalhes completos sobre a funcionalidade de dimensões
-	  no jQuery, visite <link
+      <para>O código do <xref linkend="jquery-basics.examples.dimensions" />
+      é somente uma introdução muito curta sobre as funcionalidades de dimensões
+	  do jQuery; para detalhes completos sobre os métodos de dimensão do jQuery, visite <link
       xlink:href="http://api.jquery.com/category/dimensions/">http://api.jquery.com/category/dimensions/</link>.</para>
 
       <example xml:id="jquery-basics.examples.dimensions">
@@ -563,7 +562,7 @@ $('h1').height();        // obtém a altura do primeiro h1
 
 $('h1').position();      // retorna um objeto contendo informações
                          // sobre a posição do primeiro h1 relativo
-                         // à seu pai</programlisting></para>
+                         // a seu pai</programlisting></para>
       </example>
     </section>
   </section>
@@ -572,7 +571,7 @@ $('h1').position();      // retorna um objeto contendo informações
     <title>Atributos</title>
 
     <para>Atributos de elementos podem conter informações úteis para sua
-    aplicação, então é importante saber como seta-los e obte-los.</para>
+    aplicação, então é importante saber como setá-los e obtê-los.</para>
 
     <para>O método <code>$.fn.attr</code> atua como getter e setter
     . Assim como os métodos <code>$.fn.css</code> , <code>$.fn.attr</code>
@@ -598,7 +597,7 @@ $('a').attr({
     <example>
       <title>Getting attributes</title>
 
-      <programlisting>$('a').attr('href');  // returns the href for the first a element in the document</programlisting>
+      <programlisting>$('a').attr('href');  // retorn o href do primeiro elemento &lt;a&gt; do documento</programlisting>
     </example>
   </section>
 
@@ -615,9 +614,9 @@ $('a').attr({
     <note>
       <para>Seja cuidadoso com travessias de longas distâncias nos seus
       documentos -- travessias complexas torna imperativo que a estrutura
-      do seu documento continua a mesma, alguma coisa que dificulta a 
-      garantia mesmo se você é o responsável por criar toda a aplicação
-      do servidor ao cliente. Travessias de um ou dois passos é legal,
+      do seu documento permaneça a mesma, alguma coisa que dificulta a 
+      garantia mesmo se você for o responsável por criar toda a aplicação
+      desde o servidor até o cliente. Travessias de um ou dois passos é legal,
       mas geralmente você irá querer evitar travessias que levem você
       de um container para outro.</para> 
       <!-- TODO: essa parte ficou meio estranha. procurar uma melhor tradução -->
@@ -634,7 +633,7 @@ $('li.selected').siblings();</programlisting>
     </example>
 
     <para>Você também pode iterar sobre uma seleção usando <code>$.fn.each</code>. 
-    Este método itera sobre todos os elementos numa seleção e executa uma funlção
+    Este método itera sobre todos os elementos numa seleção e executar uma função
     para cada um. A função recebe como argumento um índice com o elemento atual 
     e com o próprio elemento DOM. Dentro da função, o elemento DOM também está
     disponível como  <code>this</code> por padrão.</para>
@@ -656,7 +655,7 @@ $('li.selected').siblings();</programlisting>
     <title>Manipulando elementos</title>
     <para>Uma vez que você fez uma seleção, a diversão começa. Você pode mudar,
     mover, remover e clonar elementos. Você ainda pode criar novos elementos 
-    através uma sintaxe simples</para>
+    através de uma sintaxe simples</para>
 
     <para>Para uma referência completa dos métodos de manipulação do jQuery,
     visite 
@@ -679,12 +678,8 @@ $('li.selected').siblings();</programlisting>
       <note>
         <para>Mudar coisas em elementos é trivial, mas lembre-se que a mudança
         irá afetar <emphasis>todos</emphasis> os elementos na seleção, então 
-        se você quiser mudar um elemento, esteja certo de especifica-lo em sua
+        se você quiser mudar um elemento, esteja certo de especificá-lo em sua
         seleção antes de chamar o método setter</para>
-        <para>Changing things about elements is trivial, but remember that the
-        change will affect <emphasis>all</emphasis> elements in the selection,
-        so if you just want to change one element, be sure to specify that in
-        your selection before calling a setter method.</para>
       </note>
 
       <note>
@@ -700,7 +695,7 @@ $('li.selected').siblings();</programlisting>
           <term>$.fn.html</term>
 
           <listitem>
-            <para>Obter ou setar o conteúdo html.</para>
+            <para>Obtém ou seta o conteúdo html.</para>
           </listitem>
         </varlistentry>
 
@@ -708,7 +703,7 @@ $('li.selected').siblings();</programlisting>
           <term>$.fn.text</term>
 
           <listitem>
-            <para>Obter ou setar os conteúdos de texto; HTML será removido.</para>
+            <para>Obtém ou seta os conteúdos de texto; HTML será removido.</para>
           </listitem>
         </varlistentry>
 
@@ -716,7 +711,7 @@ $('li.selected').siblings();</programlisting>
           <term>$.fn.attr</term>
 
           <listitem>
-            <para>Obtém ou seta um valor doatributo provido.</para>
+            <para>Obtém ou seta o valor do atributo fornecido.</para>
           </listitem>
         </varlistentry>
 
@@ -733,7 +728,7 @@ $('li.selected').siblings();</programlisting>
           <term>$.fn.height</term>
 
           <listitem>
-            <para>Obtem ou seta a altura em pixels do primeiro elemento na 
+            <para>Obtém ou seta a altura em pixels do primeiro elemento na 
             seleção.</para>
           </listitem>
         </varlistentry>
@@ -770,7 +765,7 @@ $('li.selected').siblings();</programlisting>
       <title>Movendo, copiando e removendo elementos. </title>
 
       <para>Há uma variedade de formas de mover elementos pelo DOM;
-      geralmente, há duas formas:</para>
+      geralmente, há duas abordagens:</para>
 
       <itemizedlist>
         <listitem>
@@ -784,7 +779,7 @@ $('li.selected').siblings();</programlisting>
         </listitem>
       </itemizedlist>
 
-      <para>Por exemplo, o jQueru provê <code>$.fn.insertAfter</code> e
+      <para>Por exemplo, o jQuere provê <code>$.fn.insertAfter</code> e
       <code>$.fn.after</code>. O método <code>$.fn.insertAfter</code> coloca
       o(s) elemento(s) selecionado(s) depois do elemento que você passou 
       como argumento; o método <code>$.fn.after</code> coloca o elemento 
@@ -794,8 +789,8 @@ $('li.selected').siblings();</programlisting>
       <code>$.fn.append</code>; e <code>$.fn.prependTo</code> e
       <code>$.fn.prepend</code>.</para>
       
-      <para>O método que faz mais sentido pra você depende de quais elementos
-      você já selecionou e quais você precisa armazenar uma referência para os 
+      <para>O método que faz mais sentido pra você dependerá de quais elementos
+      você já selecionou e quais você precisará armazenar uma referência para os 
       elementos que você está adicionando na página. Se você precisar de armazenar
       uma referência, você sempre irá querer fazer pela primeira forma -- colocando
       os elementos selecionados relativos à outro elemento -- de forma que ele
@@ -823,8 +818,8 @@ $('#myList').append($('#myList li:first'));
         <title>Clonando elementos</title>
 
         <para>Quando você usa métodos como $.fn.appendTo, você está movendo o
-        elemento; porém,algumas vezes você irá querer fazer uma cópia do 
-        elemento. Neste caso, você precisará usar $.fn.clone first.</para>
+        elemento; porém, algumas vezes você irá querer fazer uma cópia do 
+        elemento. Neste caso, você precisará usar $.fn.clone primeiro.</para>
 
         <example>
           <title>Fazendo uma cópia de um elemento</title>
@@ -844,13 +839,13 @@ $('#myList li:first').clone().appendTo('#myList');</programlisting>
 
         <para>Há duas formas de remover elementos da página:
         <code>$.fn.remove</code> e <code>$.fn.detach</code>. Você irá 
-        usar <code>$.fn.remove</code> quandp você quer remover a
+        usar <code>$.fn.remove</code> quando você quiser remover a
         seleção permanentemente da página; enquanto o método retorna
         os elementos removidos, estes elementos não terão seus eventos
         e dados associados a ele se você retorna-los à página.</para>
 
         <para>Se você precisa que os dados e eventos persistam, você irá 
-        isar <code>$.fn.detach</code> . Da mesma forma que <code>$.fn.remove</code>,
+        usar <code>$.fn.detach</code> . Da mesma forma que <code>$.fn.remove</code>,
         ele retorna uma seleção, mas também mantém os dados e os eventos
         associados com a seleção para que você possa restaurar a seleção
         para a página no futuro.</para>
@@ -894,7 +889,7 @@ $('&lt;li class="new"&gt;novo item de lista&lt;/li&gt;');</programlisting>
 
       <remark>Perceba que no objeto de atributos nós incluimos como segundo
       argumento a propriedade classe entre aspas, enquanto as propriedades
-      text e href não. Geralmente, nomes de propriedades não precisam estar
+      html e href não. Geralmente, nomes de propriedades não precisam estar
       entre aspas a não ser que elas sejam palavras reservadas (como a 
       classe neste caso)</remark>
       
@@ -914,7 +909,7 @@ $('ul').last().after($myNewElement.clone());  // clona o p, portanto temos 2 ago
 
       <remark>Estritamente falando, você não precisa armazenar o elemento
       criado numa variável -- você pode simplesmente chamar o método para 
-      adiciona-lo diretamente depois do <code>$()</code>. Entretanto, a maior
+      adicioná-lo diretamente depois do <code>$()</code>. Entretanto, a maior
       parte do tempo você precisará de uma referência ao elemento que você
       adicionou para que você não o selecione depois.</remark>
 
