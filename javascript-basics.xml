@@ -287,7 +287,7 @@ undefined;  // seja cuidadoso -- undefined pode ser redefinido!</programlisting>
 
       <para>Algumas vezes você quer colocar um valor numa variável dependendo
       de uma condição. Você poderia usar uma declaração <code>if</code>/<code>else</code>,
-      mas em muitos casos, o operador ternário é mais conveniente.<termdef> O
+      mas em muitos casos, o operador ternário é mais conveniente. <termdef> O
       <firstterm>operador ternário</firstterm> testa uma condição; se a condição
       for verdadeira, ele retorna um valor correto, senão retorna um valor
       diferente.</termdef></para>
@@ -383,7 +383,7 @@ for (var i=0; i&lt;5; i++) {
     <section>
       <title>O laço for</title>
 
-      <para>O laço <code>for</code> é consituído de quatro declarações e possui a 
+      <para>O laço <code>for</code> é constituído de quatro declarações e possui a 
       seguinte estrutura:</para>
 
       <programlisting>for ([inicialização]; [condição]; [incremento])
@@ -406,12 +406,12 @@ for (var i=0; i&lt;5; i++) {
       <para>A declaração <emphasis>corpoDoLaço</emphasis> é o que é executado
       em cada iteração. Ele pode conter o que você quiser. Tipicamente, você 
       terá múltiplas declarações que precisam ser executadas e portanto você
-      irá coloca-las dentro de um bloco de código ( <code>{...}</code>).</para>
+      irá colocá-las dentro de um bloco de código (<code>{...}</code>).</para>
 
       <para>Este é um uso típico para o laço <code>for</code>:</para>
 
       <example>
-        <title>Um laço<code>for</code> típico</title>
+        <title>Um laço <code>for</code> típico</title>
 
         <programlisting>for (var i = 0, limit = 100; i &lt; limit; i++) {
     // Este bloco será executado 100 vezes
@@ -495,9 +495,8 @@ while (++i &lt; 100) {
     <section>
       <title>Parando e continuando</title>
 
-      <para>Geralmente, um loop termina porque declaração condicional não 
-      é interpretada como verdadeira, mas é possível para um laço, mas é 
-      possível parar um laço dentro do corpo do mesmo utilizando a 
+      <para>Geralmente, um loop termina porque a declaração condicional não 
+      é interpretada como verdadeira, mas é possível para um laço dentro do corpo do mesmo utilizando a 
       declaração <code>break</code>. </para>
 
       <example>
@@ -534,8 +533,8 @@ while (++i &lt; 100) {
   <section>
     <title>Palavras Reservadas</title>
 
-    <para>JavaScript tem um número de “palavras reservadas,” ou palavras 
-    que tem significado especial na linguagem. Você deve evitar usar estas
+    <para>JavaScript possui um número de “palavras reservadas”, ou palavras 
+    que têm significado especial na linguagem. Você deve evitar usar estas
     palavras em seu código, exceto quando você as usar com seu significado
     desejado.</para>
 
@@ -802,7 +801,7 @@ myArray[1] = 'mudado';</programlisting>
     </example>
 
     <remark>Enquanto é possível mudar o valor de um item do array como mostrado
-    em <xref linkend="javascript-basics.examples.change-array-value" />, geralmente
+    no <xref linkend="javascript-basics.examples.change-array-value" />, geralmente
     não é recomendado.</remark>
 
     <example>
@@ -832,7 +831,7 @@ var mySplit = myString.split('');  // [ 'h', 'e', 'l', 'l', 'o' ]</programlistin
     <firstterm>método</firstterm> do objeto.</termdef> Senão, elas são chamadas
     de propriedades.</para>
 
-    <para>Na prática, quase todo em JavaScript é um objeto — arrays, funções
+    <para>Na prática, quase tudo em JavaScript é um objeto — arrays, funções
     números e até strings - e todos eles possuem propriedades e métodos.</para>
 
     <example>
@@ -871,8 +870,8 @@ console.log(myObject.myName);   // loga 'Rebecca'</programlisting>
   <section>
     <title>Funções</title>
 
-    <para>Funções contém blocos de código que precisam ser executados repetidamente.
-    As funções podem ter zero ou mais argumentos, e pode opcionalmente retornar
+    <para>Funções contêm blocos de código que precisam ser executados repetidamente.
+    As funções podem ter zero ou mais argumentos, e podem opcionalmente retornar
     um valor.</para>
 
     <para>Funções podem ser criadas em uma série de formas:</para>
@@ -1151,15 +1150,15 @@ bim();  // bim não está definido fora da função anônima,
   <section>
     <title>Closures</title>
 
-    <para>Closures são uma extensão do conceito de escopo — funções tem acesso
+    <para>Closures são uma extensão do conceito de escopo — funções têm acesso
     a variáveis que estão disponíveis no escopo onde a função foi criada. Se isso
     é confuso, não se preocupe: closures são geralmente entendidas melhor através
     de um exemplo.</para>
 
     <para>Em <xref linkend="javascript-basics.examples.scope-value-change" />
-    nós vimos como funções tem acesso para modificar valores de variáveis. O mesmo
+    nós vimos como as funções têm acesso para modificar valores de variáveis. O mesmo
     tipo de comportamento existe com funções definidas dentro de laços -- a função
-    "vê" a mudança no valor da variável mesmo depois que a função é definida, resultando
+    "vê" a mudança no valor da variável mesmo depois que a função foi definida, resultando
     em todos os cliques alertando 4.</para>
 
     <example>
