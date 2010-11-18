@@ -12,7 +12,7 @@
 
     <author>
       <personname><link xlink:href="http://www.rebeccamurphey.com">Rebecca
-      Murphey</link></personname>
+              Murphey</link></personname>
     </author>
 
     <legalnotice>
@@ -53,7 +53,14 @@
 
     <othercredit>
       <orgname><link
-      xlink:href="http://github.com/rmurphey/jqfundamentals">http://github.com/rmurphey/jqfundamentals</link></orgname>
+              xlink:href="http://github.com/rmurphey/jqfundamentals">http://github.com/rmurphey/jqfundamentals</link></orgname>
+      
+      
+        <personname>Herberth Amaral (tradução e revisão), </personname> 
+        <personname>Elvis Luciano Guimarães (tradução e revisão), </personname>
+        <personname>Diego Guimarães (tradução), </personname>
+        <personname>Diego Caxito (tradução), </personname>
+        <personname>Luciana Balieiro (revisão) </personname> 
     </othercredit>
 
     <othercredit>
