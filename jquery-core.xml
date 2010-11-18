@@ -100,7 +100,7 @@ $.each({ foo : 'bar', baz : 'bim' }, function(k, v) {
 
           <programlisting>var meuArray = [ 1, 2, 3, 5 ];
 
-if ($.inArray(4, myArray) !== -1) {
+if ($.inArray(4, meuArray) !== -1) {
     console.log('encontrei!');
 }</programlisting>
         </listitem>
