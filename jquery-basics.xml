@@ -11,11 +11,10 @@
   <section>
     <title>$(document).ready()</title>
 
-    <para>Você não pode manipular a página com segurançã até o documento estar
+    <para>Você não pode manipular a página com segurança até o documento estar
 	"pronto" (ready). O jQuery detecta o estado de prontidão para você; o código
 	incluido dentro de <code>$(document).ready()</code> somente irá rodar depois
-	que a página estiver pronta para que o código JavaScript estiver pronto
-	para executar</para>
+	que a página estiver pronta executar o código JavaScript.</para>
 
     <example>
       <title>Um bloco $(document).ready()</title>
@@ -26,8 +25,8 @@
     </example>
 
     <para>Há um atalho para <code>$(document).ready()</code> que você verá
-	algumas vezes; entretando, eu recomendo usa-lo se você estiver escrevendo
-	código que pessoas que não tem experiência com jQuery irá ver.</para>
+	algumas vezes; entretando, eu não recomendo usá-lo se você estiver escrevendo
+	código que pessoas que não têm experiência com jQuery poderá ver.</para>
 
     <example>
       <title>Atalho para $(document).ready()</title>
@@ -42,7 +41,7 @@
 	anônima.</para>
 
     <example>
-      <title>Passando uma função nomeada ao invês de uma anônima</title>
+      <title>Passando uma função nomeada ao invés de uma anônima</title>
 
       <programlisting>function readyFn() {
     // código para executar quando o documento estiver pronto
@@ -58,7 +57,7 @@ $(document).ready(readyFn);</programlisting>
 
     <para>O conceito mais básico do jQuery é "selecionar alguns elementos e
 	fazer alguma coisa com eles." O jQuery suporta a maioria dos seletores
-    CSS3 como alguns seletores não-padrão. Para uma referência completa de
+    CSS3, assim como alguns seletores não-padrão. Para uma referência completa de
 	seletores, visite <link
     xlink:href="http://api.jquery.com/category/selectors/">http://api.jquery.com/category/selectors/</link>.</para>
 
@@ -100,6 +99,53 @@ $('div:animated');     // todas as divs com animação</programlisting>
     </example>
 
     <sidebar>
+      <title>Note</title>
+
+	<para>
+		Quando você usa os pseudos-seletores <code>:visible</code> e <code>:hidden</code>,
+		o jQuery testa a visibilidade atual do elemento, não o os atributos <code>visibility</code> ou <code>display</code> do CSS
+		- ou seja, ele olha se a altura e a largura física do elemento na página são ambas maiores que zero.
+		No entanto, este teste não funciona com elementos <code>&lttr&gt;</code>; neste caso, o jQuery faz a verificação da propriedade display do CSS,
+		e considera um elemento como oculto se sua propriedade <code>display</code> for <code>none</code>.
+		Elementos que não forem adicionados no DOM serão sempre considerados ocultos, mesmo que o CSS que os afetam torná-los visíveis.
+		(Consulte a seção de Manipulação mais adiante neste capítulo para aprender como criar e adicionar elementos ao DOM).
+	</para>
+
+	<para>
+		Para referência, aqui está o código que jQuery usa para determinar se um elemento é visível ou oculto,
+		com os comentários adicionados para maior esclarecimento:
+	</para>
+
+	<programlisting>
+		jQuery.expr.filters.hidden = function( elem ) {
+		    var width = elem.offsetWidth, height = elem.offsetHeight,
+		        skip = elem.nodeName.toLowerCase() === "tr";
+
+		    // o elemento tem 0 de altura e 0 de largura e não é uma &lt;tr&gt;?
+		    return width === 0 && height === 0 && !skip ?
+
+		        // então deve estar escondido
+		        true :
+
+		        // mas se o elemento tiver largura e altura e não for uma &lt;tr&gt;
+		        width > 0 && height > 0 && !skip ?
+
+		            // então deve estar visível
+		            false :
+
+		            // se chamos aqui, o elemento tem largura
+		            // e altura, mas também é uma &lt;tr&gt;,
+		            // então verifica a propriedade <code>display</code> para
+		            // decidir se ele esta escondido
+		            jQuery.curCSS(elem, "display") === "none";
+		};
+
+		jQuery.expr.filters.visible = function( elem ) {
+		    return !jQuery.expr.filters.hidden( elem );
+		};
+	<programlisting>
+
+    <sidebar>
       <title>Escolhendo seletores</title>
 
       <para>Escolher bons seletores é uma forma de melhorar a performance
@@ -116,7 +162,7 @@ $('div:animated');     // todas as divs com animação</programlisting>
 	  que você selecione elementos baseados no conteúdo de atributos arbitrários
 	  usando expressões regulares simplificadas.</para>
 
-      <programlisting>// encontre todos elementos a &lt;a&gt;s em que o atributo
+      <programlisting>// encontre todos elementos &lt;a&gt;s em que o atributo
 // rel termine com "thinger"
 $("a[rel$='thinger']");</programlisting>
 
