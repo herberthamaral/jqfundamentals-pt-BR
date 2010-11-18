@@ -29,12 +29,11 @@
     </listitem>
 
     <listitem>
-      <para>Adicione outra opção para o elemento select; dê a opção de
-      valor "Quarta-Feira".</para>
+      <para>Adicione outra opção para o elemento select; dê ao option o valor "Quarta-Feira".</para>
     </listitem>
 
     <listitem>
-      <para>Adicione um novo div.module a página depois da última; coloque
+      <para>Adicione uma nova div.module à página depois da última; coloque
       uma cópia de uma das imagens existentes dentro dela.</para>
     </listitem>
   </orderedlist>

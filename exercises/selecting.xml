@@ -14,7 +14,7 @@
 
 	    <orderedlist>
 	      <listitem>
-	        <para>Selecione todos os elementos DIV que tem a classe "module".</para>
+	        <para>Selecione todos os elementos DIV que têm a classe "module".</para>
 	      </listitem>
 
 	      <listitem>
@@ -34,7 +34,7 @@
 	      </listitem>
 
 	      <listitem>
-	        <para>Encontre quantos elementos na página tem um atributo alt.</para>
+	        <para>Encontre quantos elementos na página têm um atributo alt.</para>
 	      </listitem>
 
 	      <listitem>
