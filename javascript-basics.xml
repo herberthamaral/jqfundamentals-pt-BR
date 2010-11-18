@@ -496,7 +496,7 @@ while (++i &lt; 100) {
       <title>Parando e continuando</title>
 
       <para>Geralmente, um loop termina porque a declaração condicional não 
-      é interpretada como verdadeira, mas é possível para um laço dentro do corpo do mesmo utilizando a 
+      é interpretada como verdadeira, mas é possível parar um laço dentro do corpo do mesmo utilizando a 
       declaração <code>break</code>. </para>
 
       <example>
