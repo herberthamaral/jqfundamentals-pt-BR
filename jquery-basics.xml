@@ -98,37 +98,34 @@ $('div:gt(2)');        // todos exceto as três primeiras divs
 $('div:animated');     // todas as divs com animação</programlisting>
     </example>
 
-    <sidebar>
-      <title>Note</title>
+    <note>
+	    <para>
+		    Quando você usa os pseudos-seletores <code>:visible</code> e <code>:hidden</code>,
+		    o jQuery testa a visibilidade atual do elemento, não o os atributos <code>visibility</code> ou <code>display</code> do CSS
+		    - ou seja, ele olha se a altura e a largura física do elemento na página são ambas maiores que zero.
+		    No entanto, este teste não funciona com elementos <code>&lt;tr&gt;</code>; neste caso, o jQuery faz a verificação da propriedade display do CSS,
+		    e considera um elemento como oculto se sua propriedade <code>display</code> for <code>none</code>.
+		    Elementos que não forem adicionados no DOM serão sempre considerados ocultos, mesmo que o CSS que os afetam torná-los visíveis.
+		    (Consulte a seção de Manipulação mais adiante neste capítulo para aprender como criar e adicionar elementos ao DOM).
+	    </para>
 
-	<para>
-		Quando você usa os pseudos-seletores <code>:visible</code> e <code>:hidden</code>,
-		o jQuery testa a visibilidade atual do elemento, não o os atributos <code>visibility</code> ou <code>display</code> do CSS
-		- ou seja, ele olha se a altura e a largura física do elemento na página são ambas maiores que zero.
-		No entanto, este teste não funciona com elementos <code>&lttr&gt;</code>; neste caso, o jQuery faz a verificação da propriedade display do CSS,
-		e considera um elemento como oculto se sua propriedade <code>display</code> for <code>none</code>.
-		Elementos que não forem adicionados no DOM serão sempre considerados ocultos, mesmo que o CSS que os afetam torná-los visíveis.
-		(Consulte a seção de Manipulação mais adiante neste capítulo para aprender como criar e adicionar elementos ao DOM).
-	</para>
+	    <para>
+		    Para referência, aqui está o código que jQuery usa para determinar se um elemento é visível ou oculto,
+		    com os comentários adicionados para maior esclarecimento:
+	    </para>
 
-	<para>
-		Para referência, aqui está o código que jQuery usa para determinar se um elemento é visível ou oculto,
-		com os comentários adicionados para maior esclarecimento:
-	</para>
-
-	<programlisting>
-		jQuery.expr.filters.hidden = function( elem ) {
+    	<programlisting>jQuery.expr.filters.hidden = function( elem ) {
 		    var width = elem.offsetWidth, height = elem.offsetHeight,
 		        skip = elem.nodeName.toLowerCase() === "tr";
 
 		    // o elemento tem 0 de altura e 0 de largura e não é uma &lt;tr&gt;?
-		    return width === 0 && height === 0 && !skip ?
+		    return width === 0 &amp;&amp; height === 0 &amp;&amp; !skip ?
 
 		        // então deve estar escondido
 		        true :
 
 		        // mas se o elemento tiver largura e altura e não for uma &lt;tr&gt;
-		        width > 0 && height > 0 && !skip ?
+		        width > 0 &amp;&amp; height > 0 &amp;&amp; !skip ?
 
 		            // então deve estar visível
 		            false :
@@ -143,8 +140,9 @@ $('div:animated');     // todas as divs com animação</programlisting>
 		jQuery.expr.filters.visible = function( elem ) {
 		    return !jQuery.expr.filters.hidden( elem );
 		};
-	<programlisting>
-
+	    </programlisting>
+    </note>
+    
     <sidebar>
       <title>Escolhendo seletores</title>
 
