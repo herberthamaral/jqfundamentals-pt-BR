@@ -1163,7 +1163,7 @@ bim();  // bim não está definido fora da função anônima,
     em todos os cliques alertando 4.</para>
 
     <example>
-      <title>Como travar no valor de <code>i</code>?</title>
+      <title>Como bloquear no valor de <code>i</code>?</title>
 
       <programlisting>/* isso não se comportará como nós quisermos; */
 /* todo clique irá alertar 5 */
@@ -1175,7 +1175,7 @@ for (var i=0; i&lt;5; i++) {
     </example>
 
     <example>
-      <title>Travando no valor de <code>i</code> com uma closure</title>
+      <title>Bloqueando no valor de <code>i</code> com uma closure</title>
 
       <programlisting>/* conserto: “fecha” o valor de i dentro de createFuncion, então ela não irá mudar */
 var createFunction = function(i) {
