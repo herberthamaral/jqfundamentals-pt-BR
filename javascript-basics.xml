@@ -157,7 +157,7 @@ baz &amp;&amp; foo;   // retorna 1, que é verdadeiro</programlisting>
       <code>&amp;&amp;</code> retorna o valor do primeiro operando falso, ou o valor
       do último operador se ambos operadores forem verdadeiros.</para>
 
-      <para>Tenha certeza de consultar<xref
+      <para>Tenha certeza de consultar <xref
       linkend="javascript-basics.sections.truthy-falsy" /> para maiores detalhes
       sobre quais valores são avaliados como <code>true</code> e quais são avaliados <!-- Qual a melhor tradução para evaluate? -->
       como  <code>false</code>.</para>
@@ -285,7 +285,7 @@ undefined;  // seja cuidadoso -- undefined pode ser redefinido!</programlisting>
     <section>
       <title>Associação Condicional de Variáveis Com o Operador Ternário</title>
 
-      <para>Algumas vezes você quer colocar um valor numa variável dependendo
+      <para>Algumas vezes você precisará colocar um valor numa variável dependendo
       de uma condição. Você poderia usar uma declaração <code>if</code>/<code>else</code>,
       mas em muitos casos, o operador ternário é mais conveniente. <termdef> O
       <firstterm>operador ternário</firstterm> testa uma condição; se a condição
@@ -309,7 +309,7 @@ var foo = bar ? 1 : 0;</programlisting>
 
       <para>Ao invés de usar uma série de blocos if/else if/else, algumas vezes
       pode ser útil usar a declaração switch.
-      <termdef><firstterm>Declarações Switch</firstterm> olha o valor da variável
+      <termdef><firstterm>Declarações Switch</firstterm> olham o valor da variável
       ou expressão e executa blocos de código diferentes dependendo do valor.</termdef></para>
 
       <example>
@@ -487,8 +487,8 @@ while (++i &lt; 100) {
 } while (false);</programlisting>
       </example>
 
-      <para>Estes tipos de laços são relativamente raros, pois em poucas
-      situações requerem um laço que executa cegamente um bloco de código
+      <para>Estes tipos de laços são relativamente raros, pois poucas
+      situações requerem um laço que execute cegamente um bloco de código
       ao menos uma vez. Independentemente, é bom ficar sabendo disso.</para>
     </section>
 
@@ -496,8 +496,9 @@ while (++i &lt; 100) {
       <title>Parando e continuando</title>
 
       <para>Geralmente, um loop termina porque a declaração condicional não 
-      é interpretada como verdadeira, mas é possível parar um laço dentro do corpo do mesmo utilizando a 
-      declaração <code>break</code>. </para>
+          é interpretada como verdadeira, mas é possível parar um laço dentro 
+          do corpo do mesmo utilizando a declaração <code>break</code>. 
+      </para>
 
       <example>
         <title>Parando um laço</title>
@@ -783,21 +784,21 @@ while (++i &lt; 100) {
       <title>Acessando os itens do array pelo índice</title>
 
       <programlisting>var meuArray = [ 'ola', 'mundo', 'foo', 'bar' ];
-console.log(myArray[3]);   // loga 'bar'</programlisting>
+console.log(meuArray[3]);   // loga 'bar'</programlisting>
     </example>
 
     <example>
       <title>Testando o tamanho de um array</title>
 
-      <programlisting>var myArray = [ 'olá', 'mundo' ];
-console.log(myArray.length);   // loga 2</programlisting>
+      <programlisting>var meuArray = [ 'olá', 'mundo' ];
+console.log(meuArray.length);   // loga 2</programlisting>
     </example>
 
     <example id="javascript-basics.examples.change-array-value">
       <title>Mudando o valor de um item do array</title>
 
       <programlisting>var meuArray = [ 'olá', 'mundo' ];
-myArray[1] = 'mudado';</programlisting>
+meuArray[1] = 'mudado';</programlisting>
     </example>
 
     <remark>Enquanto é possível mudar o valor de um item do array como mostrado
@@ -808,15 +809,15 @@ myArray[1] = 'mudado';</programlisting>
       <title>Adicionando elementos em um array</title>
 
       <programlisting>var meuArray = [ 'olá', 'mundo' ];
-myArray.push('novo');</programlisting>
+meuArray.push('novo');</programlisting>
     </example>
 
     <example>
       <title>Trabalhando com arrays</title>
 
       <programlisting>var meuArray = [ 'h', 'e', 'l', 'l', 'o' ];
-var myString = myArray.join('');   // 'hello'
-var mySplit = myString.split('');  // [ 'h', 'e', 'l', 'l', 'o' ]</programlisting>
+var minhaString = meuArray.join('');   // 'hello'
+var meuSplit = minhaString.split('');  // [ 'h', 'e', 'l', 'l', 'o' ]</programlisting>
     </example>
   </section>
 
@@ -958,7 +959,7 @@ console.log(foo);   // undefined!</programlisting>
     <section>
       <title>Funções como argumento</title>
 
-      <para>Em JavaScript, funções são "cidadões de primeira classe" -- eles
+      <para>Em JavaScript, funções são "cidadãos de primeira classe" -- eles
       podem ser atribuídos a variáveis ou passados para outras funções como
       argumentos. Passar funções como argumento é um idioma extremamente comum
       em jQuery.</para>
