@@ -101,7 +101,7 @@ $('div:animated');     // todas as divs com animação</programlisting>
     <note>
 	    <para>
 		    Quando você usa os pseudos-seletores <code>:visible</code> e <code>:hidden</code>,
-		    o jQuery testa a visibilidade atual do elemento, não o os atributos <code>visibility</code> ou <code>display</code> do CSS
+		    o jQuery testa a visibilidade atual do elemento, não os atributos <code>visibility</code> ou <code>display</code> do CSS
 		    - ou seja, ele olha se a altura e a largura física do elemento na página são ambas maiores que zero.
 		    No entanto, este teste não funciona com elementos <code>&lt;tr&gt;</code>; neste caso, o jQuery faz a verificação da propriedade display do CSS,
 		    e considera um elemento como oculto se sua propriedade <code>display</code> for <code>none</code>.

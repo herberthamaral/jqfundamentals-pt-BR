@@ -137,7 +137,7 @@ console.log(novoObjeto.foo);   // 'baz'</programlisting>
         <term>$.proxy</term>
 
         <listitem>
-          <para>Returna uma função que sempre será executada no escopo fornececido
+          <para>Retorna uma função que sempre será executada no escopo fornececido
           — isto é, seta o significado do <code>this</code> dentro da função
           passada ao segundo argumento.</para>
 
@@ -201,7 +201,7 @@ jQuery.isArray(meuValor); // true</programlisting>
     <para>Assim que seu trabalho com o jQuery avança, você descobrirá com frequência que há
     dados sobre um elemento que você quer armazenar com o elemento. Em JavaScript
     puro, você pode fazer isso adicionando uma propriedade ao elemento do DOM, mas
-    você terá q lidar com memory leaks em alguns browsers. jQuery ofere um jeito
+    você terá que lidar com memory leaks em alguns browsers. jQuery ofere um jeito
     simples de armazenar dados relacionados a um elemento, e gerencia
     os problemas de memória para você.</para>
 
