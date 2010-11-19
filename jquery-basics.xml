@@ -597,7 +597,7 @@ $('a').attr({
     <example>
       <title>Getting attributes</title>
 
-      <programlisting>$('a').attr('href');  // retorn o href do primeiro elemento &lt;a&gt; do documento</programlisting>
+      <programlisting>$('a').attr('href');  // retorna o href do primeiro elemento &lt;a&gt; do documento</programlisting>
     </example>
   </section>
 
@@ -614,10 +614,10 @@ $('a').attr({
     <note>
       <para>Seja cuidadoso com travessias de longas distâncias nos seus
       documentos -- travessias complexas torna imperativo que a estrutura
-      do seu documento permaneça a mesma, alguma coisa que dificulta a 
-      garantia mesmo se você for o responsável por criar toda a aplicação
-      desde o servidor até o cliente. Travessias de um ou dois passos é legal,
-      mas geralmente você irá querer evitar travessias que levem você
+      do seu documento permaneça a mesma, uma dificuldade à estabilidade,
+      mesmo se você for o responsável por criar toda a aplicação
+      desde o servidor até o cliente. Travessias de um ou dois passos são 
+      legais, mas geralmente você irá querer evitar travessias que levem você
       de um container para outro.</para> 
       <!-- TODO: essa parte ficou meio estranha. procurar uma melhor tradução -->
     </note>
@@ -779,7 +779,7 @@ $('li.selected').siblings();</programlisting>
         </listitem>
       </itemizedlist>
 
-      <para>Por exemplo, o jQuere provê <code>$.fn.insertAfter</code> e
+      <para>Por exemplo, o jQuery fornece <code>$.fn.insertAfter</code> e
       <code>$.fn.after</code>. O método <code>$.fn.insertAfter</code> coloca
       o(s) elemento(s) selecionado(s) depois do elemento que você passou 
       como argumento; o método <code>$.fn.after</code> coloca o elemento 
