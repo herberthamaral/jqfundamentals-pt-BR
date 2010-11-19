@@ -20,7 +20,7 @@
     envia uma requisição a uma URL, e quando recebe uma resposta, uma função de
     callback pode ser acionada para trata-la. Pelo motivo da requisição
     ser assíncrona, o resto do seu código continurá a executando enquanto a 
-    requisição é processada, sendo assim, imperativo que um callback seja usado 
+    requisição é processada, sendo assim, é imperativo que um callback seja usado 
     para lidar com a resposta.</para>
 
     <para>O jQuery provê suporte Ajax que abstrai as dolorosas diferenças entre
@@ -35,7 +35,7 @@
 
     <para>Em geral, Ajax não funciona através de domínios diferentes. 
     As exceções são serviços que fornecem suporte ao JSONP (JSON com
-    padding), que permite uma limitada funcionalidade cross-domínio.</para>
+    padding), que permite uma limitada funcionalidade entre domínios.</para>
   </section>
 
   <section>
@@ -48,7 +48,8 @@
       <title>GET vs. POST</title>
 
       <para>Os métodos mais comuns para enviar uma requisição ao servidor são
-      o GET e o POST. É importante entender a aplicação apropriada para cada um.</para>
+          o GET e o POST. É importante entender a aplicação apropriada para cada um.
+      </para>
 
       <para>O método GET deve ser usado para operações não-destrutivas -
       ou seja, operações que você apenas esteja "pegando" dados do servidor,
@@ -255,9 +256,9 @@ console.log(response);</programlisting>
 
       <note>
         <para>Uma nota a respeito da configuração <code>dataType</code>: se o 
-        servicor enviar dados que estão num formato diferente que você especificou,
+        servidor enviar dados que estão num formato diferente que você especificou,
         seu código poderá falhar, e a razão nem sempre será clara, por que o
-        código de resposta HTTP não irá mostrar um erro. Qunado estiver trabalhando
+        código de resposta HTTP não irá mostrar um erro. Quando estiver trabalhando
         com requisições Ajax, tenha certeza que o servidor está enviando de volta
         os dados com o formato que você especificou e verifique se o header
         Content-type está de acordo com o tipo de dados. Por exemplo, para dados
@@ -516,7 +517,7 @@ console.log(response);</programlisting>
       </variablelist>
 
       <example>
-        <title>Usando os métodos de conveniência do jQUery</title>
+        <title>Usando os métodos de conveniência do jQuery</title>
 
         <para><programlisting>// pega texto puro ou html
 $.get('/users.php', { userId : 1234 }, function(resp) {
@@ -599,7 +600,7 @@ $.getJSON('/details.php', function(resp) {
   <section>
     <title>Trabalhando com JSONP</title>
 
-    <para>O advendo do JSONP -- essencialmente um hack consensual para cross-site
+    <para>O advento do JSONP -- essencialmente um hack consensual para cross-site
     scripting -- abriu a porta para mashups de conteúdo bem poderosos. Muitos 
     sites provêem serviços JSONP, permitindo que você acesse o conteúdo deles
     através de uma API pré-definida. Uma boa fonte de dados formatados em
