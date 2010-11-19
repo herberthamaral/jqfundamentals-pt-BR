@@ -301,7 +301,7 @@ var foo = bar ? 1 : 0;</programlisting>
       </example>
 
       <para>Enquanto o operador ternário pode ser usado sem associação do valor de retorno
-      para uma variável, isto é geralmente desencorajado..</para>
+      para uma variável, isto é geralmente desencorajado.</para>
     </section>
 
     <section>
@@ -383,7 +383,7 @@ for (var i=0; i&lt;5; i++) {
     <section>
       <title>O laço for</title>
 
-      <para>O laço <code>for</code> é consituído de quatro declarações e possui a 
+      <para>O laço <code>for</code> é constituído de quatro declarações e possui a 
       seguinte estrutura:</para>
 
       <programlisting>for ([inicialização]; [condição]; [incremento])
@@ -832,7 +832,7 @@ var mySplit = myString.split('');  // [ 'h', 'e', 'l', 'l', 'o' ]</programlistin
     <firstterm>método</firstterm> do objeto.</termdef> Senão, elas são chamadas
     de propriedades.</para>
 
-    <para>Na prática, quase todo em JavaScript é um objeto — arrays, funções
+    <para>Na prática, quase tudo em JavaScript é um objeto — arrays, funções
     números e até strings - e todos eles possuem propriedades e métodos.</para>
 
     <example>
