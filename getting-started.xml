@@ -21,7 +21,7 @@
   ao conceito. Alguns dos exercícios podem parecer triviais; outros podem ser
   assustadores. Em ambos os casos, não há problema; o objetivo é simplesmente
   fazer você ficar confortável com problemas comuns que você irá resolver no 
-  uso de jQuery. As Soluções de exemplo para todos os exercícios estão inclusos
+  uso do jQuery. As soluções de exemplo para todos os exercícios estão inclusos
   no código de amostra.</para>
 
   <section>
@@ -194,7 +194,7 @@ console.log('olah');
 	como <code>$.fn.methodName</code>. Métodos que existem no namespace do
 	jQuery mas não podem ser chamados em objetos jQuery serão referidos como
 	<code>$.methodName</code>. Se não fizer muito sentido pra você, não preocupe
-	 - Vai ficar mais claro à medida que você avançar no livro.
+	 - ficará mais claro à medida que você avançar no livro.
 	</para>
 
     <example>
@@ -221,7 +221,7 @@ console.log('olah');
 
     <para>Aqui vão alguns excelentes recursos para usar durante seu 
 	aprendizado em jQuery. O mais importante de todos é o código fonte
-	do jQuery: ele contém, em forma de código, a documentação comlpleta
+	do jQuery: ele contém, em forma de código, a documentação completa
 	da biblioteca. Não é uma caixa preta - seu conhecimento sobre a biblioteca
 	crescerá exponencialmente se você gastar um tempo visitando-o agora e 
 	novamente - e eu recomendo fortemente que você favorite-o no seu navegador
