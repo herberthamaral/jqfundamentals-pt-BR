@@ -10,10 +10,11 @@
   
   <para>jQuery está se tornando rapidamente uma habilidade fundamental para
   desenvolvedores de interface. O objetivo deste livro é prover uma visão geral
-  da biblioteca JavaScript jQuery; quando você terminar com este livro, você
-  deverá conseguir completar tarefas básicas usando jQuery, e conseguirá uma
-  base sólida se continuar estudando. Este livro foi feito para servir de
-  material para ser usado em sala de aula, mas pode servir para estudo individual.</para>
+  do jQuery, uma biblioteca para JavaScript; quando você terminar com este 
+  livro, você deverá conseguir completar tarefas básicas usando jQuery, e 
+  conseguirá uma base sólida se continuar estudando. Este livro foi feito para 
+  servir de material para ser usado em sala de aula, mas pode servir para 
+  estudo individual.</para>
   
   <para>Esta é uma aula prática. Nós vamos usar um pouco de tempo para cobrir
   conceitos, e então você terá a chance de trabalhar num exercício relacionado
