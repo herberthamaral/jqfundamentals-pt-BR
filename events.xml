@@ -149,7 +149,7 @@ $('p').unbind('.meuNamespace'); // desconecta todos os eventos no namespace</pro
         <term>pageX, pageY</term>
 
         <listitem>
-          <para>A posição do mouse no momento em que o evento ocorreu, relativa ao
+          <para>A posição do mouse no momento em que o evento ocorreu, relativa
           ao canto superior esquerdo da página.</para>
         </listitem>
       </varlistentry>
@@ -260,7 +260,7 @@ foo(); // ao invés de $('p').trigger('click')</programlisting>
     <para>Você frequentemente usará o jQuery para adicionar novos elementos a página, e
     quando o faz, pode precisar anexar eventos a esses novos elementos -- eventos que
     você já anexou a elementos similares que estavam na página originalmente.
-    Ao invés de repetir a ligação de evento toda vez que adiciona elementoos à
+    Ao invés de repetir a ligação de evento toda vez que adicionar elementos à
     página, você pode usar delegação de evento. Com delegação de evento você anexa seu
     evento ao elemento conteiner, e então quando o evento ocorre, você verifica
     em qual elemento contido ele ocorreu. Se isto soa complicado,
