@@ -11,7 +11,7 @@
 	    <para>Abra o arquivo<filename>/exercises/index.html</filename> no seu
 	    navegador. Use o arquivo <filename>/exercises/js/tabs.js</filename>. Sua
 	    tarefa é criar uma navegação por abas para os dois elementos div.module.
-	    Para fazer isto::</para>
+	    Para fazer isto:</para>
 
 	    <orderedlist>
 	      <listitem>
@@ -47,7 +47,7 @@
 	      </listitem>
 
 	      <listitem>
-	        <para>Por último, mostra a primeira tabela.</para>
+	        <para>Por último, mostre a primeira tabela.</para>
 	      </listitem>
 	    </orderedlist>
 </section>
