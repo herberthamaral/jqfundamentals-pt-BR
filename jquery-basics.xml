@@ -424,7 +424,7 @@ $('ul li').eq(5);               // o sexto item da lista </programlisting>
       </example>
 
       <para>Se você mudar sua seleção no meio de uma cadeia, o jQuery
-	  provê o método <code>$.fn.end</code> para você voltar para sue seleção
+	  provê o método <code>$.fn.end</code> para você voltar para sua seleção
 	  original.</para>
 
       <example>
@@ -541,7 +541,7 @@ if ($h1.hasClass('big')) { ... }</programlisting>
     <section>
       <title>Dimensões</title>
 
-      <para>O jQuery oferece uma variedade de médotos para obter e modificar
+      <para>O jQuery oferece uma variedade de métodos para obter e modificar
 	  informações sobre dimensões e posições de um elemento.</para>
 
       <para>O código do <xref linkend="jquery-basics.examples.dimensions" />
@@ -755,7 +755,7 @@ $('li.selected').siblings();</programlisting>
         <title>Mudando o HTML de um elemento.</title>
 
         <programlisting>$('#myDiv p:first')
-    .html('New &lt;strong&gt;first&lt;/strong&gt; paragraph!');</programlisting>
+    .html('Primeiro parágrafo &lt;strong&gt;novo&lt;/strong&gt;!');</programlisting>
       </example>
     </section>
 
@@ -789,7 +789,7 @@ $('li.selected').siblings();</programlisting>
       
       <para>O método que faz mais sentido pra você dependerá de quais elementos
       você já selecionou e quais você precisará armazenar uma referência para os 
-      elementos que você está adicionando na página. Se você precisar de armazenar
+      elementos que você está adicionando na página. Se você precisar armazenar
       uma referência, você sempre irá querer fazer pela primeira forma -- colocando
       os elementos selecionados relativos à outro elemento -- de forma que ele
       retorne o(s) elemento(s) que você está colocando. Neste caso, os métodos
@@ -886,10 +886,10 @@ $('&lt;li class="new"&gt;novo item de lista&lt;/li&gt;');</programlisting>
       </example>
 
       <remark>Perceba que no objeto de atributos nós incluimos como segundo
-      argumento a propriedade classe entre aspas, enquanto as propriedades
+      argumento a propriedade class entre aspas, enquanto as propriedades
       html e href não. Geralmente, nomes de propriedades não precisam estar
       entre aspas a não ser que elas sejam palavras reservadas (como a 
-      classe neste caso)</remark>
+      class neste caso)</remark>
       
       <para>Quando você cria um novo elemento, ele não é adicionado imediatamente
       à página. Há várias formas de adicionar um elemento à página uma vez que ele
@@ -898,7 +898,7 @@ $('&lt;li class="new"&gt;novo item de lista&lt;/li&gt;');</programlisting>
       <example>
         <title>Inserindo um novo elemento na página</title>
 
-        <programlisting>var $myNewElement = $('&lt;p&gt;New element&lt;/p&gt;');
+        <programlisting>var $myNewElement = $('&lt;p&gt;Novo elemento&lt;/p&gt;');
 $myNewElement.appendTo('#content');
 
 $myNewElement.insertAfter('ul:last'); // isto irá remover p de #content!
@@ -919,7 +919,7 @@ $('ul').last().after($myNewElement.clone());  // clona o p, portanto temos 2 ago
         <title>Criando e adicionando um elemento à página ao
         mesmo tempo</title>
 
-        <programlisting>$('ul').append('&lt;li&gt;list item&lt;/li&gt;');</programlisting>
+        <programlisting>$('ul').append('&lt;li&gt;item da lista&lt;/li&gt;');</programlisting>
       </example>
 
       <note>
@@ -952,14 +952,14 @@ $myList.append(myItems.join(''));</programlisting>
       <example>
         <title>Manipulando um único atributo</title>
 
-        <programlisting>$('#myDiv a:first').attr('href', 'newDestination.html');</programlisting>
+        <programlisting>$('#myDiv a:first').attr('href', 'novoDestino.html');</programlisting>
       </example>
 
       <example>
         <title>Manipulando múltiplos atributos</title>
 
         <programlisting>$('#myDiv a:first').attr({
-    href : 'newDestination.html',
+    href : 'novoDestino.html',
     rel : 'super-special'
 });</programlisting>
       </example>
