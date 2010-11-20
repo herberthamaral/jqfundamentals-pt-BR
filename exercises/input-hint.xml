@@ -34,12 +34,11 @@
 	      </listitem>
 
 	      <listitem>
-	        <para>Faça um bind do eventp blur para o input de busca que
+	        <para>Faça um bind do evento blur para o input de busca que
 	        restaura o texto de hint e a classe "hint" se nenhum texto
 	        for informado.</para>
 	      </listitem>
 	    </orderedlist>
 
-	    <para>Quais outras considerações podem haver se What other considerations might there be if you were creating this
-	    functionality for a real site?</para>
+	    <para>Quais outras considerações poderiam haver se você estivesse criando esta funcionalidade para um site real?</para>
 </section>
