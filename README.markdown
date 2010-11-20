@@ -16,5 +16,6 @@ Este repositório contém apenas o conteudo do livro, não tendo assim, toda a i
     cd book
     scripts/install.sh 
     vim scripts/publish-pdf.sh #mude a primeira linha para "input=src/pt-BR/jquery-fundamentals-book.xml" (sem as aspas)
+    scripts/publish-pdf.sh 
 
 Se tiver dado tudo certo, o livro em pdf estará em book/release/pdf
