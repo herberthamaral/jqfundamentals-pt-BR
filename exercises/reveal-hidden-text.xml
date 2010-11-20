@@ -15,12 +15,12 @@
 
 	    <itemizedlist>
 	      <listitem>
-	        <para>O parágrafo de excerpt deve deslizar pra baixo (slideDown) 
+	        <para>O parágrafo de excerpt deve deslizar para baixo (slideDown) 
 	        ao clicar na headline dentro da div #blog.</para>
 	      </listitem>
 
 	      <listitem>
-	        <para>O parágrafo de excerpt deve deslizar pra baixo ao 
+	        <para>O parágrafo de excerpt deve deslizar para baixo ao 
 	        clicar na sua headline, e os outros excerpts devem deslizar
 	        para cima (slideUp).</para>
 	      </listitem>

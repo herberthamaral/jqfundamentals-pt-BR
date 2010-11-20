@@ -31,7 +31,7 @@
   <para>Perceba que cada headline do blog em index.html inclui um link
   para o post. Você precisará aproveitar o href daquele link para obter
   o conteúdo de blog.html. Uma vez que você tem o href, esta é uma forma 
-  de processa-lo num ID que você pode usar como seletor em <code>$.fn.load</code>:</para>
+  de processá-lo num ID que você pode usar como seletor em <code>$.fn.load</code>:</para>
 
   <programlisting>var href = 'blog.html#post1';
 var tempArray = href.split('#');

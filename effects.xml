@@ -269,7 +269,7 @@ if ($thing.length) {
 		  <para>Se este valor for true, não haverá transição para as
           animações; os elementos serão imediatamente setados para o estado
 		  alvo final em vez disso. Isto pode ser especialmente útil ao
-		  lidar com browsers antigos; você pode querer fornecer a opção
+		  lidar com navegadores antigos; você pode querer fornecer a opção
 		  para seus usuários.</para>
         </listitem>
       </varlistentry>

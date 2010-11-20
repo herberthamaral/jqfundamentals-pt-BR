@@ -62,7 +62,7 @@
       <para>O método POST deve ser usado para operações destrutivas - ou seja,
       operações onde você muda dados no servidor. Por exemplo, um usuário salvando
       o post de um blog deve ser uma requisição POST. Requisições POST geralmente
-      não são cacheadas pelo browser; uma string de requisição pode fazer parte da
+      não são cacheadas pelo navegador; uma string de requisição pode fazer parte da
       URL, mas os dados tendem a ser enviados separadamente como uma requisição 
       POST.</para>
     </section>
@@ -249,7 +249,7 @@ console.log(response);</programlisting>
     // Código a ser executado independetemente
     // do sucesso ou falha
     complete : function(xhr, status) {
-        alert('The request is complete!');
+        alert('A requisição está completa!');
     }
 });</programlisting>
       </example>
@@ -290,7 +290,7 @@ console.log(response);</programlisting>
             <term>cache</term>
 
             <listitem>
-              <para>Usado se resposta disponível for cacheável. O padrão é
+              <para>Usado se a resposta disponível for cacheável. O padrão é
               <code>true</code> para todos os tipos de dados, exceto  "script"
               e "jsonp". Quando setado para falso, a URL simplesmente terá um 
               parâmetro a mais anexado a ela para evitar o cache.</para>
@@ -363,7 +363,7 @@ console.log(response);</programlisting>
 
             <listitem>
               <para>Uma função de callback para ser executada se a requisição
-              tiver exito. A função recebe os dados de resposta (convertidos
+              tiver êxito. A função recebe os dados de resposta (convertidos
               para um objeto JavaScript se o tipo de dados for JSON), e o texto
               de status da requisição e o objeto bruto da requisição.</para>
             </listitem>
@@ -382,7 +382,7 @@ console.log(response);</programlisting>
             <term>traditional</term>
 
             <listitem>
-              <para>Configure para true para usar o tipo de serialização param em
+              <para>Configure para <code>true</code> para usar o tipo de serialização <code>param</code> em
               versões anteriores ao jQuery 1.4. Para detalhes, veja: <link
               xlink:href="http://api.jquery.com/jQuery.param/">http://api.jquery.com/jQuery.param/</link>.</para>
             </listitem>
@@ -409,7 +409,7 @@ console.log(response);</programlisting>
         </variablelist>
 
         <para>A opção <code>url</code> é a única propriedade obrigatória
-        do objeto de configuração do método <code>$.ajax</code>;todas as
+        do objeto de configuração do método <code>$.ajax</code>; todas as
         outras propriedades são opcionais.</para>
       </section>
     </section>
@@ -495,8 +495,8 @@ console.log(response);</programlisting>
           <listitem>
             <para>Uma função de callback para executar se a requisição for
             executada com sucesso. Opcional. A função recebe os dados de
-            resposta  (convertidos para um objeto JavaScropt se o tipo de 
-            dados for JSON), assim como o texto de status  e o objeto
+            resposta  (convertidos para um objeto JavaScript se o tipo de 
+            dados for JSON), assim como o texto de status e o objeto
             bruto da requisição.</para>
           </listitem>
         </varlistentry>
@@ -510,7 +510,7 @@ console.log(response);</programlisting>
 
             <note>
               <para>Esta opção só é aplicável para métodos que ainda não
-              espeficaram o tipo de dados no seu nome.</para>
+              especificaram o tipo de dados no seu nome.</para>
             </note>
           </listitem>
         </varlistentry>
@@ -543,10 +543,10 @@ $.getJSON('/details.php', function(resp) {
       <title><code>$.fn.load</code></title>
 
       <para>O método <code>$.fn.load</code> é único dentre os métodos de 
-      ajax do jQuery que é chamado em uma seleção. O méodo <code>$.fn.load</code>
-      pega HTML de uma URL, e usa o HTML retornado para popular o(s) elemento(s)
+      ajax do jQuery que é chamado em uma seleção. O método <code>$.fn.load</code>
+      pega o HTML de uma URL, e usa o HTML retornado para popular o(s) elemento(s)
       selecionados. Em adição à URL informada, você ainda pode informar um 
-      seletor; o jQUery irá pegar somente o elemento correspondente do html
+      seletor; o jQuery irá pegar somente o elemento correspondente do HTML
       retornado.</para>
 
       <example>
@@ -618,7 +618,7 @@ $.getJSON('/details.php', function(resp) {
     // como é especificado pelo serviço do YQL
     jsonp : 'callback',
 
-    // fala pro jQuery que estamos esperando JSONP
+    // fala para o jQuery que estamos esperando JSONP
     dataType : 'jsonp',
 
     // fala para o YQL o que nós queremos e que queremos em JSON
@@ -644,7 +644,7 @@ $.getJSON('/details.php', function(resp) {
     <title>Eventos do Ajax</title>
 
     <para>Frequentemente, você irá querer fazer algo depois que uma requisição
-    Ajax inicia ou para, como exibir ou mostrar um indicador de carregamento.
+    Ajax inicia ou termina, como exibir ou mostrar um indicador de carregamento.
     Ao invés de definir este comportamento dentro de cada requisição Ajax, você
     pode associar eventos do Ajax à elementos da mesma forma que você associa 
     outros eventos. Para uma lista completa de de eventos do Ajax, visite <link

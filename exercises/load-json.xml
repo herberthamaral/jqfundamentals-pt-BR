@@ -28,7 +28,7 @@
 
 	      <listitem>
 	        <para>Quando a requisição retornar um resposta, use o valor que
-	        o usuário selecionou no select (dica: <code>$.fn.val</code>) to
+	        o usuário selecionou no select (dica: <code>$.fn.val</code>) 
 	        para procrurar informações sobre o especial na responsta JSON.</para>
 	      </listitem>
 
