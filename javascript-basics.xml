@@ -301,7 +301,7 @@ var foo = bar ? 1 : 0;</programlisting>
       </example>
 
       <para>Enquanto o operador ternário pode ser usado sem associação do valor de retorno
-      para uma variável, isto é geralmente desencorajado..</para>
+      para uma variável, isto é geralmente desencorajado.</para>
     </section>
 
     <section>
