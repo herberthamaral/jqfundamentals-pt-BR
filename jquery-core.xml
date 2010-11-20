@@ -137,7 +137,7 @@ console.log(novoObjeto.foo);   // 'baz'</programlisting>
         <term>$.proxy</term>
 
         <listitem>
-          <para>Retorna uma função que sempre será executada no escopo fornececido
+          <para>Retorna uma função que sempre será executada no escopo fornecido
           — isto é, seta o significado do <code>this</code> dentro da função
           passada ao segundo argumento.</para>
 
@@ -184,7 +184,7 @@ typeof meuValor == 'number'; // false
 typeof meuValor == 'undefined'; // false
 typeof meuValor == 'boolean'; // false
 
-// Usando o operador de igualdade estrita verificar null
+// Usando o operador de igualdade estrita para verificar null
 meuValor === null; // false
 
 // Usando os métodos do jQuery para verificar tipos não primitivos
@@ -201,7 +201,7 @@ jQuery.isArray(meuValor); // true</programlisting>
     <para>Assim que seu trabalho com o jQuery avança, você descobrirá com frequência que há
     dados sobre um elemento que você quer armazenar com o elemento. Em JavaScript
     puro, você pode fazer isso adicionando uma propriedade ao elemento do DOM, mas
-    você terá que lidar com memory leaks em alguns browsers. jQuery ofere um jeito
+    você terá que lidar com memory leaks em alguns navegadores. jQuery ofere um jeito
     simples de armazenar dados relacionados a um elemento, e gerencia
     os problemas de memória para você.</para>
 
@@ -244,11 +244,11 @@ $primeiroLi.data('contentDiv').html('new content');</programlisting>
   </section>
 
   <section>
-    <title>Detecção de Browser &amp; Funcionalidades</title>
+    <title>Detecção de Navegador &amp; Funcionalidades</title>
 
-    <para>Embora o jQuery elimine a maioria das peculiaridades dos browsers, há
+    <para>Embora o jQuery elimine a maioria das peculiaridades dos navegadores, há
     ainda ocasiões quando seu código precisa saber sobre o ambiente
-    do browser.</para>
+    do navegador.</para>
 
     <para>jQuery oferece o objeto <code>$.support</code>, assim como o
     objeto obsoleto <code>$.browser</code>, para este propósito. Para uma
@@ -258,14 +258,14 @@ $primeiroLi.data('contentDiv').html('new content');</programlisting>
     xlink:href="http://api.jquery.com/jQuery.browser/">http://api.jquery.com/jQuery.browser/</link>.</para>
 
     <para>O objeto <code>$.support</code> é dedicado a determinar quais
-    funcionalidades um browser suporta; é recomendado como um método mais 
+    funcionalidades um navegador suporta; é recomendado como um método mais 
 	“à prova de futuro” de customizar seu JavaScript para diferentes ambientes
-    de browser.</para>
+    de navegador.</para>
 
     <para>O objeto <code>$.browser</code> foi substituído em favor do
     objeto <code>$.support</code>, mas não será removido do jQuery
     tão cedo. Ele fornece detecção direta de versão e marca
-    do browser.</para>
+    do navegador.</para>
   </section>
 
   <section>

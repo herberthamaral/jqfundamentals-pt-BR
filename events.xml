@@ -36,7 +36,7 @@
     <code>$.fn.change</code>, etc. -- são atalhos para o método <code>$.fn.bind</code> 
     do jQuery. O método bind é útil para vincular a mesma
     função a múltiplos eventos, e é também usado quando você quer
-    fornecer dados para o event handler, ou quando você está trabalhando com
+    fornecer dados para o manipulador de eventos, ou quando você está trabalhando com
     eventos personalizados.</para>
 
     <example>
@@ -228,7 +228,7 @@ $('p').unbind('.meuNamespace'); // desconecta todos os eventos no namespace</pro
   <section>
     <title>Disparando Eventos</title>
 
-    <para>jQuery fornece um métido de disparar os eventos ligados a um
+    <para>jQuery fornece um método de disparar os eventos ligados a um
     elemento sem qualquer interação do usuário através do método 
     <code>$.fn.trigger</code>. Enquanto este método tem seus usos, ele não deve ser usado simplesmente
     para chamar uma função que foi ligada como um tratador de clique. Ao invés disso, você deve
@@ -262,7 +262,7 @@ foo(); // ao invés de $('p').trigger('click')</programlisting>
     você já anexou a elementos similares que estavam na página originalmente.
     Ao invés de repetir a ligação de evento toda vez que adicionar elementos à
     página, você pode usar delegação de evento. Com delegação de evento você anexa seu
-    evento ao elemento conteiner, e então quando o evento ocorre, você verifica
+    evento ao elemento container, e então quando o evento ocorre, você verifica
     em qual elemento contido ele ocorreu. Se isto soa complicado,
     por sorte o jQuery facilita com seus métodos <code>$.fn.live</code> e
     <code>$.fn.delegate</code>.</para>

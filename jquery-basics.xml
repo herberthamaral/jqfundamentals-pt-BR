@@ -919,7 +919,7 @@ $('ul').last().after($myNewElement.clone());  // clona o p, portanto temos 2 ago
         <title>Criando e adicionando um elemento à página ao
         mesmo tempo</title>
 
-        <programlisting>$('ul').append('&lt;li&gt;item da lista&lt;/li&gt;');</programlisting>
+        <programlisting>$('ul').append('&lt;li&gt;item de lista&lt;/li&gt;');</programlisting>
       </example>
 
       <note>
