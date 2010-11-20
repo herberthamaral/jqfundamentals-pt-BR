@@ -6,7 +6,7 @@
          xmlns:m="http://www.w3.org/1998/Math/MathML"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns:db="http://docbook.org/ns/docbook">
-  <title>Escreva um plugin de striping para tabelas</title> <!-- não encontrei uma boa tradução para striping -->
+  <title>Escreva um plugin para listrar tabelas</title> <!-- não encontrei uma boa tradução para striping (listrar ou zebrar) -->
 
   <para>Abra o arquivo<filename>/exercises/index.html</filename> no seu
   navegador. Use o arquivo <filename>/exercises/js/stripe.js</filename>. Sua 

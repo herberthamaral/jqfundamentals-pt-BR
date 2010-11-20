@@ -29,7 +29,7 @@
 	      <listitem>
 	        <para>Quando a requisição retornar um resposta, use o valor que
 	        o usuário selecionou no select (dica: <code>$.fn.val</code>) 
-	        para procrurar informações sobre o especial na responsta JSON.</para>
+	        para procurar informações sobre o especial na resposta JSON.</para>
 	      </listitem>
 
 	      <listitem>

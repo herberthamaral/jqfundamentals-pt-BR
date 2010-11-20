@@ -18,7 +18,7 @@
 
     <para>Requisições Ajax são disparadas por código JavaScript; seu código 
     envia uma requisição a uma URL, e quando recebe uma resposta, uma função de
-    callback pode ser acionada para trata-la. Pelo motivo da requisição
+    callback pode ser acionada para tratá-la. Pelo motivo da requisição
     ser assíncrona, o resto do seu código continurá a executando enquanto a 
     requisição é processada, sendo assim, é imperativo que um callback seja usado 
     para lidar com a resposta.</para>
@@ -192,8 +192,8 @@ console.log(response);</programlisting>
     <title>Métodos do jQuery relacionados ao Ajax</title>
 
     <para>Enquanto o jQuery oferece muitos métodos convenientes relacionados
-    ao Ajax, o coração de todos eles é o método <code>$.ajax</code> e entende-lo
-    é imperativo. Nós vamos revisa-lo primeiro e então dar uma olhada rápida
+    ao Ajax, o coração de todos eles é o método <code>$.ajax</code> e entendê-lo
+    é imperativo. Nós vamos revisá-lo primeiro e então dar uma olhada rápida
     nos métodos de conveniência.</para>
 
     <remark>Eu geralmente uso o método $.ajax e não uso os métodos de conveniência.
@@ -241,7 +241,7 @@ console.log(response);</programlisting>
 
     // código a ser executado se a requisição
     // falhar. A requisição bruta e os códigos
-    // de statsus são passados para função 
+    // de status são passados para função 
     error : function(xhr, status) {
         alert('Desculpa, aconteceu um problema!');
     },
@@ -259,7 +259,7 @@ console.log(response);</programlisting>
         servidor enviar dados que estão num formato diferente que você especificou,
         seu código poderá falhar, e a razão nem sempre será clara, por que o
         código de resposta HTTP não irá mostrar um erro. Quando estiver trabalhando
-        com requisições Ajax, tenha certeza que o servidor está enviando de volta
+        com requisições Ajax, tenha certeza que o servidor está retornando 
         os dados com o formato que você especificou e verifique se o header
         Content-type está de acordo com o tipo de dados. Por exemplo, para dados
         JSON, o header Content-type deve ser <code>application/json</code>.</para>
@@ -268,7 +268,7 @@ console.log(response);</programlisting>
       <section>
         <title>Opções do <code>$.ajax</code></title>
 
-        <para>Há várias, várias opções para o método  $.ajax, que é parte do
+        <para>Há várias, várias opções para o método $.ajax, que é parte do
         seu poder. Para uma lista completa de opções, visite <link
         xlink:href="http://api.jquery.com/jQuery.ajax/">http://api.jquery.com/jQuery.ajax/</link>;
         aqui vão algumas opções que você irá usar frequentemente:</para>
@@ -519,7 +519,7 @@ console.log(response);</programlisting>
       <example>
         <title>Usando os métodos de conveniência do jQuery</title>
 
-        <para><programlisting>// pega texto puro ou html
+        <para><programlisting>// pega um texto puro ou html
 $.get('/users.php', { userId : 1234 }, function(resp) {
     console.log(resp);
 });
@@ -543,7 +543,7 @@ $.getJSON('/details.php', function(resp) {
       <title><code>$.fn.load</code></title>
 
       <para>O método <code>$.fn.load</code> é único dentre os métodos de 
-      ajax do jQuery que é chamado em uma seleção. O método <code>$.fn.load</code>
+      Ajax do jQuery que é chamado em uma seleção. O método <code>$.fn.load</code>
       pega o HTML de uma URL, e usa o HTML retornado para popular o(s) elemento(s)
       selecionados. Em adição à URL informada, você ainda pode informar um 
       seletor; o jQuery irá pegar somente o elemento correspondente do HTML
@@ -572,7 +572,7 @@ $.getJSON('/details.php', function(resp) {
     <para>As funcionalidades de Ajax do jQuery podem ser especialmente úteis
     ao lidar com formulários. O <link xlink:href="http://jquery.malsup.com/form/">jQuery
     Form Plugin</link> é uma ferramenta bem testada para adicionar funcionalidades 
-    de Ajax nos formulários e você deve usa-lo para manipular formulários com
+    de Ajax nos formulários e você deve usá-lo para manipular formulários com
     Ajax ao invés de usar sua própria solução para alguma coisa mais complexa.
     Mas ainda há dois métodos do jQuery relacionados à processamento de formulários
     que você deve conhecer: <code>$.fn.serialize</code> e
@@ -581,7 +581,12 @@ $.getJSON('/details.php', function(resp) {
     <example>
       <title>Transformando os dados de um formulário em uma string de requisição</title>
 
-      <programlisting>$('#myForm').serialize();</programlisting>
+      <programlisting>
+        $('#myForm').serialize();
+        // cria uma estrutura como esta:
+        
+        name=campo1&amp;value=123
+      </programlisting>
     </example>
 
     <example>
