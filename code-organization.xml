@@ -21,7 +21,7 @@
       <title>Conceitos Chave</title>
 
       <para>Antes de irmos para os padrões de organização de código, é importante
-      entender alguns conceitos que são comuns a todos bons padrões de de organização
+      entender alguns conceitos que são comuns a todos bons padrões de organização
       de código.</para>
 
       <itemizedlist>
@@ -48,13 +48,13 @@
           <para>Unidades de funcionalidade devem ser <link
           xlink:href="http://en.wikipedia.org/wiki/Loose_coupling">fracamente
           acopladas</link> — uma unidade de funcionalidade deve conseguir existir
-          por si só, e comunicação entre unidades devem ser manipuladas através
+          por si só, e a comunicação entre unidades devem ser manipuladas através
           de um sistema de mensagens, como eventos customizados ou pub/sub. Evite
           comunicação direta entre unidades de funcionalidade sempre que possível.</para>
         </listitem>
 
         <listitem>
-          <para>Unidades de funcionalidade devem ser divididas em pequenos médodos
+          <para>Unidades de funcionalidade devem ser divididas em pequenos métodos
           que fazem exatamente uma só coisa. Se seus métodos são maiores que algumas 
           linhas, você deve considerar uma refatoração.</para>
         </listitem>
@@ -117,7 +117,7 @@ myFeature.readSettings(); // loga { foo : 'bar' }
       <para>O literal objeto acima é simplesmente um objeto associado a uma
       variável. O objeto tem uma propriedade e vários métodos. Todas as propriedades
       e métodos são públicas, então qualquer parte da sua aplicação pode ver 
-      as as propriedades e chamar métodos no objeto. Enquanto há um método
+      as propriedades e chamar métodos no objeto. Enquanto há um método
       init. não há nada requerendo que ele seja chamado antes do objeto
       estar funcional. </para>
 
@@ -125,7 +125,7 @@ myFeature.readSettings(); // loga { foo : 'bar' }
       que nós temos este código escrito no estilo tradicional do jQuery:</para>
 
       <programlisting>// carrega algum conteúdo ao clicar num item da lista
-// utilizando o ID do item da lista e esconde conteúdo
+// utilizando o ID do item da lista e esconde o conteúdo
 // em itens de lista similares
 $(document).ready(function() {
   $('#myFeature li')
@@ -148,13 +148,13 @@ $(document).ready(function() {
       <para>Se isso for extender nossa aplicação, deixar como está pode ser
       legal. Por outro lado, se esse for um pedaço de uma aplicação maior,
       nós temos que manter esta funcionalidade separada da funcionalidade
-      não relacionada. Talvez nós ainda queiramos mover a URL pra fora do 
+      não relacionada. Talvez nós ainda queiramos mover a URL para fora do 
       código e dentro de uma área de configuração. Por último, nós talvez
       precisaremos quebrar o encadeamento de métodos para ficar mais fácil
       modificar pedaços de funcionalidade depois. </para>
 
       <example>
-        <title>Usando um literal de objeto para uma feature do jQuery</title>
+        <title>Usando um literal de objeto numa funcionalidade do jQuery</title>
 
         <programlisting>var myFeature = {
     init : function(settings) {
@@ -300,7 +300,7 @@ feature.sayPrivateThing();
       por causa que ambas foram definidas no mesmo escopo de sayPrivateThing.</para>
 
       <para>Este padrão é poderoso pois, da mesma forma que você pode obter 
-      dos nomes de variáveis, ele pode dar a você variáveis privadas e funções
+      os nomes de variáveis, ele pode dar a você variáveis privadas e funções
       enquanto expõe uma API limitada consistindo das propriedades retornadas
       dos objetos e métodos.</para>
 
@@ -380,7 +380,7 @@ feature.sayPrivateThing();
       e usada com permissão do autor do RequireJS, James Burke.</para>
     </note>
 
-    <para>Quando um projeto alcança um determinado tamanho, gerenciar modulos
+    <para>Quando um projeto alcança um determinado tamanho, gerenciar módulos
     de scripts começa a ficar complicado. Você precisa ter certeza da seqüência
     correta dos scripts e você começa a pensar seriamente em combinar scripts em
     um único arquivo, para que somente uma ou um número pequeno de requisições 
@@ -388,7 +388,7 @@ feature.sayPrivateThing();
     que necessário, depois que a página carregar. </para>
 
     <para>O RequireJS é uma ferramenta para gerenciamento de dependências feita pelo
-    James Burke e pode lhe ajudar a gerenciar módulos de scripts, carrega-los na
+    James Burke e pode lhe ajudar a gerenciar módulos de scripts, carregá-los na
     ordem correta e tornar fácil a combinação de scripts mais tarde através de
     uma ferramenta própria de otimização, sem necessidade de alterar seu código
     de marcação. Ele também lhe fornece um meio fácil de carregar os scripts depois
@@ -477,7 +477,7 @@ feature.sayPrivateThing();
     <section>
       <title>Criando módulos reusáveis com RequireJS</title>
 
-      <para>RequireJS torna fácil a dafinição de módulos reusáveis via
+      <para>RequireJS torna fácil a definição de módulos reusáveis via
       <code>require.def()</code>. Um módulo RequireJS pode ter dependências que
       podem ser usadas para definir um módulo e um módulo RequireJS pode retornar
       um valor - um objeto, uma função, o que for - que pode ser consumido por
@@ -501,7 +501,7 @@ feature.sayPrivateThing();
         <para>Este exemplo seria melhor armazenado no arquivo my/simpleshirt.js.
         </para>
 
-        <para>Se seu módulo possui dependências, você pode especifica-las como
+        <para>Se seu módulo possui dependências, você pode especificá-las como
         segundo argumento para <code>require.def()</code> (como um array) e então
         passar uma função como terceiro argumento. A função será chamada para definir
         o módulo quando todas as dependências tiverem sido carregadas.
@@ -539,7 +539,7 @@ my/shirt.js</programlisting>
         <para>A função que define <code>my/shirt</code> não é chamada até 
         que os módulos <code>my/cart</code> e <code>my/inventory</code> sejam
         carregados, e a função recebe os módulos como argumentos
-        <code>cart</code> e <code>inventory</code>. A ordem que dos argumentos
+        <code>cart</code> e <code>inventory</code>. A ordem dos argumentos
         da função precisam combinar com a ordem em que as dependências foram 
         requiridas no array de dependências. O objeto retornado pela chamada da
         função define o módulo <code>my/shirt</code>. Por definir os módulos
@@ -598,7 +598,7 @@ webapp/scripts/jquery.beta.js</programlisting>
     appDir: "../",
     baseUrl: "scripts/",
     dir: "../../webapp-build",
-    //Comente a linha de otimização se você quer 
+    //Comente a linha de otimização (optimize) se você quer 
     //o código minificado pelo Compilador Closure Compiler utilizando
     //o modo de otimização "simple"
     optimize: "none",
@@ -612,7 +612,7 @@ webapp/scripts/jquery.beta.js</programlisting>
       </example>
 
       <para>Para usar a ferramenta de build, você precisa do Java6 instalado. O
-      Compilador Closure é usado para o passo de minificação do JavaScirpt 
+      Compilador Closure é usado para o passo de minificação do JavaScript 
       (se <code>optimize:
       "none"</code> estiver comentado), e requer o Java 6. </para>
 
@@ -663,7 +663,7 @@ myPortlet.$element.appendTo('body');</programlisting>
 
       <programlisting>myPortlet.open(); // força o estado aberto
 myPortlet.close(); // força o estado fechado
-myPortlet.toggle(); // inverte o estado open/close
+myPortlet.toggle(); // inverte o estado aberto/fechado
 myPortlet.refresh(); // atualiza o conteúdo
 myPortlet.destroy(); // remove o portlet da página
 myPortlet.setSource('data/html/onions.html'); 

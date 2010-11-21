@@ -235,7 +235,7 @@ $('#meuDiv').data('nomeChave'); // { foo : 'bar' }</programlisting>
 // depois não temos que procurar o div de novo;
 // podemos apenas lê-lo dos dados do item de lista
 var $primeiroLi = $('#minhaLista li:first');
-$primeiroLi.data('contentDiv').html('new content');</programlisting>
+$primeiroLi.data('contentDiv').html('novo conteúdo');</programlisting>
     </example>
 
     <para>Além de passar um único par chave-valor para <code>$.fn.data</code> 

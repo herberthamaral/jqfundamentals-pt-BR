@@ -30,7 +30,7 @@
     <para>O código que iremos usar neste livro está <link
     xlink:href="http://github.com/rmurphey/jqfundamentals">num repositório do
     Github</link>. Você pode baixar um arquivo .zip ou .tar contendo o código
-	e então descompacta-lo para usar no seu servidor. Se você souber usar o git,
+	e então descompactá-lo para usar no seu servidor. Se você souber usar o git,
 	você será bem vindo para clonar ou 'forkar' o repositório.</para>
   </section>
 
@@ -138,7 +138,7 @@ console.log('olah');
     </itemizedlist>
 
     <para>Outros métodos para console estão disponíveis, apesar deles terem
-	uma diferença em cada browser. Os consoles também tem a habilidade de 
+	uma diferença em cada navegador. Os consoles também tem a habilidade de 
 	setar breakpoints e observar expressões no seu código para propósitos
 	de debug.</para>
 	
@@ -193,7 +193,7 @@ console.log('olah');
 	<para>Métodos que podem ser chamados em objetos jQuery serão referenciados
 	como <code>$.fn.methodName</code>. Métodos que existem no namespace do
 	jQuery mas não podem ser chamados em objetos jQuery serão referidos como
-	<code>$.methodName</code>. Se não fizer muito sentido pra você, não preocupe
+	<code>$.methodName</code>. Se não fizer muito sentido para você, não se preocupe
 	 - ficará mais claro à medida que você avançar no livro.
 	</para>
 

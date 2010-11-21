@@ -18,7 +18,7 @@
   <para>Em alguns casos, você precisará consultar a documentação do jQuery
   para poder completar um exercício, dado que nós não cobrimos todas as informações
   relevantes na aula. Isto é por praticidade; a biblioteca jQuery é grande
-  e aprender a encontrar respostas na documentação é uma parte importe do
+  e aprender a encontrar respostas na documentação é uma parte importante do
   processo.</para>
 
   <para>Aqui vão algumas sugestões para combater estes problemas:</para>
@@ -40,7 +40,7 @@
     <listitem>
       <para>Por último, descubra o que você precisa fazer com os elementos
       para resolver o problmea. Pode ser útil escrever comentários explicando
-      o que você vai fazer antes de você escrever código para faze-lo.</para>
+      o que você vai fazer antes de você escrever código para fazê-lo.</para>
     </listitem>
   </itemizedlist>
 

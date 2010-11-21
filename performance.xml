@@ -17,7 +17,7 @@
     <title>Armazene o length em loops</title>
 
     <para>Em um loop, não acesse a propriedade length de um array todo tempo;
-    armazene-o em outra variável antes de manipula-lo..</para>
+    armazene-o em outra variável antes de manipulá-lo.</para>
 
     <programlisting>var myLength = myArray.length;
 
@@ -89,7 +89,7 @@ $.each($elems, function(i,elem) {
 
     <para>Funções anônimas em todo lugar são dolorosas. Elas são difíceis
     de debugar, manter, testar ou reusar. Ao invés disso, utilize um literal
-    objeto para organizar e nomear seus seus manipuladores e callbacks.</para>
+    objeto para organizar e nomear seus manipuladores e callbacks.</para>
 
     <programlisting>// RUIM
 $(document).ready(function() {
@@ -160,7 +160,7 @@ $('div.data .gonzalez');
 // otimizado
 $('.data td.gonzalez');</programlisting>
 
-      <para>Use <code>tag.classe</code> se possível no seu seletor mais a
+      <para>Use tag <code>.class</code> se possível no seu seletor mais a
       direita, e somente <code>tag</code> ou <code>.class</code> na esquerda.
       </para>
 
@@ -197,7 +197,7 @@ $('.gender input:radio'); // muito melhor</programlisting>
     <para>Delegação de evento permite que você delegue um manipulador de evento
     a um elemento container (uma lista não-ordenada, por exemplo) ao invés
     de múltiplos elementos contidos (uma lista de itens, por exemplo). O jQuery
-    torna isso fácil com $.fn.live e $.fn.delegate. Onde possível, você deve 
+    torna isso fácil com $.fn.live e $.fn.delegate. Sempre que possível, você deve 
     usar <code>$.fn.delegate</code> ao invés de <code>$.fn.live</code>, de forma
     que isso elimina a necessidade de uma seleção desnecessária e seu contexto
     explícito (vs. o contexto de  <code>$.fn.live</code> do <code>document</code>) 
@@ -239,7 +239,7 @@ $parent.append(table);</programlisting>
 
     <para>Se você estiver mudando o CSS de mais de 20 elementos utilizando 
     $.fn.css, considere adicionar uma tag de estilo à página para uma melhoria
-    de performance de aproximadamente 60$.</para>
+    de performance de aproximadamente 60%.</para>
 
     <programlisting>// tudo certo para até 20 elementos, lento depois disso
 $('a.swedberg').css('color', '#asd123');

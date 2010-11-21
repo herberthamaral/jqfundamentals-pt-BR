@@ -133,7 +133,7 @@ $('div:animated');     // todas as divs com animação</programlisting>
 		            // se chamos aqui, o elemento tem largura
 		            // e altura, mas também é uma &lt;tr&gt;,
 		            // então verifica a propriedade <code>display</code> para
-		            // decidir se ele esta escondido
+		            // decidir se ele está escondido
 		            jQuery.curCSS(elem, "display") === "none";
 		};
 
@@ -336,7 +336,7 @@ $('ul li').eq(5);               // o sexto item da lista </programlisting>
           <term>:password</term>
 
           <listitem>
-            <para>Selecionam inputs com <code>type="password"</code></para>
+            <para>Seleciona inputs com <code>type="password"</code></para>
           </listitem>
         </varlistentry>
 
@@ -344,7 +344,7 @@ $('ul li').eq(5);               // o sexto item da lista </programlisting>
           <term>:radio</term>
 
           <listitem>
-            <para>Selecionam inputs com <code>type="radio"</code></para>
+            <para>Seleciona inputs com <code>type="radio"</code></para>
           </listitem>
         </varlistentry>
 
@@ -352,7 +352,7 @@ $('ul li').eq(5);               // o sexto item da lista </programlisting>
           <term>:reset</term>
 
           <listitem>
-            <para>Selecionam inputs com <code>type="reset"</code></para>
+            <para>Seleciona inputs com <code>type="reset"</code></para>
           </listitem>
         </varlistentry>
 
@@ -434,7 +434,7 @@ $('ul li').eq(5);               // o sexto item da lista </programlisting>
         <programlisting>$('#content')
     .find('h3')
     .eq(2)
-        .html('new text for the third h3!')
+        .html('novo texto para o terceiro h3!')
     .end() // restaura a seleção para todos h3 em #context
     .eq(0)
         .html('novo texto para o primeiro h3!');</programlisting>
@@ -577,7 +577,7 @@ $('h1').position();      // retorna um objeto contendo informações
 	um objeto contendo um ou mais pares chave/valor.</para>
 
     <example>
-      <title>Setting attributes</title>
+      <title>Definindo atributos</title>
 
       <programlisting>$('a').attr('href', 'todosMeusHrefsSaoOMesmoAgora.html');
 $('a').attr({ 
@@ -588,12 +588,12 @@ $('a').attr({
 
     <remark>Agora, nós quebramos o objeto em múltiplas linhas. Lembre-se,
 	espaços não importam em JavaScript, então você deve se sentir livre
-	para usa-lo do jeito que quiser para fazer seu código ficar mais legível!
+	para usá-lo do jeito que quiser para fazer seu código ficar mais legível!
 	Depois, você pode usar uma ferramenta de minificação para remover espaços
 	desnecessários para seu código de produção.</remark>
 
     <example>
-      <title>Getting attributes</title>
+      <title>Obtendo atributos</title>
 
       <programlisting>$('a').attr('href');  // retorna o href do primeiro elemento &lt;a&gt; do documento</programlisting>
     </example>
@@ -631,7 +631,7 @@ $('li.selected').siblings();</programlisting>
     </example>
 
     <para>Você também pode iterar sobre uma seleção usando <code>$.fn.each</code>. 
-    Este método itera sobre todos os elementos numa seleção e executar uma função
+    Este método itera sobre todos os elementos numa seleção e executa uma função
     para cada um. A função recebe como argumento um índice com o elemento atual 
     e com o próprio elemento DOM. Dentro da função, o elemento DOM também está
     disponível como  <code>this</code> por padrão.</para>
@@ -661,16 +661,16 @@ $('li.selected').siblings();</programlisting>
     xlink:href="http://api.jquery.com/category/manipulation/">http://api.jquery.com/category/manipulation/</link>.</para>
 
     <section>
-      <title>Obtendo e setando informações sobre elementos</title>
+      <title>Obtendo e Definindo informações sobre elementos</title>
 
       <para>Há um certo número de formas que você pode mudar um elemento 
       existente. Dentre as tarefas mais comuns que você irá fazer é mudar
-      o inner HTML ou o atributo de um elemento. O jQuery oferece métodos
+      o HTML interno ou o atributo de um elemento. O jQuery oferece métodos
       simples e cross-navegador para estes tipos de manipulação. Você ainda
       pode obter informações sobre elementos usando muitos dos mesmos métodos
       nas suas formas de getter. Nós veremos exemplos destes métodos durante
       esta seção, mas especificamente, aqui vão alguns poucos métodos que
-      você pode usar para obter e setar informação sobre elementos.
+      você pode usar para obter e definir informação sobre elementos.
       </para>
       
       <note>
@@ -781,13 +781,13 @@ $('li.selected').siblings();</programlisting>
       <code>$.fn.after</code>. O método <code>$.fn.insertAfter</code> coloca
       o(s) elemento(s) selecionado(s) depois do elemento que você passou 
       como argumento; o método <code>$.fn.after</code> coloca o elemento 
-      passado como argumento depois do elemento selecionado.Vários outros 
+      passado como argumento depois do elemento selecionado. Vários outros 
       métodos seguem este padrão: <code>$.fn.insertBefore</code> e
       <code>$.fn.before</code>; <code>$.fn.appendTo</code> e
       <code>$.fn.append</code>; e <code>$.fn.prependTo</code> e
       <code>$.fn.prepend</code>.</para>
       
-      <para>O método que faz mais sentido pra você dependerá de quais elementos
+      <para>O método que faz mais sentido para você dependerá de quais elementos
       você já selecionou e quais você precisará armazenar uma referência para os 
       elementos que você está adicionando na página. Se você precisar armazenar
       uma referência, você sempre irá querer fazer pela primeira forma -- colocando
@@ -840,10 +840,10 @@ $('#myList li:first').clone().appendTo('#myList');</programlisting>
         usar <code>$.fn.remove</code> quando você quiser remover a
         seleção permanentemente da página; enquanto o método retorna
         os elementos removidos, estes elementos não terão seus eventos
-        e dados associados a ele se você retorna-los à página.</para>
+        e dados associados a ele se você retorná-los à página.</para>
 
         <para>Se você precisa que os dados e eventos persistam, você irá 
-        usar <code>$.fn.detach</code> . Da mesma forma que <code>$.fn.remove</code>,
+        usar <code>$.fn.detach</code>. Da mesma forma que <code>$.fn.remove</code>,
         ele retorna uma seleção, mas também mantém os dados e os eventos
         associados com a seleção para que você possa restaurar a seleção
         para a página no futuro.</para>
@@ -852,14 +852,14 @@ $('#myList li:first').clone().appendTo('#myList');</programlisting>
           <para>O método <code>$.fn.detach</code> é extremamente útil se você
           estiver fazendo uma manipulação pesada à um elemento. Neste caso,
           é bom aplicar um <code>$.fn.detach</code> no elemento da página,
-          trabalhar no seu próprio código, e então restaura-lo à página quando
+          trabalhar no seu próprio código, e então restaurá-lo à página quando
           você terminar. Isto evita que você faça "toques ao DOM" caros enquanto
           mantém os dados e eventos do elemento.</para>
         </note>
 
         <para>Se você quer deixar um elemento na página mas simplesmente quer
         remover seu conteúdo, você pode usar <code>$.fn.empty</code> para retirar
-        o innerHTML do elemento.</para>
+        o HTML interno do elemento.</para>
       </section>
     </section>
 

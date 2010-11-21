@@ -23,7 +23,7 @@
     satisfazer bem suas necessidades. Acontece que eventos customizados oferecem
     um jeito completamente novo de pensar sobre JavaScript orientado a eventos.
     Ao invés de focar no elemento que dispara uma ação, eventos customizados
-    colocam o holoforte  no elemento em ação. Isso traz muitos benefícios,
+    colocam o holoforte no elemento em ação. Isso traz muitos benefícios,
     incluindo:</para>
 
     <itemizedlist>
@@ -276,7 +276,7 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
             <term>populate</term>
 
             <listitem>
-              <para>Recebe os dados retornados em JSON e usa-os para para
+              <para>Recebe os dados retornados em JSON e usa-os para 
               alimentar o container.</para>
             </listitem>
           </varlistentry>
@@ -286,9 +286,9 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
 
             <listitem>
               <para>Remove o container da página depois que o usuário efetua
-              a requisição para faze-lo. A verificação pode ser ignorada
-              se true for passado como segundo argumento do manipulador de
-              eventos. O evento remove também remove o termo associado com o
+              a requisição para fazê-lo. A verificação pode ser ignorada
+              se <code>true</code> for passado como segundo argumento do manipulador de
+              eventos. O evento remove também o termo associado com o
               container de resultados do objeto global contendo o termo de 
               busca.</para>
             </listitem>
@@ -298,7 +298,7 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
             <term>collapse</term>
 
             <listitem>
-              <para>Adiciona a classe collapsed ao container, que esconderá
+              <para>Adiciona a classe <code>collapsed</code> ao container, que esconderá
               os resultados via CSS. Ele também irá mudar o botão  “Collapse”
               do container em um botão “Expand”.</para>
             </listitem>
@@ -308,14 +308,14 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
             <term>expand</term>
 
             <listitem>
-              <para>Remove a classe collapsed do container. Ele também irá 
+              <para>Remove a classe <code>collapsed</code> do container. Ele também irá 
               mudar o botão “Expand” em um botão “Collapse”.</para>
             </listitem>
           </varlistentry>
         </variablelist>
 
         <para>O plugin é responsável por adicionar os botões de ação ao container.
-        Ele vinvula cada evento de clique à cada item da lista de ações e usa
+        Ele vincúla cada evento de clique à cada item da lista de ações e usa
         a classe do item de lista para determinar qual evento customizado será
         disparado no container de resultados correspondente. </para>
 
@@ -345,7 +345,7 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
         // evento ele irá disparar no painel de resultados.
         $a.find('li').click(function() {
             // passa o li que foi clicado para a função 
-            // para que o mesmo possa manipulado se necessário
+            // para que o mesmo possa ser manipulado se necessário
             $results.trigger($(this).attr('class'), [ $(this) ]);
         });
     });
@@ -504,7 +504,7 @@ $.fn.twitterResult.events = {
 
         <para>Vamos começar ligando nossa caixa de texto e o botão “Load Trending
         Terms”. Para a caixa de texto, nós iremos capturar o termo que foi 
-        digitado e iremos passa-lo para o evento <code>getResults</code> do
+        digitado e iremos passá-lo para o evento <code>getResults</code> do
         container do Twitter. O evento <code>getTrends</code> será disparado
         ao clicarmos no botão “Load Trending Terms”: </para>
 
@@ -520,7 +520,7 @@ $('#get_trends').click(function() {
 
         <para>Nós podemos remover, contrair, expandir e atualizar todos os
         resultados se adicionarmos alguns botões com IDs apropriados, assim
-        como mostrado abaixo. Perceba como nós estamos passando o valor true 
+        como mostrado abaixo. Perceba como nós estamos passando o valor <code>true</code> 
         para o manipulador de evento como seu segundo argumento, dizendo ao
         mesmo que que nós não queremos verificar a remoção de containers
         individuais. </para>

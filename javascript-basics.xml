@@ -177,7 +177,7 @@ var bar = baz || createBar();</programlisting>
 
         <para>Este estilo é elegante e agradevelmente curto; por isso, pode 
         ser difícil ler, especialmente por iniciantes. Eu o mostro aqui para
-        que você possa reconhece-lo no código que você lê, mas eu não recomendo
+        que você possa reconhecê-lo no código que você lê, mas eu não recomendo
         o uso até que você esteja extremamente confortável com o que isto 
         significa e como você espera que se comporte.</para>
       </note>
@@ -186,7 +186,7 @@ var bar = baz || createBar();</programlisting>
     <section>
       <title>Operadores de comparação</title>
 
-      <para>Operadores de comparação premite testar quando valores são
+      <para>Operadores de comparação permite testar quando valores são
       equivalentes ou quando são idênticos.</para>
 
       <example>
@@ -296,7 +296,7 @@ undefined;  // seja cuidadoso -- undefined pode ser redefinido!</programlisting>
         <title>O operador ternário</title>
 
         <programlisting>// seta foo pra 1 se bar for verdadeiro;
-// senão, seta foo pra 0
+// senão, seta foo para 0
 var foo = bar ? 1 : 0;</programlisting>
       </example>
 
@@ -948,7 +948,7 @@ greeting();</programlisting>
         <title>Uma função anônima auto-executável</title>
 
         <programlisting>(function(){
-    var foo = 'Hello world';
+    var foo = 'Olá mundo';
 })();
 
 
@@ -1160,7 +1160,7 @@ bim();  // bim não está definido fora da função anônima,
     nós vimos como as funções têm acesso para modificar valores de variáveis. O mesmo
     tipo de comportamento existe com funções definidas dentro de laços -- a função
     "vê" a mudança no valor da variável mesmo depois que a função foi definida, resultando
-    em todos os cliques alertando 4.</para>
+    em todos os cliques alertando 5.</para>
 
     <example>
       <title>Como bloquear no valor de <code>i</code>?</title>
