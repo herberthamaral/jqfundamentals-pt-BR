@@ -394,7 +394,7 @@ $('li').hoverClass('hover');</programlisting>
     </example>
 
     <section>
-      <title>Adicionando métodos para um Widget</title>
+      <title>Adicionando métodos a um Widget</title>
 
       <para>Agora que nós podemos inicializar nossa barra de progresso, nós
       iremos adicionar a habilidade de executar ações através da chamada de
