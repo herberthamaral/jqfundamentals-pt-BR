@@ -315,7 +315,7 @@ $(document).trigger('myCustomEvent', [ 'bim', 'baz' ]);</programlisting>
         </variablelist>
 
         <para>O plugin é responsável por adicionar os botões de ação ao container.
-        Ele vincúla cada evento de clique à cada item da lista de ações e usa
+        Ele vincula cada evento de clique à cada item da lista de ações e usa
         a classe do item de lista para determinar qual evento customizado será
         disparado no container de resultados correspondente. </para>
 
