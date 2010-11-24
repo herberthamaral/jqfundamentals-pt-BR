@@ -13,7 +13,7 @@
 
     <para>O método XMLHttpRequest permite que navegadores se comuniquem com o
     servidor sem precisar recarregar a página. Este método, também conhecido
-    como Ajax(Asynchronous JavaScript and XML - JavaScript Assíncrono e XML),
+    como Ajax (Asynchronous JavaScript and XML - JavaScript Assíncrono e XML),
     permite ter experiências ricas e interativas nas páginas web.</para>
 
     <para>Requisições Ajax são disparadas por código JavaScript; seu código 
@@ -163,7 +163,7 @@ console.log(response);</programlisting>
 
       <para>Em geral, as requisições Ajax são limitadas ao mesmo protocolo
        (http ou https), a mesma porta, e ao mesmo domínio da página que
-       está fazendo a requisição. Esta limitação não se aplicam a scripts que
+       está fazendo a requisição. Estas limitações não se aplicam a scripts que
        são carregados pelos métodos de Ajax do jQuery.</para>
 
       <para>A outra exceção são requisições direcionadas a um serviço JSONP
@@ -181,7 +181,7 @@ console.log(response);</programlisting>
       ferramenta indispensável para trabalhar com requisições Ajax. Você
       pode ver as requisições Ajax no mesmo instante que elas acontecem na
       tab Console do Firebug  (e no painel Resources &gt; XHR do Webkit Inspector), 
-      e você pode clicar numa requisição para expandi-la e ver os detalhes como
+      e você pode clicar numa requisição para expandí-la e ver os detalhes como
       os headers de requisição, de resposta, conteúdo e mais. Se alguma coisa não
       estiver acontecendo como esperado com uma requisição Ajax, este é o primeiro
       lugar para ver o que está acontecendo de errado.</para>
