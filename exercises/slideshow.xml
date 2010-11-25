@@ -10,7 +10,7 @@
 
   <para>Abra o arquivo<filename>/exercises/index.html</filename> no seu 
   navegador. Use o arquivo <filename>/exercises/js/slideshow.js</filename>. Sua
-  tarefa é pegar HTML puro e melhora-lo com JavaScript adicionando um
+  tarefa é pegar HTML puro e melhorá-lo com JavaScript adicionando um
   slideshow.</para>
 
   <orderedlist>
@@ -20,16 +20,16 @@
 
     <listitem>
       <para>Escreva o código para navegar em torno dos itens da lista dentro
-      do elemento; Exiba um com fadeIn, mostre-o em alguns segundos e então
-      faça o desaparecer com o fade out.</para>
+      do elemento; Exiba um com fadeIn, mostre-o por alguns segundos e então
+      faça o desaparecer com o fadeOut e faça o próximo aparecer com o fadeIn.</para>
     </listitem>
 
     <listitem>
-        <para>Quando você chegar ao final da lista, inicie denovo do início.</para>
+        <para>Quando você chegar ao final da lista, comece denovo do início.</para>
     </listitem>
   </orderedlist>
 
   <para>Para um desafio extra, crie uma área de navegação debaixo do 
   slideshow que mostra quantas imagens existem e quais imagens você
-  está vendo agora. (Dica: $.fn.prevAll será util para isto.</para>
+  está vendo agora. (Dica: $.fn.prevAll será util para isto.)</para>
 </section>
