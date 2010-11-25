@@ -153,8 +153,8 @@ jQuery.fx.speeds.turtle = 2000;</programlisting></para>
         <para><programlisting>$('div.old').fadeOut(300, function() { $(this).remove(); }); </programlisting></para>
       </example>
 
-      <para>Note que se sua seleção não retorna nenhum elemento, sua
-	  callback nunca será executada! Você pode resolver este problema testando se
+      <para>Note que se sua seleção não retorna nenhum elemento, seu
+	  callback nunca será executado! Você pode resolver este problema testando se
 	  sua seleção retornou algum elemento; se não, você pode só executar a
 	  callback imediatamente.</para>
 
@@ -201,7 +201,7 @@ if ($thing.length) {
     <note>
       <para>Propriedades relacionadas a cor não podem ser animadas com
       <code>$.fn.animate</code> usando jQuery de forma convencional. Animações de cor
-	  pode facilmente ser efetuadas incluindo o <link
+	  podem ser facilmente efetuadas incluindo o <link
       xlink:href="http://plugins.jquery.com/files/jquery.color.js.txt">plugin
       de cor</link>. Discutiremos o uso de plugins depois no livro.</para>
     </note>
@@ -246,7 +246,7 @@ if ($thing.length) {
         <term>$.fn.stop</term>
 
         <listitem>
-          <para>Para animações atualmente sendo executadas nos
+          <para>Pára animações atualmente sendo executadas nos
           elementos selecionados.</para>
         </listitem>
       </varlistentry>
