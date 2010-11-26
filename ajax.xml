@@ -19,7 +19,7 @@
     <para>Requisições Ajax são disparadas por código JavaScript; seu código 
     envia uma requisição a uma URL, e quando recebe uma resposta, uma função de
     callback pode ser acionada para tratá-la. Pelo motivo da requisição
-    ser assíncrona, o resto do seu código continurá a executando enquanto a 
+    ser assíncrona, o resto do seu código continurá executando enquanto a 
     requisição é processada, sendo assim, é imperativo que um callback seja usado 
     para lidar com a resposta.</para>
 
@@ -164,9 +164,9 @@ console.log(response);</programlisting>
       <para>Em geral, as requisições Ajax são limitadas ao mesmo protocolo
        (http ou https), a mesma porta, e ao mesmo domínio da página que
        está fazendo a requisição. Estas limitações não se aplicam a scripts que
-       são carregados pelos métodos de Ajax do jQuery.</para>
+       são carregados pelos métodos Ajax do jQuery.</para>
 
-      <para>A outra exceção são requisições direcionadas a um serviço JSONP
+      <para>As outras exceções são requisições direcionadas a um serviço JSONP
       em outro domínio. No caso do JSONP, o provedor do serviço tem que concordar
       em responder a sua requisição com um script que pode ser carregado dentro
       da mesma página usando uma tag <code>&lt;script&gt;</code>, assim evitando
@@ -393,7 +393,7 @@ console.log(response);</programlisting>
 
             <listitem>
               <para>O tipo da requisição, "POST" ou "GET". O padrão é "GET".
-              Outros tipos de requisição, como "PUT" e "DELETE" podem ser
+              Outros tipos de requisições, como "PUT" e "DELETE" podem ser
               utilizados, mas eles talvez não sejam suportados por todos os
               navegadores.</para>
             </listitem>
@@ -439,7 +439,7 @@ console.log(response);</programlisting>
           <term>$.post</term>
 
           <listitem> 
-            <para>Executa uma requisição POST na URL informada.</para>
+            <para>Executa uma requisição POST para a URL informada.</para>
           </listitem>
         </varlistentry>
 
