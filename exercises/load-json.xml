@@ -43,7 +43,7 @@
 	      </listitem>
 	    </orderedlist>
 
-	    <para>Perceba que nos estamos carregando o JSON todas as vezes que o usuário
+	    <para>Perceba que nós estamos carregando o JSON todas as vezes que o usuário
 	    muda a seleção. Como podemos mudar o código para que uma requisição só seja
 	    feita uma única vez e então usarmos a resposta cacheada quando o usuário 
 	    modificar a caixa de seleção?</para>
