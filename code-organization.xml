@@ -611,7 +611,7 @@ webapp/scripts/jquery.beta.js</programlisting>
 }</programlisting>
       </example>
 
-      <para>Para usar a ferramenta de build, você precisa do Java6 instalado. O
+      <para>Para usar a ferramenta de build, você precisa do Java 6 instalado. O
       Compilador Closure é usado para o passo de minificação do JavaScript 
       (se <code>optimize:
       "none"</code> estiver comentado), e requer o Java 6. </para>
