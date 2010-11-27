@@ -250,7 +250,7 @@ $('&lt;style type="text/css"&gt;a.swedberg { color : #asd123 }&lt;/style&gt;')
   <sect1>
     <title>Use <code>$.data</code> ao invés de <code>$.fn.data</code></title>
 
-    <para>Use $.data num elemento DOM ao invés de chamar $.fn.data numa seleção
+    <para>Usando $.data em um elemento DOM ao invés de chamar $.fn.data numa seleção
     do jQuery pode ser até 10 vezes mais rápido. Tenha certeza que você entendeu
     a diferença entre um elemento do DOM e uma seleção do jQuery antes de fazer
     isso.</para>
