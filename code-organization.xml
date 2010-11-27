@@ -145,7 +145,7 @@ $(document).ready(function() {
 });
 </programlisting>
 
-      <para>Se isso for extender nossa aplicação, deixar como está pode ser
+      <para>Se isso for estender nossa aplicação, deixar como está pode ser
       legal. Por outro lado, se esse for um pedaço de uma aplicação maior,
       nós temos que manter esta funcionalidade separada da funcionalidade
       não relacionada. Talvez nós ainda queiramos mover a URL para fora do 
@@ -219,8 +219,8 @@ $(document).ready(myFeature.init);</programlisting>
 
       <para>A primeira coisa que você irá perceber é que esta abordagem 
       é obviamente muito maior que a original - novamente, se isso for 
-      extender nossa aplicação, o uso do literal objeto não irá fazer 
-      sentido algum. Embora assumindo que não vai extender nossa aplicação,
+      estender nossa aplicação, o uso do literal objeto não irá fazer 
+      sentido algum. Embora assumindo que não vai estender nossa aplicação,
       nós ganhamos várias coisas:</para>
 
       <itemizedlist>
