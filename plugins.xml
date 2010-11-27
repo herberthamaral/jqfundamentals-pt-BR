@@ -139,7 +139,7 @@ $('a').showLinkLocation();</programlisting>
 
     <para>Este é um outro exemplo de plugin. Este não requer que nós façamos
     uma iteração sobre todos os elementos com o método <code>each()</code>.,
-    Ao invés disso, não simplesmente vamos delegar para outros método do jQuery
+    Ao invés disso, nós simplesmente iremos delegar para outros método do jQuery
     diretamente:</para>
 
     <programlisting>(function($){
@@ -296,15 +296,15 @@ $('li').hoverClass('hover');</programlisting>
         <para>Esta seção é baseada, com permissão, no post de blog <link
         xlink:href="http://blog.nemikor.com/2010/05/15/building-stateful-jquery-plugins/">Building
         Stateful jQuery Plugins</link> de Scott Gonzalez.</para>
-      </note>Enquanto a maioria dos plguins para jQuery são stateless - isto é,
-      nós os chamamos num elemento e isso é a estenção de nossa interação com 
+      </note>Enquanto a maioria dos plugins para jQuery são stateless - isto é,
+      nós os chamamos num elemento e isso é a extensão de nossa interação com 
       o plugin - há um grande conjunto de funcionalidades que não se encaixam
-      no padrão básico de plguins.</para>
+      no padrão básico de plugins.</para>
 
     <para>Como forma de preencher esta lacula, o jQuery UI implementa um sistema
     de plugin mais avançado. O novo sistema gerencia estado, permite múltiplas
     funções sendo expostas através de um plugin simples, e provê vários pontos
-    de estenção. Este sistema é chamado de fábrica de widgets e é exposto como 
+    de extensão. Este sistema é chamado de fábrica de widgets e é exposto como 
     <code>jQuery.widget</code> e faz parte do jQuery UI 1.8; entretanto, pode 
     ser usado independentemente do jQuery UI. </para>
 
@@ -316,7 +316,7 @@ $('li').hoverClass('hover');</programlisting>
     isso pode ser feito através da chamada à <code>jQuery.widget</code>
     com dois parâmetros: o nome do plugin a ser criado e um literal objeto
     contendo funções para dar suporte ao nosso plugin. Quando nosso plugin
-    é chamado, ele irá criar uma nova instância do plugin e todas as funções
+    for chamado, ele irá criar uma nova instância do plugin e todas as funções
     serão executadas dentro do contexto desta instância. Isso é diferente de 
     um plugin padrão do jQuery em duas formas importantes. Primeiro, o 
     contexto é um objeto, não um elemento do DOM. Segundo, o contexto é sempre
@@ -337,7 +337,7 @@ $('li').hoverClass('hover');</programlisting>
     </example>
 
     <para>O nome do plugin precisa conter um namespace; neste caso nós usamos
-    o namespace <code>nmk</code>. Há uma limitação que namespaces tem que ter
+    o namespace <code>nmk</code>. Há uma limitação que namespaces têm que ter
     exatamente um nível de profundidade - isto é, nós não podemos usar um 
     namespace como <code>nmk.foo</code>. Nós podemos também ver que a 
     fábrica de widgets nos deu duas propriedades. <code>this.element</code> é
@@ -372,7 +372,7 @@ $('li').hoverClass('hover');</programlisting>
     passadas para nosso plugins estão em <code>this.options</code>, dentro de
     nossa instância do plugin. Como mostrado abaixo, nós podemos especificar 
     valores padrão para qualquer uma das nossas opções. Quando estiver projetando
-    sua API, você deve perceber o caso mais comum para seu plugin para que você
+    sua API, você deve perceber o caso mais comum para seu plugin de modo que você
     possa setar valores padrão e fazer todas as opções verdadeiramente opcionais. </para>
 
     <example>
@@ -524,7 +524,7 @@ alert(bar.progressbar("value"));</programlisting>
 
       <para>Uma das formas mais fáceis de fazer seu plugin estensível é 
       adicionar callbacks para que os usuários possam reagir quando o estado
-      do plugin muda. Nós podemos ver abaixo como adicionar um callback à nossa
+      do plugin mudar. Nós podemos ver abaixo como adicionar um callback à nossa
       barra de progresso para enviar um sinal quando a barra de progresso
       chegar à 100%. O método <code>_trigger</code> requer três parâmetros:
       o nome do callback, um objeto de evento nativo que iniciou o callback, e
@@ -537,7 +537,7 @@ alert(bar.progressbar("value"));</programlisting>
       x/y providas pelo objeto do evento. </para>
 
       <example>
-        <title>Provendo callbacks para estensão do usuário</title>
+        <title>Provendo callbacks para extensão do usuário</title>
 
         <programlisting>$.widget("nmk.progressbar", {
     options: {
