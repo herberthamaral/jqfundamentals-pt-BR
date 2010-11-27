@@ -147,7 +147,7 @@ $('#master_switch').click(function() {
 
     <note>
       <para>Se você está acostumado com programação orientada a objetos,
-      talvez seja útil pensar em evetos como se fossem métodos de objetos.
+      talvez seja útil pensar em eventos como se fossem métodos de objetos.
       Grosseiramente falando, o objeto que o método pertence é criado pelo
       seletor do jQuery. Vinculando o evento customizado changeState para
       todos os elementos <code>$(‘.light’)</code> é similar a ter uma classe
@@ -522,7 +522,7 @@ $('#get_trends').click(function() {
         resultados se adicionarmos alguns botões com IDs apropriados, assim
         como mostrado abaixo. Perceba como nós estamos passando o valor <code>true</code> 
         para o manipulador de evento como seu segundo argumento, dizendo ao
-        mesmo que que nós não queremos verificar a remoção de containers
+        mesmo que nós não queremos verificar a remoção de containers
         individuais. </para>
 
         <programlisting>$.each(['refresh', 'expand', 'collapse'], function(i, ev) {
