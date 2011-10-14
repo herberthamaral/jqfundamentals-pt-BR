@@ -1156,7 +1156,7 @@ bim();  // bim não está definido fora da função anônima,
     é confuso, não se preocupe: closures são geralmente entendidas melhor através
     de um exemplo.</para>
 
-    <para>Em <xref linkend="javascript-basics.examples.scope-value-change" />
+    <para>No <xref linkend="javascript-basics.examples.scope-value-change" />
     nós vimos como as funções têm acesso para modificar valores de variáveis. O mesmo
     tipo de comportamento existe com funções definidas dentro de laços -- a função
     "vê" a mudança no valor da variável mesmo depois que a função foi definida, resultando
