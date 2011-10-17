@@ -571,9 +571,9 @@ $('h1').position();      // retorna um objeto contendo informações
     <para>Atributos de elementos podem conter informações úteis para sua
     aplicação, então é importante saber como setá-los e obtê-los.</para>
 
-    <para>O método <code>$.fn.attr</code> atua como getter e setter
-    . Assim como os métodos <code>$.fn.css</code> , <code>$.fn.attr</code>
-    atuando como um setter, podem aceitar tanto uma chave e um valor ou
+    <para>O método <code>$.fn.attr</code> atua como getter e setter.
+     Assim como o método <code>$.fn.css</code>, <code>$.fn.attr</code>
+    atuando como setter, pode aceitar tanto uma chave e um valor ou
 	um objeto contendo um ou mais pares chave/valor.</para>
 
     <example>
