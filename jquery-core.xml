@@ -12,7 +12,7 @@
     <title><code>$</code> vs <code>$()</code></title>
 
 	<para>Até agora, estivemos lidando inteiramente com métodos que são chamados
-    em um objeto jQuery. Por examplo:</para>
+    em um objeto jQuery. Por exemplo:</para>
 
     <programlisting>$('h1').remove();</programlisting>
 

@@ -141,7 +141,7 @@ jQuery.fx.speeds.turtle = 2000;</programlisting></para>
 	  animação, ou pode remover elementos que são parte da animação.
       <termdef><firstterm>Funções de callback</firstterm> fornecem um jeito de
 	  registrar seu interesse em um evento que acontecerá no
-      futuro.</termdef> Neste caso, o evento que estaremos repondendo é a
+      futuro.</termdef> Neste caso, o evento que estaremos respondendo é a
 	  conclusão da animação. Dentro da função de callback, a
       palavra-chave <code>this</code> refere-se ao elemento no qual o efeito
 	  foi chamado; como se estivéssemos dentro de funções de manipulação de eventos, podemos transformá-lo
